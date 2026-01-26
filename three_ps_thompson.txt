@@ -1,0 +1,42 @@
+2026-01-26
+Progress:
+- Created a new GitHub repository for NCAA Next Man Up after identifying configuration issues with the original repo that prevented it from being public and properly shared.
+- Added full repository structure, documentation files, and initial project content to the new repo.
+- Finalized Capstone project proposal for submission.
+- Continued early development work and began laying groundwork for a simple prototype to support future conversations with UM basketball staff.
+- Began evaluating potential dashboard frameworks that integrate well with Python-based analytics and future data management needs.
+
+Problems:
+- Still determining the most appropriate dashboard application and architecture to balance flexibility, scalability, and ease of use.
+- Awaiting scheduling availability from UM basketball staff due to in-season constraints.
+- Had inital set up problems with GitHub Repo, but it is now up and working, and I may still have Andrew review this and see if this is what he wants.
+
+Plans:
+- Continue developing a basic working prototype to support early feedback and conversations with Jay Flores.
+- Narrow down dashboard technology choice and overall system architecture.
+- Further refine analytics focus and metrics based on initial stakeholder discussions.
+
+Hours:
+- 11
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+2026-01-19
+Progress:
+- Created initial GitHub repository structure for the NCAA Next Man Up project.
+- Began outlining project scope, goals, and overall analytics approach.
+- Researched publicly available NCAA basketball data sources, including Sports Reference, ESPN, and KenPom, as potential primary contributors.
+- Reached out to Jay Flores and Patricia Duce to begin conversations around project alignment, collaboration, and potential application.
+- Began setting up initial code structure and exploratory development.
+
+Problems:
+- Still evaluating which data sources provide the most reliable and consistent access for automation and analysis.
+- Client and Prospective Client details not fully finalized yet.
+
+Plans:
+- Finalize and submit Capstone project proposal.
+- Continue refining GitHub structure and documentation.
+- Attempt to schedule initial meetings with Jay Flores and Patricia Duce to further align project direction.
+
+Hours:
+- 7

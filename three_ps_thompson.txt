@@ -1,3 +1,28 @@
+2026-02-02
+Progress:
+- Finalized foundational data engineering code for the NCAA Next Man Up project, establishing a repeatable and well-documented pipeline for ingesting, cleaning, and processing college basketball data.
+- Successfully gained access to KenPom data and integrated it into the project workflow, including authentication and API usage for advanced team-level metrics.
+- Created cleaned and processed CSV files from raw data sources (Sports Reference, KenPom) to produce analysis-ready datasets.
+- Implemented structured Python scripts for schedules, rosters, team metrics, and four-factor statistics with consistent naming and configuration across seasons.
+- Completed and submitted the required work session / workshop video demonstrating current code, data outputs, and project progress.
+- Continued refining repository structure, documentation, and organization to support scalability and external review.
+
+Problems:
+- Still awaiting availability from Jay Flores due to in-season scheduling constraints, limiting direct stakeholder feedback.
+- Some data sources require careful handling due to access limits, formatting inconsistencies, and automation constraints.
+- Dashboard development is intentionally postponed until data pipelines and metric definitions are fully stabilized.
+
+Plans:
+- Schedule and conduct an initial working meeting with Jay Flores to validate analytics priorities and use cases.
+- Expand data coverage to additional teams and seasons to support comparative analysis and “next man up” scenarios.
+- Begin exploratory analysis and metric validation now that core data pipelines are established.
+- Re-evaluate dashboard frameworks with a clearer understanding of data structure, scale, and user needs.
+
+Hours:
+- 15
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 2026-01-26
 Progress:
 - Created a new GitHub repository for NCAA Next Man Up after identifying configuration issues with the original repo that prevented it from being public and properly shared.

@@ -1,3 +1,29 @@
+2026-02-09
+Progress:
+- Met with Jay Flores and gained clearer direction on project priorities, shifting focus toward player utility and fit rather than solely team-level performance.
+- Clarified emphasis on evaluating players through lineup context, role-based performance, conference and league rankings, and peer comparisons.
+- Discussed longer-term potential for the project to support recruiting and transfer portal evaluation through shared, standardized analytics across teams.
+- Agreed that prioritizing publicly available data sources will improve scalability and allow the tool to be used beyond UM-specific internal data.
+- Began refining long-term GitHub structure and end-state vision, including cleaner commits, clearer action plans, and improved project organization.
+- Continued significant coding work focused on data loading and scraping to reduce reliance on manually uploaded CSV files.
+- Advanced style guide and coding conventions to improve readability, consistency, and maintainability across data ingestion scripts.
+
+Problems:
+- Programmatic data loading and scraping from sources like Sports Reference presents challenges due to access constraints, formatting inconsistencies, and the need to follow usage rules carefully.
+- Transfer portal analytics remain conceptually valuable but difficult to operationalize due to uncertainty around player availability and timing.
+- Balancing near-term prototype development with longer-term scalability requires careful prioritization.
+
+Plans:
+- Continue developing automated data ingestion workflows that minimize manual data handling while respecting source limitations.
+- Translate player utility and fit concepts into measurable, transparent metrics using publicly available data.
+- Explore feasible ways to represent transfer portal value through historical movement patterns, role fit, and performance comparables.
+- Further clean and document repository structure to align with long-term project vision and external collaboration.
+
+Hours:
+- 9
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 2026-02-02
 Progress:
 - Finalized foundational data engineering code for the NCAA Next Man Up project, establishing a repeatable and well-documented pipeline for ingesting, cleaning, and processing college basketball data.

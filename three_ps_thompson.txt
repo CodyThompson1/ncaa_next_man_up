@@ -1,3 +1,29 @@
+2026-02-16
+Progress:
+- Reflected on work session feedback and made corrective adjustments to narrow project scope around clearly defined coaching decisions.
+- Met briefly with Jay Flores and refined the focus toward player utility, role definition, lineup fit, and substitution impact rather than broad team-level reporting.
+- Translated stakeholder feedback into predefined analytical use cases (player grading, substitution-level impact, lineup performance comparisons, conference peer rankings).
+- Fully stabilized data loading pipeline; all major datasets now load programmatically without manual CSV handling.
+- Continued standardizing ingestion, cleaning, and transformation scripts so the system operates as one cohesive pipeline.
+- Began developing analytical layers on top of the cleaned dataset, including early work on player grading logic and substitution impact breakdowns.
+- Improved GitHub structure and commit organization to better reflect production-style workflow and long-term scalability.
+
+Problems:
+- Project scope still presents risk of overexpansion due to the large number of potential analytical directions.
+- Some advanced metrics require careful interpretation and documentation before being used in player grading logic.
+- Transfer portal modeling remains conceptually valuable but difficult to operationalize due to uncertainty around player availability and movement timing.
+
+Plans:
+- Finalize initial version of player grading framework using role-based and efficiency-based metrics.
+- Develop substitution impact analysis to quantify lineup performance changes when specific players enter or exit.
+- Continue refining analytical outputs so the dashboard clearly answers a small set of high-value coaching questions.
+- Prepare a simplified explanation of supported decisions to improve clarity for non-basketball audiences.
+
+Hours:
+- 15
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 2026-02-09
 Progress:
 - Met with Jay Flores and gained clearer direction on project priorities, shifting focus toward player utility and fit rather than solely team-level performance.

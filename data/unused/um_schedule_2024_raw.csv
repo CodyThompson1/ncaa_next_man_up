@@ -1,0 +1,37 @@
+G,Date,Time,Type,,Opponent,Conf,SRS,,Tm,Opp,OT,W,L,Streak,Arena
+1,Tue Nov 7 2023,9:00p,REG,,Northwest Indian,,,W,107,59,,1,0,W 1,Dahlberg Arena
+2,Fri Nov 10 2023,9:00p,REG,@,Oregon,Pac-12,12.22,L,61,75,,1,1,L 1,Matthew Knight Arena
+3,Sun Nov 12 2023,9:00p,REG,,UC Davis,Big West,-1.33,W,78,65,,2,1,W 1,Dahlberg Arena
+4,Thu Nov 16 2023,10:00p,REG,,North Dakota State,Summit,-7.57,L,69,78,,2,2,L 1,Dahlberg Arena
+5,Fri Nov 24 2023,4:00p,REG,@,Houston (6),Big 12,25.69,L,44,79,,2,3,L 2,Fertitta Center
+6,Wed Nov 29 2023,10:00p,REG,@,Nevada,MWC,12.85,L,66,77,,2,4,L 3,Lawlor Events Center
+7,Sat Dec 2 2023,3:00p,REG,,San Jose State,MWC,-3.82,W,75,58,,3,4,W 1,Dahlberg Arena
+8,Tue Dec 5 2023,9:00p,REG,,Montana State–Northern,,,W,91,67,,4,4,W 2,Dahlberg Arena
+9,Sat Dec 9 2023,3:00p,REG,,Montana Tech,,,W,88,67,,5,4,W 3,Dahlberg Arena
+10,Sun Dec 17 2023,5:00p,REG,@,San Jose State,MWC,-3.82,W,86,75,,6,4,W 4,Provident Credit Union Event Center
+11,Tue Dec 19 2023,9:00p,REG,@,UC Davis,Big West,-1.33,W,73,61,,7,4,W 5,University Credit Union Center
+12,Thu Dec 28 2023,9:00p,REG,@,Weber State,Big Sky,-0.49,L,63,93,,7,5,L 1,Dee Events Center
+13,Sat Dec 30 2023,6:00p,REG,@,Idaho State,Big Sky,-7.49,W,76,68,,8,5,W 1,Reed Gym
+14,Wed Jan 3 2024,8:00p,REG,@,North Dakota State,Summit,-7.57,W,96,86,,9,5,W 2,Scheels Center
+15,Sat Jan 6 2024,9:00p,REG,,South Dakota,Summit,-12.55,W,82,63,,10,5,W 3,Dahlberg Arena
+16,Thu Jan 11 2024,9:00p,REG,,Northern Colorado,Big Sky,-4.44,L,92,98,OT,10,6,L 1,Dahlberg Arena
+17,Sat Jan 13 2024,9:00p,REG,,Northern Arizona,Big Sky,-12.17,W,90,47,,11,6,W 1,Dahlberg Arena
+18,Sat Jan 20 2024,9:00p,REG,@,Montana State,Big Sky,-5.34,W,87,77,,12,6,W 2,Worthington Arena
+19,Mon Jan 22 2024,9:00p,REG,,Weber State,Big Sky,-0.49,W,77,62,,13,6,W 3,Dahlberg Arena
+20,Thu Jan 25 2024,10:00p,REG,@,Portland State,Big Sky,-7.15,L,46,72,,13,7,L 1,Peter W. Stott Center
+21,Sat Jan 27 2024,9:00p,REG,@,Sacramento State,Big Sky,-10.87,W,70,67,,14,7,W 1,The Nest
+22,Thu Feb 1 2024,9:00p,REG,,Idaho,Big Sky,-11.29,W,73,70,,15,7,W 2,Dahlberg Arena
+23,Sat Feb 3 2024,9:00p,REG,,Eastern Washington,Big Sky,-1.03,L,65,78,,15,8,L 1,Dahlberg Arena
+24,Thu Feb 8 2024,8:00p,REG,@,Northern Arizona,Big Sky,-12.17,W,94,66,,16,8,W 1,Walkup Skydome
+25,Sat Feb 10 2024,4:00p,REG,@,Northern Colorado,Big Sky,-4.44,L,71,87,,16,9,L 1,Bank of Colorado Arena
+26,Sat Feb 17 2024,9:00p,REG,,Montana State,Big Sky,-5.34,W,88,69,,17,9,W 1,Dahlberg Arena
+27,Thu Feb 22 2024,9:00p,REG,,Sacramento State,Big Sky,-10.87,W,68,61,,18,9,W 2,Dahlberg Arena
+28,Sat Feb 24 2024,9:00p,REG,,Portland State,Big Sky,-7.15,W,82,73,,19,9,W 3,Dahlberg Arena
+29,Thu Feb 29 2024,9:00p,REG,@,Eastern Washington,Big Sky,-1.03,L,79,89,,19,10,L 1,Reese Court
+30,Sat Mar 2 2024,5:00p,REG,@,Idaho,Big Sky,-11.29,W,80,57,,20,10,W 1,ICCU Arena
+31,Mon Mar 4 2024,9:00p,REG,,Idaho State,Big Sky,-7.49,W,79,65,,21,10,W 2,Dahlberg Arena
+32,Mon Mar 11 2024,10:00p,CTOURN,N,Portland State,Big Sky,-7.15,W,87,81,,22,10,W 3,Idaho Central Arena
+33,Tue Mar 12 2024,11:00p,CTOURN,N,Idaho State,Big Sky,-7.49,W,72,58,,23,10,W 4,Idaho Central Arena
+34,Wed Mar 13 2024,11:30p,CTOURN,N,Montana State,Big Sky,-5.34,L,70,85,,23,11,L 1,Idaho Central Arena
+35,Sun Mar 24 2024,1:00p,CBI,N,Presbyterian,Big South,-8.13,W,82,79,OT,24,11,W 1,Ocean Center
+36,Mon Mar 25 2024,2:00p,CBI,N,Arkansas State,Sun Belt,0.28,L,61,74,,24,12,L 1,Ocean Center

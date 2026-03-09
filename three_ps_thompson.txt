@@ -1,3 +1,60 @@
+2026-03-09
+
+Progress:
+- Completed a full overhaul of the project’s data loading and data cleaning structure to better align with the intended analytics pipeline.
+- Finalized multiple data collection scripts covering Montana player statistics, Big Sky player statistics, player advanced metrics, game logs, and team schedule data.
+- Implemented a comprehensive set of cleaning scripts that standardize player profiles, player statistics, game logs, and team schedule data into consistent processed datasets.
+- Built the KenPom team master dataset by merging multiple KenPom endpoints into a unified team metrics table used for team-level comparisons.
+- Standardized naming conventions, column schemas, and merge keys across datasets to ensure reliable joins between player, team, and game-level data.
+- Implemented validation checks for duplicate records, missing values, and schema consistency to improve data quality before feature engineering.
+- Organized the repository into a clear pipeline structure including `data_collection`, `data_cleaning`, `feature_engineering`, and `evaluation_engine` modules.
+- Prepared the processed datasets needed for player comparison modeling and the evaluation engine.
+- Began implementing the foundational logic for the player evaluation framework, including percentile-based scoring and role-based player comparison structures.
+
+Problems:
+- Cleaning and standardizing player statistics across multiple data sources required extensive adjustments due to inconsistent naming conventions and missing fields.
+- Some advanced player metrics expected from KenPom were not available at the player level, requiring substitutions or alternative calculations from available data.
+- Ensuring that the cleaned datasets remained compatible across all stages of the pipeline required repeated validation and structural adjustments.
+
+Plans:
+- Begin implementing the feature engineering layer, including conference player pools, peer group generation, and percentile-based metric calculations.
+- Finalize the player archetype assignment logic used to categorize players by role within their team structure.
+- Continue building the evaluation engine scripts that will score players across shooting, playmaking, defense, and rebounding categories.
+- Prepare the processed and engineered datasets for integration with the project dashboard.
+
+Hours:
+- 22
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+2026-03-02
+
+Progress:
+- Performed a major restructuring of the data pipeline to improve long-term maintainability and alignment with the overall project blueprint.
+- Rebuilt the data collection architecture to separate Montana-specific datasets from broader Big Sky conference datasets to support peer comparison logic.
+- Implemented new Sports Reference scraping workflows for player statistics, advanced metrics, and game logs after determining that KenPom does not provide player-level API endpoints.
+- Created automated loaders for Montana rosters, Big Sky rosters, player season statistics, player advanced statistics, and player game logs.
+- Developed scripts to collect and organize KenPom team-level metrics including ratings, four factors, point distribution, height metrics, and miscellaneous team statistics.
+- Standardized output schemas across data collection scripts so downstream cleaning and feature engineering stages can operate on consistent field structures.
+- Implemented defensive programming and validation checks throughout the collection pipeline to ensure missing tables, malformed pages, or incomplete player records do not break the workflow.
+- Established a structured raw data layer that separates Sports Reference and KenPom data sources to make future refreshes and debugging easier.
+
+Problems:
+- KenPom’s API documentation revealed that player-level endpoints are not publicly accessible, requiring a pivot toward Sports Reference scraping for player statistics.
+- HTML structure inconsistencies across Sports Reference player pages created challenges when reliably locating the correct tables for season statistics and game logs.
+- Several players do not have complete data tables or have partial stat records, requiring additional validation logic to prevent missing data errors during ingestion.
+
+Plans:
+- Continue refining the Sports Reference ingestion scripts to ensure all relevant player statistics are consistently captured across teams.
+- Begin finalizing the cleaned datasets that will serve as inputs for the feature engineering stage.
+- Prepare the project structure for peer group generation, player archetype assignment, and percentile calculations.
+- Continue validating that Montana-specific datasets and conference comparison datasets remain aligned for downstream evaluation logic.
+
+Hours
+- 21
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 2026-02-23
 Progress:
 - Completed full data loading and cleaning pipeline; all core datasets now ingest, standardize, and output in a consistent structure.

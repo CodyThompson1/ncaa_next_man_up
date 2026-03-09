@@ -1,0 +1,11 @@
+team_name,season,conference_abbreviation,conference_name,wins,losses,adj_em,adj_o,adj_d,tempo,luck,sos_adj_em,sos_off,sos_def,ncsos_adj_em,rank_adj_em,rank_adj_o,rank_adj_d,rank_tempo,rank_luck,rank_sos_adj_em,efg_off,efg_def,to_rate_off,to_rate_def,orb_rate,drb_rate,ft_rate,opp_ft_rate,source_ratings_endpoint,source_four_factors_endpoint
+Eastern Washington,2026,BSky,Big Sky,13,18,0.4257,113.84,113.414,67.6446,-0.0722,1.2397,,,,166,102,256,164,338,,,,,,,,35.2738,,ratings,four-factors
+Idaho,2026,BSky,Big Sky,19,14,0.5991,109.232,108.633,67.5956,-0.0225,-1.3037,,,,165,176,155,169,246,,,,,,,,33.5758,,ratings,four-factors
+Idaho State,2026,BSky,Big Sky,13,20,-7.0191,109.698,116.717,65.6087,-0.0353,-0.2887,,,,249,165,315,278,290,,,,,,,,37.9475,,ratings,four-factors
+Montana,2026,BSky,Big Sky,16,15,-1.899,106.658,108.557,69.24,0.0292,0.0458,,,,187,222,153,83,112,,,,,,,,35.7729,,ratings,four-factors
+Montana State,2026,BSky,Big Sky,18,14,2.9993,111.098,108.099,66.003,-0.0827,0.3405,,,,132,138,142,262,346,,,,,,,,30.2422,,ratings,four-factors
+Northern Arizona,2026,BSky,Big Sky,10,22,-14.439,105.361,119.8,63.9234,0.0306,-0.7176,,,,320,253,344,340,109,,,,,,,,31.7692,,ratings,four-factors
+Northern Colorado,2026,BSky,Big Sky,20,11,2.4085,112.075,109.666,68.6716,-0.0141,-1.749,,,,136,123,186,111,225,,,,,,,,27.2781,,ratings,four-factors
+Portland State,2026,BSky,Big Sky,20,10,1.8573,104.006,102.149,67.9513,0.025,-1.6398,,,,141,273,47,145,125,,,,,,,,37.0656,,ratings,four-factors
+Sacramento State,2026,BSky,Big Sky,10,21,-8.3125,106.025,114.338,71.7965,-0.0222,1.7383,,,,265,233,277,13,245,,,,,,,,41.2359,,ratings,four-factors
+Weber State,2026,BSky,Big Sky,16,15,-2.4383,111.838,114.276,68.5908,-0.02,-1.6775,,,,193,129,274,117,239,,,,,,,,39.0328,,ratings,four-factors

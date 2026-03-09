@@ -7,7 +7,7 @@ Loads Sports-Reference schedule CSV exports for University of Montana men's bask
 cleans column names/types, and saves a processed schedule table for analysis and dashboards.
 
 Required Inputs:
-- --season (one or more season end years). Example: 2024 = 2023–24 season.
+- --season (one or more season end years). Example: 2026 = 2025–26 season.
 
 Outputs:
 - data/processed/um_schedule_<season>_processed.csv

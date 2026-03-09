@@ -1,0 +1,2 @@
+team_name,season,conference_abbreviation,conference_name,wins,losses,adj_em,adj_o,adj_d,tempo,luck,sos_adj_em,sos_off,sos_def,ncsos_adj_em,rank_adj_em,rank_adj_o,rank_adj_d,rank_tempo,rank_luck,rank_sos_adj_em,efg_off,efg_def,to_rate_off,to_rate_def,orb_rate,drb_rate,ft_rate,opp_ft_rate,source_ratings_endpoint,source_four_factors_endpoint
+Montana,2026,BSky,Big Sky,16,15,-1.899,106.658,108.557,69.24,0.0292,0.0458,,,,187,222,153,83,112,,,,,,,,35.7729,,ratings,four-factors

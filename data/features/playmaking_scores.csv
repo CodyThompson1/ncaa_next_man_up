@@ -1,0 +1,14 @@
+player_name,team_name,season,conference_name,position_group,position_raw,archetype,usg_pct,ast_pct_source_metric,ast_pct_score_component,ast_source_metric,ast_score_component,tov_pct_source_metric,tov_pct_score_component,playmaking_metric_count,playmaking_weight_sum_used,playmaking_score,playmaking_score_band
+Grant Kepley,Montana,2026,Big Sky,Guard,G,,19.0,ast_pct_percentile,89.74,assists,92.31,tov_pct_percentile,97.44,3,0.9,92.16,Elite
+Kenyon Aguino,Montana,2026,Big Sky,Forward,F,,18.1,ast_pct_percentile,100.0,assists,69.23,tov_pct_percentile,53.85,3,0.9,81.2,Strong
+Tyler Isaak,Montana,2026,Big Sky,Guard,G,,14.3,ast_pct_percentile,83.72,assists,84.62,tov_pct_percentile,56.98,3,0.9,78.03,Strong
+Chase Henderson,Montana,2026,Big Sky,Guard,G,,20.4,ast_pct_percentile,63.16,assists,76.92,tov_pct_percentile,97.37,3,0.9,74.58,Solid
+Tejon Sawyer,Montana,2026,Big Sky,Forward,F,,19.7,ast_pct_percentile,54.17,assists,53.85,tov_pct_percentile,75.0,3,0.9,58.71,Developing
+Money Williams,Montana,2026,Big Sky,Guard,G,,33.2,ast_pct_percentile,0.0,assists,100.0,tov_pct_percentile,100.0,3,0.9,50.0,Developing
+Tyler Thompson,Montana,2026,Big Sky,Guard,G,,14.5,ast_pct_percentile,31.82,assists,61.54,tov_pct_percentile,61.36,3,0.9,46.64,Developing
+Kadyn Betts,Montana,2026,Big Sky,Forward,F,,24.2,ast_pct_percentile,20.83,assists,34.62,tov_pct_percentile,100.0,3,0.9,42.25,Developing
+Connor Dick,Montana,2026,Big Sky,Guard,G,,15.1,ast_pct_percentile,13.04,assists,34.62,tov_pct_percentile,91.3,3,0.9,36.43,Limited
+Brooklyn Hicks,Montana,2026,Big Sky,Guard,G,,20.9,ast_pct_percentile,22.22,assists,46.15,tov_pct_percentile,50.0,3,0.9,35.04,Limited
+Courtney Anderson,Montana,2026,Big Sky,Guard,G,,20.8,ast_pct_percentile,0.0,assists,23.08,tov_pct_percentile,72.22,3,0.9,22.46,Limited
+Trae Taylor,Montana,2026,Big Sky,Forward,F,,14.7,ast_pct_percentile,3.7,assists,7.69,tov_pct_percentile,66.67,3,0.9,18.8,Limited
+Amari Jedkins,Montana,2026,Big Sky,Forward,F,,13.0,ast_pct_percentile,5.0,assists,15.38,tov_pct_percentile,10.0,3,0.9,8.99,Limited

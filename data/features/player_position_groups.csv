@@ -1,153 +1,153 @@
-player_name,team_name,season,position_raw,class,height,weight,position_group,position_group_source
-Alan Gballou,Eastern Washington,2026,F,FR,6-7,255.0,Forward,position_raw_exact_forward_or_center
-Alton Hamilton,Eastern Washington,2026,F,JR,6-8,235.0,Forward,position_raw_exact_forward_or_center
-Andrew Cook,Eastern Washington,2026,G,SR,6-4,205.0,Guard,position_raw_exact_guard
-Angelo Winkel,Eastern Washington,2026,F,SR,6-9,220.0,Forward,position_raw_exact_forward_or_center
-Cole Scherer,Eastern Washington,2026,G,FR,6-2,185.0,Guard,position_raw_exact_guard
-Elijah Thomas,Eastern Washington,2026,G,SR,6-6,190.0,Guard,position_raw_exact_guard
-Emmett Marquardt,Eastern Washington,2026,F,SO,6-9,220.0,Forward,position_raw_exact_forward_or_center
-Isaiah Moses,Eastern Washington,2026,G,SR,6-1,165.0,Guard,position_raw_exact_guard
-Johnny Radford,Eastern Washington,2026,G,SR,6-1,180.0,Guard,position_raw_exact_guard
-Jojo Anderson,Eastern Washington,2026,G,SR,6-0,180.0,Guard,position_raw_exact_guard
-Kiree Huie,Eastern Washington,2026,F,SR,6-9,210.0,Forward,position_raw_exact_forward_or_center
-Maddox Monson,Eastern Washington,2026,G,SR,6-2,180.0,Guard,position_raw_exact_guard
-Shaumba Ngoyi,Eastern Washington,2026,F,SR,6-9,200.0,Forward,position_raw_exact_forward_or_center
-Straton Rogers,Eastern Washington,2026,G,SR,6-5,205.0,Guard,position_raw_exact_guard
-Tyler Powell,Eastern Washington,2026,G,SR,6-5,220.0,Guard,position_raw_exact_guard
-Aidan Sevilla,Idaho,2026,G,SR,6-0,180.0,Guard,position_raw_exact_guard
-Biko Johnson,Idaho,2026,G,SR,6-2,180.0,Guard,position_raw_exact_guard
-Brody Rowbury,Idaho,2026,F,SR,6-11,290.0,Forward,position_raw_exact_forward_or_center
-Ewan Steele,Idaho,2026,F,SO,6-9,220.0,Forward,position_raw_exact_forward_or_center
-Isaiah Brickner,Idaho,2026,G,SR,6-4,190.0,Guard,position_raw_exact_guard
-Jack Payne,Idaho,2026,G,JR,6-6,195.0,Guard,position_raw_exact_guard
-Jackson Rasmussen,Idaho,2026,F,FR,6-7,200.0,Forward,position_raw_exact_forward_or_center
-Kolton Mitchell,Idaho,2026,G,SO,6-1,175.0,Guard,position_raw_exact_guard
-Kristian Gonzalez,Idaho,2026,G,JR,6-3,180.0,Guard,position_raw_exact_guard
-Miles Klapper,Idaho,2026,G,SO,6-3,185.0,Guard,position_raw_exact_guard
-Seth Joba,Idaho,2026,F,JR,6-9,225.0,Forward,position_raw_exact_forward_or_center
-Talon Jenkins,Idaho,2026,G,FR,6-7,,Guard,position_raw_exact_guard
-Titus Yearout,Idaho,2026,G,SR,6-2,181.0,Guard,position_raw_exact_guard
-Trevon Blassingame,Idaho,2026,G,SR,6-4,173.0,Guard,position_raw_exact_guard
-Tyler Linhardt,Idaho,2026,F,SR,6-7,220.0,Forward,position_raw_exact_forward_or_center
-William Jenson,Idaho,2026,F,FR,6-9,,Forward,position_raw_exact_forward_or_center
-Blake Daberkow,Idaho State,2026,F,SR,6-10,235.0,Forward,position_raw_exact_forward_or_center
-Caleb Van De Griend,Idaho State,2026,F,SR,6-8,250.0,Forward,position_raw_exact_forward_or_center
-Cheikh Sow,Idaho State,2026,G,SR,6-7,195.0,Guard,position_raw_exact_guard
-Connor Hollenbeck,Idaho State,2026,F,SR,6-7,225.0,Forward,position_raw_exact_forward_or_center
-Evan Otten,Idaho State,2026,C,SO,6-11,220.0,Forward,position_raw_exact_forward_or_center
-Gus Etchison,Idaho State,2026,G,SR,5-11,145.0,Guard,position_raw_exact_guard
-Jaedyn Brown,Idaho State,2026,G,SO,6-4,175.0,Guard,position_raw_exact_guard
-Jamison Guerra,Idaho State,2026,G,SR,6-0,200.0,Guard,position_raw_exact_guard
-Kasen Carpenter,Idaho State,2026,G,SR,6-5,190.0,Guard,position_raw_exact_guard
-Lachlan Brewer,Idaho State,2026,G,SO,6-6,190.0,Guard,position_raw_exact_guard
-Landen Birley,Idaho State,2026,G,FR,6-4,170.0,Guard,position_raw_exact_guard
-Louis Bond,Idaho State,2026,G,FR,6-5,185.0,Guard,position_raw_exact_guard
-Martin Kheil,Idaho State,2026,G,SO,6-4,200.0,Guard,position_raw_exact_guard
-Quin Patterson,Idaho State,2026,G,SR,6-7,205.0,Guard,position_raw_exact_guard
-Trey Arland,Idaho State,2026,G,JR,6-7,190.0,Guard,position_raw_exact_guard
-Amari Jedkins,Montana,2026,F,JR,6-7,195.0,Forward,position_raw_exact_forward_or_center
-Brooklyn Hicks,Montana,2026,G,JR,6-3,185.0,Guard,position_raw_exact_guard
-Chase Henderson,Montana,2026,G,JR,6-0,165.0,Guard,position_raw_exact_guard
-Connor Dick,Montana,2026,G,JR,6-3,194.0,Guard,position_raw_exact_guard
-Courtney Anderson,Montana,2026,G,SO,6-5,182.0,Guard,position_raw_exact_guard
-Grant Kepley,Montana,2026,G,SO,6-4,180.0,Guard,position_raw_exact_guard
-Kadyn Betts,Montana,2026,F,JR,6-8,215.0,Forward,position_raw_exact_forward_or_center
-Kenyon Aguino,Montana,2026,F,FR,6-7,222.0,Forward,position_raw_exact_forward_or_center
-Luke Moxon,Montana,2026,G,FR,6-3,210.0,Guard,position_raw_exact_guard
-Money Williams,Montana,2026,G,JR,6-4,200.0,Guard,position_raw_exact_guard
-Tejon Sawyer,Montana,2026,F,SR,6-8,252.0,Forward,position_raw_exact_forward_or_center
-Trae Taylor,Montana,2026,F,SR,6-9,207.0,Forward,position_raw_exact_forward_or_center
-Tyler Isaak,Montana,2026,G,JR,6-3,185.0,Guard,position_raw_exact_guard
-Tyler Thompson,Montana,2026,G,SO,6-6,190.0,Guard,position_raw_exact_guard
-Calum Rutherfurd,Montana State,2026,F,JR,6-11,225.0,Forward,position_raw_exact_forward_or_center
-Cavin Holden,Montana State,2026,G,JR,6-2,175.0,Guard,position_raw_exact_guard
-Chris Hodges,Montana State,2026,F,SR,6-9,239.0,Forward,position_raw_exact_forward_or_center
-Christian King,Montana State,2026,F,JR,6-7,215.0,Forward,position_raw_exact_forward_or_center
-Cj Purdie,Montana State,2026,G,FR,6-4,185.0,Guard,position_raw_exact_guard
-Davian Brown,Montana State,2026,G,SR,6-3,180.0,Guard,position_raw_exact_guard
-Grayson Gaddis,Montana State,2026,F,SO,6-7,215.0,Forward,position_raw_exact_forward_or_center
-Howie Keene,Montana State,2026,G,FR,6-7,195.0,Guard,position_raw_exact_guard
-Jaden Steppe,Montana State,2026,F,SO,6-8,220.0,Forward,position_raw_exact_forward_or_center
-James Steward,Montana State,2026,F,FR,6-8,210.0,Forward,position_raw_exact_forward_or_center
-Jed Miller,Montana State,2026,G,SR,6-2,175.0,Guard,position_raw_exact_guard
-Jeremiah Davis,Montana State,2026,G,SR,6-4,185.0,Guard,position_raw_exact_guard
-Patrick Mcmahon,Montana State,2026,G,SR,6-7,190.0,Guard,position_raw_exact_guard
-Seth Amunrud,Montana State,2026,G,JR,6-3,175.0,Guard,position_raw_exact_guard
-Waka Mbatch,Montana State,2026,F,JR,6-10,203.0,Forward,position_raw_exact_forward_or_center
-Arne Osojnik,Northern Arizona,2026,G,JR,6-6,195.0,Guard,position_raw_exact_guard
-Brennan Peterson,Northern Arizona,2026,G,FR,6-0,167.0,Guard,position_raw_exact_guard
-Chris Komin,Northern Arizona,2026,G,FR,6-3,160.0,Guard,position_raw_exact_guard
-Diego Campisano,Northern Arizona,2026,F,SR,6-6,200.0,Forward,position_raw_exact_forward_or_center
-Erez Poran,Northern Arizona,2026,G,FR,6-6,197.0,Guard,position_raw_exact_guard
-Isaiah Shaw,Northern Arizona,2026,G,JR,6-7,190.0,Guard,position_raw_exact_guard
-Jt Amundsen,Northern Arizona,2026,G,FR,5-8,160.0,Guard,position_raw_exact_guard
-Karl Markus Poom,Northern Arizona,2026,F,SO,6-8,210.0,Forward,position_raw_exact_forward_or_center
-Kavon Bradford,Northern Arizona,2026,G,SO,6-2,180.0,Guard,position_raw_exact_guard
-Oakland Fort,Northern Arizona,2026,G,SR,5-10,170.0,Guard,position_raw_exact_guard
-Ryan Abelman,Northern Arizona,2026,G,SR,6-3,185.0,Guard,position_raw_exact_guard
-Traivar Jackson,Northern Arizona,2026,F,SR,6-6,210.0,Forward,position_raw_exact_forward_or_center
-Walker Timme,Northern Arizona,2026,F,JR,6-7,220.0,Forward,position_raw_exact_forward_or_center
-Zack Davidson,Northern Arizona,2026,F,SO,6-8,224.0,Forward,position_raw_exact_forward_or_center
-Ariik Mawien,Northern Colorado,2026,G,SO,6-4,175.0,Guard,position_raw_exact_guard
-Brock Wisne,Northern Colorado,2026,F,SR,6-9,230.0,Forward,position_raw_exact_forward_or_center
-Chancellor White,Northern Colorado,2026,G,JR,6-6,185.0,Guard,position_raw_exact_guard
-Egan Shields,Northern Colorado,2026,C,JR,6-10,215.0,Forward,position_raw_exact_forward_or_center
-Hunter Caldwell,Northern Colorado,2026,C,SO,6-10,230.0,Forward,position_raw_exact_forward_or_center
-Ibu Yamazaki,Northern Colorado,2026,F,SR,6-7,215.0,Forward,position_raw_exact_forward_or_center
-Kaden Ericksen,Northern Colorado,2026,G,JR,6-4,185.0,Guard,position_raw_exact_guard
-Quinn Denker,Northern Colorado,2026,G,SR,6-3,195.0,Guard,position_raw_exact_guard
-Ring Nyeri,Northern Colorado,2026,F,SO,6-8,165.0,Forward,position_raw_exact_forward_or_center
-Steven Ramirez,Northern Colorado,2026,G,FR,6-4,205.0,Guard,position_raw_exact_guard
-Tanner Braketa,Northern Colorado,2026,G,FR,6-1,180.0,Guard,position_raw_exact_guard
-Vincent Delano,Northern Colorado,2026,G,SO,6-2,175.0,Guard,position_raw_exact_guard
-Walker Asp,Northern Colorado,2026,F,SO,6-8,160.0,Forward,position_raw_exact_forward_or_center
-William Dixion,Northern Colorado,2026,G,FR,6-2,200.0,Guard,position_raw_exact_guard
-William Humer,Northern Colorado,2026,F,SR,6-10,228.0,Forward,position_raw_exact_forward_or_center
-Zach Bloch,Northern Colorado,2026,G,SR,6-1,165.0,Guard,position_raw_exact_guard
-Alex Dupre,Portland State,2026,G,SO,6-5,180.0,Guard,position_raw_exact_guard
-Brayden Barron,Portland State,2026,F,FR,6-6,200.0,Forward,position_raw_exact_forward_or_center
-Brycen Long,Portland State,2026,G,SR,6-2,175.0,Guard,position_raw_exact_guard
-Charles Chukwu,Portland State,2026,C,SR,6-8,210.0,Forward,position_raw_exact_forward_or_center
-Colt Ness,Portland State,2026,G,FR,6-0,170.0,Guard,position_raw_exact_guard
-Isaac Brice,Portland State,2026,F,SR,6-6,205.0,Forward,position_raw_exact_forward_or_center
-Isaiah Williams,Portland State,2026,G,SR,6-7,190.0,Guard,position_raw_exact_guard
-Jaylin Henderson,Portland State,2026,G,SR,6-3,175.0,Guard,position_raw_exact_guard
-Kean Webb,Portland State,2026,C,SO,6-11,230.0,Forward,position_raw_exact_forward_or_center
-Kelcy Phipps,Portland State,2026,G,JR,6-2,175.0,Guard,position_raw_exact_guard
-Keyon Kensie,Portland State,2026,G,JR,6-7,187.0,Guard,position_raw_exact_guard
-Matthew Beatty,Portland State,2026,C,FR,6-10,215.0,Forward,position_raw_exact_forward_or_center
-Mozae Downing Rivers,Portland State,2026,G,SR,6-6,215.0,Guard,position_raw_exact_guard
-Samuel Stewart,Portland State,2026,G,SR,6-4,180.0,Guard,position_raw_exact_guard
-Sebastian Tidor,Portland State,2026,G,SR,6-5,195.0,Guard,position_raw_exact_guard
-Terri Miller,Portland State,2026,F,SR,6-8,250.0,Forward,position_raw_exact_forward_or_center
-Tre Vaughn Minott,Portland State,2026,C,SR,6-9,280.0,Forward,position_raw_exact_forward_or_center
-Arman Madi,Sacramento State,2026,G,JR,6-6,220.0,Guard,position_raw_exact_guard
-Brandon Gardner,Sacramento State,2026,F,SO,6-8,215.0,Forward,position_raw_exact_forward_or_center
-Davis Ambuehl,Sacramento State,2026,C,SR,6-7,230.0,Forward,position_raw_exact_forward_or_center
-Isaiah Bronson,Sacramento State,2026,G,FR,6-2,180.0,Guard,position_raw_exact_guard
-Jahni Summers,Sacramento State,2026,G,JR,6-6,185.0,Guard,position_raw_exact_guard
-Jayden Teat,Sacramento State,2026,G,FR,6-1,175.0,Guard,position_raw_exact_guard
-Jeremiah Cherry,Sacramento State,2026,F,SR,6-11,280.0,Forward,position_raw_exact_forward_or_center
-Jeremiah Nyarko,Sacramento State,2026,F,SR,6-9,205.0,Forward,position_raw_exact_forward_or_center
-Mark Lavrenov,Sacramento State,2026,F,FR,6-8,220.0,Forward,position_raw_exact_forward_or_center
-Mataj Glover,Sacramento State,2026,G,SO,6-2,175.0,Guard,position_raw_exact_guard
-Mikey Williams,Sacramento State,2026,G,SO,6-3,193.0,Guard,position_raw_exact_guard
-Prophet Johnson,Sacramento State,2026,G,SR,6-3,185.0,Guard,position_raw_exact_guard
-Romari Robinson,Sacramento State,2026,G,FR,6-4,195.0,Guard,position_raw_exact_guard
-Shaqir Oneal,Sacramento State,2026,F,SR,6-7,185.0,Forward,position_raw_exact_forward_or_center
-Zach Anderson,Sacramento State,2026,G,JR,6-3,185.0,Guard,position_raw_exact_guard
-Anthony Moore,Weber State,2026,G,FR,6-5,190.0,Guard,position_raw_exact_guard
-Ardarius Grayson,Weber State,2026,G,FR,6-1,185.0,Guard,position_raw_exact_guard
-Bourgeois Tshilobo,Weber State,2026,C,FR,6-8,225.0,Forward,position_raw_exact_forward_or_center
-Brady Smith,Weber State,2026,G,JR,6-0,173.0,Guard,position_raw_exact_guard
-David Hansen,Weber State,2026,F,SO,6-9,200.0,Forward,position_raw_exact_forward_or_center
-Declan Cutler,Weber State,2026,F,SO,6-9,230.0,Forward,position_raw_exact_forward_or_center
-Duce Paschal,Weber State,2026,G,FR,6-5,185.0,Guard,position_raw_exact_guard
-Edwin Suarez,Weber State,2026,F,JR,6-6,205.0,Forward,position_raw_exact_forward_or_center
-Jace Whiting,Weber State,2026,G,SR,6-2,185.0,Guard,position_raw_exact_guard
-Malek Gomma,Weber State,2026,F,JR,6-8,225.0,Forward,position_raw_exact_forward_or_center
-Nigel Burris,Weber State,2026,F,SR,6-7,222.0,Forward,position_raw_exact_forward_or_center
-Tijan Saine,Weber State,2026,G,JR,5-10,175.0,Guard,position_raw_exact_guard
-Trevor Hennig,Weber State,2026,G,SO,6-4,185.0,Guard,position_raw_exact_guard
-Tyler Christensen,Weber State,2026,G,JR,6-4,200.0,Guard,position_raw_exact_guard
-Viljami Vartiainen,Weber State,2026,F,JR,6-6,195.0,Forward,position_raw_exact_forward_or_center
+player_name,team_name,season,position_raw,class,height,weight,position_group,position_group_rule,source_dataset
+Alan Gballou,Eastern Washington,2026,F,FR,6-7,255.0,Forward,forward_or_center,big_sky
+Alton Hamilton,Eastern Washington,2026,F,JR,6-8,235.0,Forward,forward_or_center,big_sky
+Andrew Cook,Eastern Washington,2026,G,SR,6-4,205.0,Guard,direct_guard,big_sky
+Angelo Winkel,Eastern Washington,2026,F,SR,6-9,220.0,Forward,forward_or_center,big_sky
+Cole Scherer,Eastern Washington,2026,G,FR,6-2,185.0,Guard,direct_guard,big_sky
+Elijah Thomas,Eastern Washington,2026,G,SR,6-6,190.0,Guard,direct_guard,big_sky
+Emmett Marquardt,Eastern Washington,2026,F,SO,6-9,220.0,Forward,forward_or_center,big_sky
+Isaiah Moses,Eastern Washington,2026,G,SR,6-1,165.0,Guard,direct_guard,big_sky
+Johnny Radford,Eastern Washington,2026,G,SR,6-1,180.0,Guard,direct_guard,big_sky
+Jojo Anderson,Eastern Washington,2026,G,SR,6-0,180.0,Guard,direct_guard,big_sky
+Kiree Huie,Eastern Washington,2026,F,SR,6-9,210.0,Forward,forward_or_center,big_sky
+Maddox Monson,Eastern Washington,2026,G,SR,6-2,180.0,Guard,direct_guard,big_sky
+Shaumba Ngoyi,Eastern Washington,2026,F,SR,6-9,200.0,Forward,forward_or_center,big_sky
+Straton Rogers,Eastern Washington,2026,G,SR,6-5,205.0,Guard,direct_guard,big_sky
+Tyler Powell,Eastern Washington,2026,G,SR,6-5,220.0,Guard,direct_guard,big_sky
+Aidan Sevilla,Idaho,2026,G,SR,6-0,180.0,Guard,direct_guard,big_sky
+Biko Johnson,Idaho,2026,G,SR,6-2,180.0,Guard,direct_guard,big_sky
+Brody Rowbury,Idaho,2026,F,SR,6-11,290.0,Forward,forward_or_center,big_sky
+Ewan Steele,Idaho,2026,F,SO,6-9,220.0,Forward,forward_or_center,big_sky
+Isaiah Brickner,Idaho,2026,G,SR,6-4,190.0,Guard,direct_guard,big_sky
+Jack Payne,Idaho,2026,G,JR,6-6,195.0,Guard,direct_guard,big_sky
+Jackson Rasmussen,Idaho,2026,F,FR,6-7,200.0,Forward,forward_or_center,big_sky
+Kolton Mitchell,Idaho,2026,G,SO,6-1,175.0,Guard,direct_guard,big_sky
+Kristian Gonzalez,Idaho,2026,G,JR,6-3,180.0,Guard,direct_guard,big_sky
+Miles Klapper,Idaho,2026,G,SO,6-3,185.0,Guard,direct_guard,big_sky
+Seth Joba,Idaho,2026,F,JR,6-9,225.0,Forward,forward_or_center,big_sky
+Talon Jenkins,Idaho,2026,G,FR,6-7,,Guard,direct_guard,big_sky
+Titus Yearout,Idaho,2026,G,SR,6-2,181.0,Guard,direct_guard,big_sky
+Trevon Blassingame,Idaho,2026,G,SR,6-4,173.0,Guard,direct_guard,big_sky
+Tyler Linhardt,Idaho,2026,F,SR,6-7,220.0,Forward,forward_or_center,big_sky
+William Jenson,Idaho,2026,F,FR,6-9,,Forward,forward_or_center,big_sky
+Blake Daberkow,Idaho State,2026,F,SR,6-10,235.0,Forward,forward_or_center,big_sky
+Caleb Van De Griend,Idaho State,2026,F,SR,6-8,250.0,Forward,forward_or_center,big_sky
+Cheikh Sow,Idaho State,2026,G,SR,6-7,195.0,Guard,direct_guard,big_sky
+Connor Hollenbeck,Idaho State,2026,F,SR,6-7,225.0,Forward,forward_or_center,big_sky
+Evan Otten,Idaho State,2026,C,SO,6-11,220.0,Forward,forward_or_center,big_sky
+Gus Etchison,Idaho State,2026,G,SR,5-11,145.0,Guard,direct_guard,big_sky
+Jaedyn Brown,Idaho State,2026,G,SO,6-4,175.0,Guard,direct_guard,big_sky
+Jamison Guerra,Idaho State,2026,G,SR,6-0,200.0,Guard,direct_guard,big_sky
+Kasen Carpenter,Idaho State,2026,G,SR,6-5,190.0,Guard,direct_guard,big_sky
+Lachlan Brewer,Idaho State,2026,G,SO,6-6,190.0,Guard,direct_guard,big_sky
+Landen Birley,Idaho State,2026,G,FR,6-4,170.0,Guard,direct_guard,big_sky
+Louis Bond,Idaho State,2026,G,FR,6-5,185.0,Guard,direct_guard,big_sky
+Martin Kheil,Idaho State,2026,G,SO,6-4,200.0,Guard,direct_guard,big_sky
+Quin Patterson,Idaho State,2026,G,SR,6-7,205.0,Guard,direct_guard,big_sky
+Trey Arland,Idaho State,2026,G,JR,6-7,190.0,Guard,direct_guard,big_sky
+Amari Jedkins,Montana,2026,F,JR,6-7,195,Forward,forward_or_center,montana
+Brooklyn Hicks,Montana,2026,G,JR,6-3,185,Guard,direct_guard,montana
+Chase Henderson,Montana,2026,G,JR,6-0,165,Guard,direct_guard,montana
+Connor Dick,Montana,2026,G,JR,6-3,194,Guard,direct_guard,montana
+Courtney Anderson,Montana,2026,G,SO,6-5,182,Guard,direct_guard,montana
+Grant Kepley,Montana,2026,G,SO,6-4,180,Guard,direct_guard,montana
+Kadyn Betts,Montana,2026,F,JR,6-8,215,Forward,forward_or_center,montana
+Kenyon Aguino,Montana,2026,F,FR,6-7,222,Forward,forward_or_center,montana
+Luke Moxon,Montana,2026,G,FR,6-3,210,Guard,direct_guard,montana
+Money Williams,Montana,2026,G,JR,6-4,200,Guard,direct_guard,montana
+Tejon Sawyer,Montana,2026,F,SR,6-8,252,Forward,forward_or_center,montana
+Trae Taylor,Montana,2026,F,SR,6-9,207,Forward,forward_or_center,montana
+Tyler Isaak,Montana,2026,G,JR,6-3,185,Guard,direct_guard,montana
+Tyler Thompson,Montana,2026,G,SO,6-6,190,Guard,direct_guard,montana
+Calum Rutherfurd,Montana State,2026,F,JR,6-11,225.0,Forward,forward_or_center,big_sky
+Cavin Holden,Montana State,2026,G,JR,6-2,175.0,Guard,direct_guard,big_sky
+Chris Hodges,Montana State,2026,F,SR,6-9,239.0,Forward,forward_or_center,big_sky
+Christian King,Montana State,2026,F,JR,6-7,215.0,Forward,forward_or_center,big_sky
+Cj Purdie,Montana State,2026,G,FR,6-4,185.0,Guard,direct_guard,big_sky
+Davian Brown,Montana State,2026,G,SR,6-3,180.0,Guard,direct_guard,big_sky
+Grayson Gaddis,Montana State,2026,F,SO,6-7,215.0,Forward,forward_or_center,big_sky
+Howie Keene,Montana State,2026,G,FR,6-7,195.0,Guard,direct_guard,big_sky
+Jaden Steppe,Montana State,2026,F,SO,6-8,220.0,Forward,forward_or_center,big_sky
+James Steward,Montana State,2026,F,FR,6-8,210.0,Forward,forward_or_center,big_sky
+Jed Miller,Montana State,2026,G,SR,6-2,175.0,Guard,direct_guard,big_sky
+Jeremiah Davis,Montana State,2026,G,SR,6-4,185.0,Guard,direct_guard,big_sky
+Patrick Mcmahon,Montana State,2026,G,SR,6-7,190.0,Guard,direct_guard,big_sky
+Seth Amunrud,Montana State,2026,G,JR,6-3,175.0,Guard,direct_guard,big_sky
+Waka Mbatch,Montana State,2026,F,JR,6-10,203.0,Forward,forward_or_center,big_sky
+Arne Osojnik,Northern Arizona,2026,G,JR,6-6,195.0,Guard,direct_guard,big_sky
+Brennan Peterson,Northern Arizona,2026,G,FR,6-0,167.0,Guard,direct_guard,big_sky
+Chris Komin,Northern Arizona,2026,G,FR,6-3,160.0,Guard,direct_guard,big_sky
+Diego Campisano,Northern Arizona,2026,F,SR,6-6,200.0,Forward,forward_or_center,big_sky
+Erez Poran,Northern Arizona,2026,G,FR,6-6,197.0,Guard,direct_guard,big_sky
+Isaiah Shaw,Northern Arizona,2026,G,JR,6-7,190.0,Guard,direct_guard,big_sky
+Jt Amundsen,Northern Arizona,2026,G,FR,5-8,160.0,Guard,direct_guard,big_sky
+Karl Markus Poom,Northern Arizona,2026,F,SO,6-8,210.0,Forward,forward_or_center,big_sky
+Kavon Bradford,Northern Arizona,2026,G,SO,6-2,180.0,Guard,direct_guard,big_sky
+Oakland Fort,Northern Arizona,2026,G,SR,5-10,170.0,Guard,direct_guard,big_sky
+Ryan Abelman,Northern Arizona,2026,G,SR,6-3,185.0,Guard,direct_guard,big_sky
+Traivar Jackson,Northern Arizona,2026,F,SR,6-6,210.0,Forward,forward_or_center,big_sky
+Walker Timme,Northern Arizona,2026,F,JR,6-7,220.0,Forward,forward_or_center,big_sky
+Zack Davidson,Northern Arizona,2026,F,SO,6-8,224.0,Forward,forward_or_center,big_sky
+Ariik Mawien,Northern Colorado,2026,G,SO,6-4,175.0,Guard,direct_guard,big_sky
+Brock Wisne,Northern Colorado,2026,F,SR,6-9,230.0,Forward,forward_or_center,big_sky
+Chancellor White,Northern Colorado,2026,G,JR,6-6,185.0,Guard,direct_guard,big_sky
+Egan Shields,Northern Colorado,2026,C,JR,6-10,215.0,Forward,forward_or_center,big_sky
+Hunter Caldwell,Northern Colorado,2026,C,SO,6-10,230.0,Forward,forward_or_center,big_sky
+Ibu Yamazaki,Northern Colorado,2026,F,SR,6-7,215.0,Forward,forward_or_center,big_sky
+Kaden Ericksen,Northern Colorado,2026,G,JR,6-4,185.0,Guard,direct_guard,big_sky
+Quinn Denker,Northern Colorado,2026,G,SR,6-3,195.0,Guard,direct_guard,big_sky
+Ring Nyeri,Northern Colorado,2026,F,SO,6-8,165.0,Forward,forward_or_center,big_sky
+Steven Ramirez,Northern Colorado,2026,G,FR,6-4,205.0,Guard,direct_guard,big_sky
+Tanner Braketa,Northern Colorado,2026,G,FR,6-1,180.0,Guard,direct_guard,big_sky
+Vincent Delano,Northern Colorado,2026,G,SO,6-2,175.0,Guard,direct_guard,big_sky
+Walker Asp,Northern Colorado,2026,F,SO,6-8,160.0,Forward,forward_or_center,big_sky
+William Dixion,Northern Colorado,2026,G,FR,6-2,200.0,Guard,direct_guard,big_sky
+William Humer,Northern Colorado,2026,F,SR,6-10,228.0,Forward,forward_or_center,big_sky
+Zach Bloch,Northern Colorado,2026,G,SR,6-1,165.0,Guard,direct_guard,big_sky
+Alex Dupre,Portland State,2026,G,SO,6-5,180.0,Guard,direct_guard,big_sky
+Brayden Barron,Portland State,2026,F,FR,6-6,200.0,Forward,forward_or_center,big_sky
+Brycen Long,Portland State,2026,G,SR,6-2,175.0,Guard,direct_guard,big_sky
+Charles Chukwu,Portland State,2026,C,SR,6-8,210.0,Forward,forward_or_center,big_sky
+Colt Ness,Portland State,2026,G,FR,6-0,170.0,Guard,direct_guard,big_sky
+Isaac Brice,Portland State,2026,F,SR,6-6,205.0,Forward,forward_or_center,big_sky
+Isaiah Williams,Portland State,2026,G,SR,6-7,190.0,Guard,direct_guard,big_sky
+Jaylin Henderson,Portland State,2026,G,SR,6-3,175.0,Guard,direct_guard,big_sky
+Kean Webb,Portland State,2026,C,SO,6-11,230.0,Forward,forward_or_center,big_sky
+Kelcy Phipps,Portland State,2026,G,JR,6-2,175.0,Guard,direct_guard,big_sky
+Keyon Kensie,Portland State,2026,G,JR,6-7,187.0,Guard,direct_guard,big_sky
+Matthew Beatty,Portland State,2026,C,FR,6-10,215.0,Forward,forward_or_center,big_sky
+Mozae Downing Rivers,Portland State,2026,G,SR,6-6,215.0,Guard,direct_guard,big_sky
+Samuel Stewart,Portland State,2026,G,SR,6-4,180.0,Guard,direct_guard,big_sky
+Sebastian Tidor,Portland State,2026,G,SR,6-5,195.0,Guard,direct_guard,big_sky
+Terri Miller,Portland State,2026,F,SR,6-8,250.0,Forward,forward_or_center,big_sky
+Tre Vaughn Minott,Portland State,2026,C,SR,6-9,280.0,Forward,forward_or_center,big_sky
+Arman Madi,Sacramento State,2026,G,JR,6-6,220.0,Guard,direct_guard,big_sky
+Brandon Gardner,Sacramento State,2026,F,SO,6-8,215.0,Forward,forward_or_center,big_sky
+Davis Ambuehl,Sacramento State,2026,C,SR,6-7,230.0,Forward,forward_or_center,big_sky
+Isaiah Bronson,Sacramento State,2026,G,FR,6-2,180.0,Guard,direct_guard,big_sky
+Jahni Summers,Sacramento State,2026,G,JR,6-6,185.0,Guard,direct_guard,big_sky
+Jayden Teat,Sacramento State,2026,G,FR,6-1,175.0,Guard,direct_guard,big_sky
+Jeremiah Cherry,Sacramento State,2026,F,SR,6-11,280.0,Forward,forward_or_center,big_sky
+Jeremiah Nyarko,Sacramento State,2026,F,SR,6-9,205.0,Forward,forward_or_center,big_sky
+Mark Lavrenov,Sacramento State,2026,F,FR,6-8,220.0,Forward,forward_or_center,big_sky
+Mataj Glover,Sacramento State,2026,G,SO,6-2,175.0,Guard,direct_guard,big_sky
+Mikey Williams,Sacramento State,2026,G,SO,6-3,193.0,Guard,direct_guard,big_sky
+Prophet Johnson,Sacramento State,2026,G,SR,6-3,185.0,Guard,direct_guard,big_sky
+Romari Robinson,Sacramento State,2026,G,FR,6-4,195.0,Guard,direct_guard,big_sky
+Shaqir Oneal,Sacramento State,2026,F,SR,6-7,185.0,Forward,forward_or_center,big_sky
+Zach Anderson,Sacramento State,2026,G,JR,6-3,185.0,Guard,direct_guard,big_sky
+Anthony Moore,Weber State,2026,G,FR,6-5,190.0,Guard,direct_guard,big_sky
+Ardarius Grayson,Weber State,2026,G,FR,6-1,185.0,Guard,direct_guard,big_sky
+Bourgeois Tshilobo,Weber State,2026,C,FR,6-8,225.0,Forward,forward_or_center,big_sky
+Brady Smith,Weber State,2026,G,JR,6-0,173.0,Guard,direct_guard,big_sky
+David Hansen,Weber State,2026,F,SO,6-9,200.0,Forward,forward_or_center,big_sky
+Declan Cutler,Weber State,2026,F,SO,6-9,230.0,Forward,forward_or_center,big_sky
+Duce Paschal,Weber State,2026,G,FR,6-5,185.0,Guard,direct_guard,big_sky
+Edwin Suarez,Weber State,2026,F,JR,6-6,205.0,Forward,forward_or_center,big_sky
+Jace Whiting,Weber State,2026,G,SR,6-2,185.0,Guard,direct_guard,big_sky
+Malek Gomma,Weber State,2026,F,JR,6-8,225.0,Forward,forward_or_center,big_sky
+Nigel Burris,Weber State,2026,F,SR,6-7,222.0,Forward,forward_or_center,big_sky
+Tijan Saine,Weber State,2026,G,JR,5-10,175.0,Guard,direct_guard,big_sky
+Trevor Hennig,Weber State,2026,G,SO,6-4,185.0,Guard,direct_guard,big_sky
+Tyler Christensen,Weber State,2026,G,JR,6-4,200.0,Guard,direct_guard,big_sky
+Viljami Vartiainen,Weber State,2026,F,JR,6-6,195.0,Forward,forward_or_center,big_sky

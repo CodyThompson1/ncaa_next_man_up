@@ -1,0 +1,14 @@
+player_name,team_name,season,conference_name,position_group,position_raw,player_archetype,archetype,stl_pct_percentile,blk_pct_percentile,drtg_percentile,stl_pct_defense_component_score,blk_pct_defense_component_score,drtg_defense_component_score,defense_score,stl_pct_percentile_source_column,blk_pct_percentile_source_column,drtg_percentile_source_column
+Amari Jedkins,Montana,2026,Big Sky,Forward,F,3-and-D Forward,,100.0,45.0,95.0,100.0,45.0,5.0,48.25,stl_pct_percentile,blk_pct_percentile,drtg_percentile
+Brooklyn Hicks,Montana,2026,Big Sky,Guard,G,Off-Ball Shooter,,59.72,47.22,91.67,59.72,47.22,8.33,36.04,stl_pct_percentile,blk_pct_percentile,drtg_percentile
+Chase Henderson,Montana,2026,Big Sky,Guard,G,Primary Creator,,7.89,6.58,52.63,7.89,6.58,47.37,23.35,stl_pct_percentile,blk_pct_percentile,drtg_percentile
+Connor Dick,Montana,2026,Big Sky,Guard,G,Secondary Playmaker,,57.61,97.83,89.13,57.61,97.83,10.87,48.97,stl_pct_percentile,blk_pct_percentile,drtg_percentile
+Courtney Anderson,Montana,2026,Big Sky,Guard,G,Off-Ball Shooter,,5.56,80.56,52.78,5.56,80.56,47.22,40.97,stl_pct_percentile,blk_pct_percentile,drtg_percentile
+Grant Kepley,Montana,2026,Big Sky,Guard,G,Primary Creator,,41.03,17.95,76.92,41.03,17.95,23.08,28.08,stl_pct_percentile,blk_pct_percentile,drtg_percentile
+Kadyn Betts,Montana,2026,Big Sky,Forward,F,Scoring Forward,,4.17,75.0,50.0,4.17,75.0,50.0,40.21,stl_pct_percentile,blk_pct_percentile,drtg_percentile
+Kenyon Aguino,Montana,2026,Big Sky,Forward,F,Scoring Forward,,51.92,38.46,76.92,51.92,38.46,23.08,37.02,stl_pct_percentile,blk_pct_percentile,drtg_percentile
+Money Williams,Montana,2026,Big Sky,Guard,G,Primary Creator,,0.0,100.0,100.0,0.0,100.0,0.0,25.0,stl_pct_percentile,blk_pct_percentile,drtg_percentile
+Tejon Sawyer,Montana,2026,Big Sky,Forward,F,3-and-D Forward,,41.67,54.17,87.5,41.67,54.17,12.5,33.13,stl_pct_percentile,blk_pct_percentile,drtg_percentile
+Trae Taylor,Montana,2026,Big Sky,Forward,F,Scoring Forward,,85.19,37.04,72.22,85.19,37.04,27.78,50.19,stl_pct_percentile,blk_pct_percentile,drtg_percentile
+Tyler Isaak,Montana,2026,Big Sky,Guard,G,Secondary Playmaker,,31.4,44.19,69.77,31.4,44.19,30.23,34.13,stl_pct_percentile,blk_pct_percentile,drtg_percentile
+Tyler Thompson,Montana,2026,Big Sky,Guard,G,Off-Ball Shooter,,28.41,73.86,77.27,28.41,73.86,22.73,37.5,stl_pct_percentile,blk_pct_percentile,drtg_percentile

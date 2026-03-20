@@ -1,358 +1,677 @@
 """
 File: build_player_peer_groups.py
-Last Modified: 2026-03-01
-Purpose: Build a reusable long-format player peer group bridge table for the NCAA Next Man Up project by matching players within the Big Sky comparison pool based on season, standardized position group, and a usage window of ± 5%, while applying minimum participation thresholds to reduce tiny samples for downstream percentile scoring and evaluation engine workflows.
+
+Build player peer groups for the NCAA Next Man Up project.
+
+Purpose:
+- Create a reusable long-format bridge table that maps Montana target players
+  to valid Big Sky peer players.
+- Use position-group matching and a usage-based similarity window to define
+  peer groups.
+- Support downstream percentile, archetype, and evaluation scripts.
+
+Important project note:
+- `conference_player_pool.csv` is treated as the Big Sky peer pool.
+- Montana target players are sourced from
+  `data/processed/player_data/player_stats_all_games_montana.csv`.
+- Position groups are sourced from `data/features/player_position_groups.csv`.
 
 Inputs:
 - data/processed/comparison_sets/conference_player_pool.csv
+- data/processed/player_data/player_stats_all_games_montana.csv
 - data/features/player_position_groups.csv
 
-Outputs:
+Output:
 - data/features/player_peer_groups.csv
 """
 
 from __future__ import annotations
 
 from pathlib import Path
+from typing import Iterable
 
 import pandas as pd
 
 
+# =========================
+# PATHS
+# =========================
+
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 
 CONFERENCE_PLAYER_POOL_PATH = (
-    PROJECT_ROOT / "data" / "processed" / "comparison_sets" / "conference_player_pool.csv"
+    PROJECT_ROOT
+    / "data"
+    / "processed"
+    / "comparison_sets"
+    / "conference_player_pool.csv"
 )
-PLAYER_POSITION_GROUPS_PATH = (
-    PROJECT_ROOT / "data" / "features" / "player_position_groups.csv"
-)
-OUTPUT_PATH = PROJECT_ROOT / "data" / "features" / "player_peer_groups.csv"
 
-REQUIRED_POOL_COLUMNS = {
+MONTANA_PLAYER_STATS_PATH = (
+    PROJECT_ROOT
+    / "data"
+    / "processed"
+    / "player_data"
+    / "player_stats_all_games_montana.csv"
+)
+
+PLAYER_POSITION_GROUPS_PATH = (
+    PROJECT_ROOT
+    / "data"
+    / "features"
+    / "player_position_groups.csv"
+)
+
+OUTPUT_PATH = (
+    PROJECT_ROOT
+    / "data"
+    / "features"
+    / "player_peer_groups.csv"
+)
+
+
+# =========================
+# CONFIGURATION
+# =========================
+
+USAGE_WINDOW = 5.0
+MIN_MINUTES_PLAYED = 200
+MIN_GAMES_PLAYED = 5
+
+REQUIRED_PEER_POOL_COLUMNS = [
     "player_name",
     "team_name",
     "season",
     "conference_name",
-}
-REQUIRED_POSITION_COLUMNS = {
+    "usg_pct",
+]
+
+REQUIRED_TARGET_COLUMNS = [
+    "player_name",
+    "team_name",
+    "season",
+    "usg_pct",
+]
+
+REQUIRED_POSITION_COLUMNS = [
     "player_name",
     "team_name",
     "season",
     "position_group",
-}
-
-USAGE_CANDIDATE_COLUMNS = [
-    "usg_pct",
-    "usage_pct",
-    "usage_rate",
-    "usage",
 ]
 
-MINUTES_CANDIDATE_COLUMNS = [
-    "minutes_played",
-    "minutes",
-    "mp",
-    "total_minutes",
-]
+VALID_POSITION_GROUPS = {"Guard", "Forward"}
 
-GAMES_CANDIDATE_COLUMNS = [
-    "games_played",
-    "games",
-    "g",
-]
-
-TARGET_CONFERENCE_NAME = "Big Sky"
-USAGE_WINDOW = 5.0
-MIN_MINUTES_PLAYED = 200.0
-MIN_GAMES_PLAYED = 8
-
-OUTPUT_COLUMNS = [
+STANDARD_OUTPUT_COLUMNS = [
     "target_player_name",
-    "target_team_name",
     "peer_player_name",
+    "target_team_name",
     "peer_team_name",
     "season",
     "position_group",
-    "target_usage",
-    "peer_usage",
+    "target_usg_pct",
+    "peer_usg_pct",
     "usage_difference",
-    "usage_window",
-    "conference_name",
+    "target_conference_name",
+    "peer_conference_name",
+    "target_minutes_played",
+    "peer_minutes_played",
+    "target_games_played",
+    "peer_games_played",
+    "peer_group_rule",
 ]
 
 
-def _read_csv(path: Path) -> pd.DataFrame:
+# =========================
+# VALIDATION HELPERS
+# =========================
+
+def _validate_file_exists(path: Path) -> None:
+    """Validate that a required input file exists."""
     if not path.exists():
-        raise FileNotFoundError(f"Required input file not found: {path}")
-
-    df = pd.read_csv(path)
-
-    if df.empty:
-        raise ValueError(f"Input file is empty: {path}")
-
-    return df
+        raise FileNotFoundError(f"Missing required input file: {path}")
 
 
-def _validate_required_columns(df: pd.DataFrame, required_columns: set[str], path: Path) -> None:
-    missing_columns = required_columns.difference(df.columns)
+def _validate_required_columns(
+    df: pd.DataFrame,
+    required_columns: Iterable[str],
+    path: Path,
+) -> None:
+    """Validate that the DataFrame contains required columns."""
+    missing_columns = [column for column in required_columns if column not in df.columns]
     if missing_columns:
-        raise ValueError(
-            f"Input file is missing required columns {sorted(missing_columns)}: {path}"
-        )
+        raise ValueError(f"Missing required columns in {path}: {missing_columns}")
 
 
-def _clean_text(value: object) -> str:
-    if pd.isna(value):
-        return ""
-    return str(value).strip()
+def _standardize_text(series: pd.Series) -> pd.Series:
+    """Standardize text-like columns."""
+    return series.astype("string").str.strip().replace("", pd.NA)
 
 
-def _standardize_text_columns(df: pd.DataFrame, columns: list[str]) -> pd.DataFrame:
-    for column in columns:
-        if column in df.columns:
-            df[column] = df[column].apply(_clean_text)
-            df[column] = df[column].replace("", pd.NA)
-    return df
+def _coerce_numeric(series: pd.Series) -> pd.Series:
+    """Convert a Series to numeric."""
+    return pd.to_numeric(series, errors="coerce")
 
 
-def _find_first_existing_column(df: pd.DataFrame, candidates: list[str], label: str) -> str:
-    for column in candidates:
+# =========================
+# COLUMN RESOLUTION HELPERS
+# =========================
+
+def _get_first_existing_column(df: pd.DataFrame, candidate_columns: list[str]) -> str | None:
+    """Return the first candidate column that exists in the DataFrame."""
+    for column in candidate_columns:
         if column in df.columns:
             return column
-    raise ValueError(
-        f"Could not find a valid {label} column. Looked for: {candidates}"
-    )
+    return None
 
 
-def _prepare_conference_player_pool(df: pd.DataFrame) -> pd.DataFrame:
-    _validate_required_columns(df, REQUIRED_POOL_COLUMNS, CONFERENCE_PLAYER_POOL_PATH)
-
-    df = df.copy()
-    df = _standardize_text_columns(
+def _add_metric_columns(df: pd.DataFrame) -> pd.DataFrame:
+    """
+    Add standardized minutes and games columns using the best available source columns.
+    """
+    minutes_column = _get_first_existing_column(
         df,
-        ["player_name", "team_name", "conference_name", "position_raw"],
+        [
+            "minutes_played",
+            "minutes",
+            "mp",
+            "min",
+            "total_minutes",
+            "mins",
+        ],
     )
 
-    df["season"] = pd.to_numeric(df["season"], errors="coerce").astype("Int64")
+    games_column = _get_first_existing_column(
+        df,
+        [
+            "games_played",
+            "games",
+            "g",
+        ],
+    )
 
-    usage_column = _find_first_existing_column(df, USAGE_CANDIDATE_COLUMNS, "usage")
-    minutes_column = _find_first_existing_column(df, MINUTES_CANDIDATE_COLUMNS, "minutes")
-    games_column = _find_first_existing_column(df, GAMES_CANDIDATE_COLUMNS, "games")
+    df["minutes_played_std"] = (
+        _coerce_numeric(df[minutes_column]) if minutes_column else pd.NA
+    )
+    df["games_played_std"] = (
+        _coerce_numeric(df[games_column]) if games_column else pd.NA
+    )
 
-    df["usage_metric"] = pd.to_numeric(df[usage_column], errors="coerce")
-    df["minutes_metric"] = pd.to_numeric(df[minutes_column], errors="coerce")
-    df["games_metric"] = pd.to_numeric(df[games_column], errors="coerce")
+    df["minutes_source_column"] = minutes_column if minutes_column else pd.NA
+    df["games_source_column"] = games_column if games_column else pd.NA
 
-    df = df[df["conference_name"].str.lower() == TARGET_CONFERENCE_NAME.lower()].copy()
+    return df
 
-    df = df.dropna(subset=["player_name", "team_name", "season", "usage_metric"])
-    df = df[
-        (df["minutes_metric"].fillna(0) >= MIN_MINUTES_PLAYED)
-        | (df["games_metric"].fillna(0) >= MIN_GAMES_PLAYED)
-    ].copy()
 
-    df = df.drop_duplicates(
-        subset=["player_name", "team_name", "season"],
-        keep="first",
-    ).reset_index(drop=True)
+def _apply_sample_thresholds(df: pd.DataFrame) -> pd.DataFrame:
+    """
+    Filter to players with sufficient playing time.
 
-    if df.empty:
+    Rule:
+    - Keep players if they meet either the minutes threshold or the games threshold.
+    """
+    minutes_ok = df["minutes_played_std"].ge(MIN_MINUTES_PLAYED).fillna(False)
+    games_ok = df["games_played_std"].ge(MIN_GAMES_PLAYED).fillna(False)
+
+    filtered_df = df.loc[minutes_ok | games_ok].copy()
+
+    if filtered_df.empty:
         raise ValueError(
-            "Conference player pool is empty after applying conference and participation filters."
+            "All rows were removed by the minimum sample thresholds. "
+            "Check minutes/games fields and threshold settings."
         )
 
+    return filtered_df
+
+
+# =========================
+# LOADERS
+# =========================
+
+def _load_conference_player_pool(path: Path) -> pd.DataFrame:
+    """
+    Load and standardize the Big Sky peer pool input.
+    """
+    _validate_file_exists(path)
+
+    df = pd.read_csv(path)
+    _validate_required_columns(df, REQUIRED_PEER_POOL_COLUMNS, path)
+
+    for column in ["player_name", "team_name", "conference_name"]:
+        df[column] = _standardize_text(df[column])
+
+    df["season"] = _coerce_numeric(df["season"]).astype("Int64")
+    df["usg_pct"] = _coerce_numeric(df["usg_pct"])
+
+    df = _add_metric_columns(df)
+
+    required_not_null = ["player_name", "team_name", "season", "conference_name", "usg_pct"]
+    for column in required_not_null:
+        if df[column].isna().any():
+            invalid_rows = df.loc[
+                df[column].isna(),
+                required_not_null,
+            ].head(10)
+            raise ValueError(
+                f"Null values found in required peer-pool field `{column}`.\n"
+                f"Example invalid rows:\n{invalid_rows.to_string(index=False)}"
+            )
+
     return df
 
 
-def _prepare_position_groups(df: pd.DataFrame) -> pd.DataFrame:
-    _validate_required_columns(df, REQUIRED_POSITION_COLUMNS, PLAYER_POSITION_GROUPS_PATH)
+def _load_montana_target_stats(path: Path) -> pd.DataFrame:
+    """
+    Load and standardize Montana target player stats.
 
-    df = df.copy()
-    df = _standardize_text_columns(
-        df,
-        ["player_name", "team_name", "position_group", "position_raw"],
-    )
-    df["season"] = pd.to_numeric(df["season"], errors="coerce").astype("Int64")
+    This is the Montana target table because conference_player_pool.csv
+    may only contain the Big Sky comparison pool.
+    """
+    _validate_file_exists(path)
 
-    df = df.dropna(subset=["player_name", "team_name", "season", "position_group"])
-    df = df.drop_duplicates(
-        subset=["player_name", "team_name", "season"],
-        keep="first",
-    ).reset_index(drop=True)
+    df = pd.read_csv(path)
+    _validate_required_columns(df, REQUIRED_TARGET_COLUMNS, path)
 
-    allowed_groups = {"Guard", "Forward"}
-    invalid_groups = set(df["position_group"].dropna().unique()) - allowed_groups
+    for column in ["player_name", "team_name"]:
+        df[column] = _standardize_text(df[column])
+
+    df["season"] = _coerce_numeric(df["season"]).astype("Int64")
+    df["usg_pct"] = _coerce_numeric(df["usg_pct"])
+
+    df = _add_metric_columns(df)
+
+    if "conference_name" not in df.columns:
+        df["conference_name"] = "Big Sky"
+    else:
+        df["conference_name"] = _standardize_text(df["conference_name"]).fillna("Big Sky")
+
+    required_not_null = ["player_name", "team_name", "season", "conference_name", "usg_pct"]
+    for column in required_not_null:
+        if df[column].isna().any():
+            invalid_rows = df.loc[
+                df[column].isna(),
+                required_not_null,
+            ].head(10)
+            raise ValueError(
+                f"Null values found in required Montana target field `{column}`.\n"
+                f"Example invalid rows:\n{invalid_rows.to_string(index=False)}"
+            )
+
+    return df
+
+
+def _load_position_groups(path: Path) -> pd.DataFrame:
+    """Load and validate the player position groups input."""
+    _validate_file_exists(path)
+
+    df = pd.read_csv(path)
+    _validate_required_columns(df, REQUIRED_POSITION_COLUMNS, path)
+
+    for column in ["player_name", "team_name", "position_group"]:
+        df[column] = _standardize_text(df[column])
+
+    df["season"] = _coerce_numeric(df["season"]).astype("Int64")
+
+    if df["position_group"].isna().any():
+        invalid_rows = df.loc[
+            df["position_group"].isna(),
+            ["player_name", "team_name", "season"],
+        ].head(10)
+        raise ValueError(
+            "Null position_group values found in player_position_groups input.\n"
+            f"Example invalid rows:\n{invalid_rows.to_string(index=False)}"
+        )
+
+    invalid_groups = set(df["position_group"].dropna().unique()) - VALID_POSITION_GROUPS
     if invalid_groups:
-        raise ValueError(f"Invalid position_group values found: {sorted(invalid_groups)}")
+        raise ValueError(
+            f"Unexpected position_group values found: {sorted(invalid_groups)}"
+        )
 
-    if df.empty:
-        raise ValueError("Player position groups input is empty after cleaning.")
+    df = (
+        df.sort_values(by=["player_name", "team_name", "season"])
+        .drop_duplicates(subset=["player_name", "team_name", "season"], keep="first")
+        .copy()
+    )
 
     return df
 
+
+# =========================
+# MERGE HELPERS
+# =========================
 
 def _merge_position_groups(
-    conference_pool_df: pd.DataFrame,
+    player_df: pd.DataFrame,
     position_groups_df: pd.DataFrame,
+    dataset_name: str,
 ) -> pd.DataFrame:
-    merge_keys = ["player_name", "team_name", "season"]
-
-    merged_df = conference_pool_df.merge(
-        position_groups_df[merge_keys + ["position_group"]],
-        on=merge_keys,
+    """Attach position groups to a player table."""
+    merged_df = player_df.merge(
+        position_groups_df[
+            ["player_name", "team_name", "season", "position_group"]
+        ],
+        on=["player_name", "team_name", "season"],
         how="left",
         validate="many_to_one",
     )
 
-    missing_position_group_df = merged_df[merged_df["position_group"].isna()][
-        ["player_name", "team_name", "season"]
-    ].drop_duplicates()
+    if merged_df["position_group"].isna().any():
+        missing_df = merged_df.loc[
+            merged_df["position_group"].isna(),
+            ["player_name", "team_name", "season", "conference_name"],
+        ].drop_duplicates()
 
-    if not missing_position_group_df.empty:
         raise ValueError(
-            "Some players in conference_player_pool.csv could not be matched to "
-            "player_position_groups.csv:\n"
-            f"{missing_position_group_df.to_string(index=False)}"
+            f"Some players in {dataset_name} could not be matched to "
+            f"player_position_groups.csv.\n"
+            f"Example missing matches:\n{missing_df.head(15).to_string(index=False)}"
         )
 
     return merged_df
 
 
-def _build_peer_groups(player_df: pd.DataFrame) -> pd.DataFrame:
-    target_df = player_df[
-        ["player_name", "team_name", "season", "conference_name", "position_group", "usage_metric"]
-    ].copy()
-    peer_df = target_df.copy()
+def _deduplicate_players(df: pd.DataFrame) -> pd.DataFrame:
+    """
+    Deduplicate player rows at the player/team/season level.
+    """
+    df = df.copy()
 
-    target_df = target_df.rename(
+    df["_usg_present"] = df["usg_pct"].notna().astype(int)
+    df["_minutes_present"] = df["minutes_played_std"].notna().astype(int)
+    df["_games_present"] = df["games_played_std"].notna().astype(int)
+
+    df = df.sort_values(
+        by=[
+            "player_name",
+            "team_name",
+            "season",
+            "_usg_present",
+            "_minutes_present",
+            "_games_present",
+        ],
+        ascending=[True, True, True, False, False, False],
+    )
+
+    df = df.drop_duplicates(
+        subset=["player_name", "team_name", "season"],
+        keep="first",
+    ).copy()
+
+    df = df.drop(columns=["_usg_present", "_minutes_present", "_games_present"])
+    return df
+
+
+# =========================
+# TARGET / PEER BUILD
+# =========================
+
+def _prepare_targets_and_peers(
+    montana_df: pd.DataFrame,
+    peer_pool_df: pd.DataFrame,
+) -> tuple[pd.DataFrame, pd.DataFrame]:
+    """
+    Prepare the final target and peer tables after thresholds and de-duplication.
+    """
+    montana_df = _apply_sample_thresholds(montana_df)
+    peer_pool_df = _apply_sample_thresholds(peer_pool_df)
+
+    montana_df = _deduplicate_players(montana_df)
+    peer_pool_df = _deduplicate_players(peer_pool_df)
+
+    if montana_df.empty:
+        raise ValueError("No Montana target players remain after filtering.")
+
+    if peer_pool_df.empty:
+        raise ValueError("No Big Sky peer players remain after filtering.")
+
+    return montana_df, peer_pool_df
+
+
+def _build_peer_bridge(
+    targets_df: pd.DataFrame,
+    peers_df: pd.DataFrame,
+) -> pd.DataFrame:
+    """
+    Build the long-format target-to-peer bridge table.
+
+    Matching rules:
+    - same season
+    - same position_group
+    - peer usage within target usage ± USAGE_WINDOW
+    - exclude self-matches
+    """
+    target_columns = [
+        "player_name",
+        "team_name",
+        "season",
+        "conference_name",
+        "position_group",
+        "usg_pct",
+        "minutes_played_std",
+        "games_played_std",
+    ]
+    peer_columns = [
+        "player_name",
+        "team_name",
+        "season",
+        "conference_name",
+        "position_group",
+        "usg_pct",
+        "minutes_played_std",
+        "games_played_std",
+    ]
+
+    targets = targets_df[target_columns].rename(
         columns={
             "player_name": "target_player_name",
             "team_name": "target_team_name",
-            "usage_metric": "target_usage",
+            "conference_name": "target_conference_name",
+            "position_group": "target_position_group",
+            "usg_pct": "target_usg_pct",
+            "minutes_played_std": "target_minutes_played",
+            "games_played_std": "target_games_played",
         }
     )
-    peer_df = peer_df.rename(
+
+    peers = peers_df[peer_columns].rename(
         columns={
             "player_name": "peer_player_name",
             "team_name": "peer_team_name",
-            "usage_metric": "peer_usage",
+            "conference_name": "peer_conference_name",
+            "position_group": "peer_position_group",
+            "usg_pct": "peer_usg_pct",
+            "minutes_played_std": "peer_minutes_played",
+            "games_played_std": "peer_games_played",
         }
     )
 
-    merged_peer_df = target_df.merge(
-        peer_df,
-        on=["season", "conference_name", "position_group"],
+    merged_df = targets.merge(
+        peers,
+        on="season",
         how="inner",
-        validate="many_to_many",
     )
 
-    merged_peer_df["usage_difference"] = (
-        merged_peer_df["target_usage"] - merged_peer_df["peer_usage"]
+    merged_df = merged_df.loc[
+        merged_df["target_position_group"] == merged_df["peer_position_group"]
+    ].copy()
+
+    merged_df["usage_difference"] = (
+        merged_df["peer_usg_pct"] - merged_df["target_usg_pct"]
     ).abs()
-    merged_peer_df["usage_window"] = USAGE_WINDOW
 
-    merged_peer_df = merged_peer_df[
-        merged_peer_df["usage_difference"] <= USAGE_WINDOW
+    merged_df = merged_df.loc[
+        merged_df["usage_difference"] <= USAGE_WINDOW
     ].copy()
 
-    merged_peer_df = merged_peer_df[
+    merged_df = merged_df.loc[
         ~(
-            (merged_peer_df["target_player_name"] == merged_peer_df["peer_player_name"])
-            & (merged_peer_df["target_team_name"] == merged_peer_df["peer_team_name"])
-            & (merged_peer_df["season"] == merged_peer_df["season"])
+            (merged_df["target_player_name"] == merged_df["peer_player_name"])
+            & (merged_df["target_team_name"] == merged_df["peer_team_name"])
         )
     ].copy()
 
-    if merged_peer_df.empty:
-        raise ValueError(
-            "No peer groups were created. Review usage values, position groups, or thresholds."
-        )
+    merged_df["position_group"] = merged_df["target_position_group"]
+    merged_df["peer_group_rule"] = (
+        f"same_position_group_and_usage_within_{USAGE_WINDOW:g}_pct"
+    )
 
-    merged_peer_df = merged_peer_df[OUTPUT_COLUMNS].copy()
-    merged_peer_df = merged_peer_df.sort_values(
-        by=[
-            "target_team_name",
+    output_df = merged_df[
+        [
             "target_player_name",
+            "peer_player_name",
+            "target_team_name",
+            "peer_team_name",
             "season",
             "position_group",
+            "target_usg_pct",
+            "peer_usg_pct",
+            "usage_difference",
+            "target_conference_name",
+            "peer_conference_name",
+            "target_minutes_played",
+            "peer_minutes_played",
+            "target_games_played",
+            "peer_games_played",
+            "peer_group_rule",
+        ]
+    ].copy()
+
+    output_df = output_df.sort_values(
+        by=[
+            "season",
+            "target_team_name",
+            "target_player_name",
             "usage_difference",
             "peer_team_name",
             "peer_player_name",
-        ]
+        ],
+        ascending=[True, True, True, True, True, True],
     ).reset_index(drop=True)
 
-    return merged_peer_df
+    return output_df
 
+
+# =========================
+# OUTPUT VALIDATION
+# =========================
 
 def _validate_output(df: pd.DataFrame) -> None:
+    """Validate the engineered output before writing to disk."""
     if df.empty:
-        raise ValueError("Output dataframe is empty.")
+        raise ValueError(
+            "Peer-group output is empty. No valid player peer matches were created."
+        )
 
-    missing_columns = [column for column in OUTPUT_COLUMNS if column not in df.columns]
-    if missing_columns:
-        raise ValueError(f"Output dataframe is missing required columns: {missing_columns}")
-
-    for column in [
+    null_check_columns = [
         "target_player_name",
-        "target_team_name",
         "peer_player_name",
+        "target_team_name",
         "peer_team_name",
         "season",
         "position_group",
-        "target_usage",
-        "peer_usage",
+        "target_usg_pct",
+        "peer_usg_pct",
         "usage_difference",
-    ]:
+    ]
+
+    for column in null_check_columns:
         if df[column].isna().any():
-            raise ValueError(f"Null values found in required output column: {column}")
+            invalid_rows = df.loc[
+                df[column].isna(),
+                null_check_columns,
+            ].head(10)
+            raise ValueError(
+                f"Null values found in required output column `{column}`.\n"
+                f"Example invalid rows:\n{invalid_rows.to_string(index=False)}"
+            )
 
-    invalid_groups = set(df["position_group"].unique()) - {"Guard", "Forward"}
+    invalid_groups = set(df["position_group"].dropna().unique()) - VALID_POSITION_GROUPS
     if invalid_groups:
-        raise ValueError(f"Invalid position_group values in output: {sorted(invalid_groups)}")
+        raise ValueError(
+            f"Invalid position_group values in output: {sorted(invalid_groups)}"
+        )
 
-    if (df["usage_difference"] > USAGE_WINDOW).any():
-        raise ValueError("Found usage_difference values outside the allowed usage window.")
-
-    exact_self_matches = df[
+    self_matches = df.loc[
         (df["target_player_name"] == df["peer_player_name"])
         & (df["target_team_name"] == df["peer_team_name"])
     ]
-    if not exact_self_matches.empty:
-        raise ValueError("Output contains self-matches, which should have been excluded.")
+    if not self_matches.empty:
+        raise ValueError(
+            "Self-matches were found in the output, which should be excluded."
+        )
 
-    peer_counts = (
-        df.groupby(["target_player_name", "target_team_name", "season"])
-        .size()
-        .reset_index(name="peer_count")
+    duplicate_count = df.duplicated(
+        subset=[
+            "target_player_name",
+            "peer_player_name",
+            "target_team_name",
+            "peer_team_name",
+            "season",
+        ]
+    ).sum()
+    if duplicate_count > 0:
+        raise ValueError(
+            f"Duplicate target-peer rows remain in output: {duplicate_count}"
+        )
+
+
+# =========================
+# MAIN BUILD
+# =========================
+
+def build_player_peer_groups() -> pd.DataFrame:
+    """
+    Build the reusable player peer-group bridge table.
+    """
+    peer_pool_df = _load_conference_player_pool(CONFERENCE_PLAYER_POOL_PATH)
+    montana_targets_df = _load_montana_target_stats(MONTANA_PLAYER_STATS_PATH)
+    position_groups_df = _load_position_groups(PLAYER_POSITION_GROUPS_PATH)
+
+    peer_pool_df = _merge_position_groups(
+        peer_pool_df,
+        position_groups_df,
+        dataset_name="conference_player_pool.csv",
     )
-    zero_peer_targets = peer_counts[peer_counts["peer_count"] <= 0]
-    if not zero_peer_targets.empty:
-        raise ValueError("Some target players have zero peers after filtering.")
 
+    montana_targets_df = _merge_position_groups(
+        montana_targets_df,
+        position_groups_df,
+        dataset_name="player_stats_all_games_montana.csv",
+    )
 
-def save_output(df: pd.DataFrame, output_path: Path) -> None:
-    output_path.parent.mkdir(parents=True, exist_ok=True)
-    df.to_csv(output_path, index=False)
+    montana_targets_df, peer_pool_df = _prepare_targets_and_peers(
+        montana_df=montana_targets_df,
+        peer_pool_df=peer_pool_df,
+    )
+
+    peer_groups_df = _build_peer_bridge(
+        targets_df=montana_targets_df,
+        peers_df=peer_pool_df,
+    )
+
+    peer_groups_df = peer_groups_df[STANDARD_OUTPUT_COLUMNS].copy()
+
+    _validate_output(peer_groups_df)
+    return peer_groups_df
 
 
 def main() -> None:
-    conference_player_pool_df = _read_csv(CONFERENCE_PLAYER_POOL_PATH)
-    player_position_groups_df = _read_csv(PLAYER_POSITION_GROUPS_PATH)
+    """Run the player peer-group feature engineering pipeline."""
+    peer_groups_df = build_player_peer_groups()
 
-    conference_player_pool_df = _prepare_conference_player_pool(conference_player_pool_df)
-    player_position_groups_df = _prepare_position_groups(player_position_groups_df)
+    OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
+    peer_groups_df.to_csv(OUTPUT_PATH, index=False)
 
-    merged_player_df = _merge_position_groups(
-        conference_player_pool_df=conference_player_pool_df,
-        position_groups_df=player_position_groups_df,
+    print(f"Saved: {OUTPUT_PATH}")
+    print(f"Rows written: {len(peer_groups_df):,}")
+    print("Top target peer counts:")
+    print(
+        peer_groups_df.groupby(
+            ["target_player_name", "position_group"],
+            dropna=False,
+        ).size().sort_values(ascending=False).head(15).to_string()
     )
-
-    player_peer_groups_df = _build_peer_groups(merged_player_df)
-    _validate_output(player_peer_groups_df)
-    save_output(player_peer_groups_df, OUTPUT_PATH)
-
-    print(f"Player peer groups saved: {len(player_peer_groups_df)}")
-    print(f"Output written to: {OUTPUT_PATH}")
 
 
 if __name__ == "__main__":

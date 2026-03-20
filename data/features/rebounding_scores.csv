@@ -1,0 +1,14 @@
+player_name,team_name,season,conference_name,position_group,archetype,trb_pct_percentile,orb_pct_percentile,drb_pct_percentile,trb_pct_weight,orb_pct_weight,drb_pct_weight,trb_pct_component_score,orb_pct_component_score,drb_pct_component_score,rebounding_score,rebounding_metrics_available
+Amari Jedkins,Montana,2026,Big Sky,Forward,3-and-D Forward,40.0,25.0,50.0,0.5,0.25,0.25,40.0,25.0,50.0,38.75,3.0
+Brooklyn Hicks,Montana,2026,Big Sky,Guard,Off-Ball Shooter,86.1111,69.4444,83.3333,0.5,0.15,0.35,86.1111,69.4444,83.3333,82.64,3.0
+Chase Henderson,Montana,2026,Big Sky,Guard,Primary Creator,7.8947,17.1053,7.8947,0.5,0.15,0.35,7.8947,17.1053,7.8947,9.28,3.0
+Connor Dick,Montana,2026,Big Sky,Guard,Secondary Playmaker,86.9565,95.6522,60.8696,0.5,0.15,0.35,86.9565,95.6522,60.8696,79.13,3.0
+Courtney Anderson,Montana,2026,Big Sky,Guard,Off-Ball Shooter,59.7222,97.2222,5.5556,0.5,0.15,0.35,59.7222,97.2222,5.5556,46.39,3.0
+Grant Kepley,Montana,2026,Big Sky,Guard,Primary Creator,64.1026,33.3333,66.6667,0.5,0.15,0.35,64.1026,33.3333,66.6667,60.38,3.0
+Kadyn Betts,Montana,2026,Big Sky,Forward,Scoring Forward,29.166700000000002,41.6667,33.3333,0.5,0.25,0.25,29.166700000000002,41.6667,33.3333,33.33,3.0
+Kenyon Aguino,Montana,2026,Big Sky,Forward,Scoring Forward,30.7692,34.6154,30.7692,0.5,0.25,0.25,30.7692,34.6154,30.7692,31.73,3.0
+Money Williams,Montana,2026,Big Sky,Guard,Primary Creator,100.0,0.0,100.0,0.5,0.15,0.35,100.0,0.0,100.0,85.0,3.0
+Tejon Sawyer,Montana,2026,Big Sky,Forward,3-and-D Forward,39.5833,12.5,60.4167,0.5,0.25,0.25,39.5833,12.5,60.4167,38.02,3.0
+Trae Taylor,Montana,2026,Big Sky,Forward,Scoring Forward,40.740700000000004,85.18520000000001,3.7037,0.5,0.25,0.25,40.740700000000004,85.18520000000001,3.7037,42.59,3.0
+Tyler Isaak,Montana,2026,Big Sky,Guard,Secondary Playmaker,55.814,22.093,60.46510000000001,0.5,0.15,0.35,55.814,22.093,60.46510000000001,52.38,3.0
+Tyler Thompson,Montana,2026,Big Sky,Guard,Off-Ball Shooter,73.86359999999999,10.2273,82.9545,0.5,0.15,0.35,73.86359999999999,10.2273,82.9545,67.5,3.0

@@ -1,0 +1,393 @@
+target_player_name,peer_player_name,target_team_name,peer_team_name,season,position_group,target_usg_pct,peer_usg_pct,usage_difference,target_conference_name,peer_conference_name,target_minutes_played,peer_minutes_played,target_games_played,peer_games_played,peer_group_rule
+Amari Jedkins,Chris Hodges,Montana,Montana State,2026,Forward,13.0,13.6,0.5999999999999996,Big Sky,Big Sky,124.0,728.5,23.0,32.0,same_position_group_and_usage_within_5_pct
+Amari Jedkins,Jeremiah Nyarko,Montana,Sacramento State,2026,Forward,13.0,13.6,0.5999999999999996,Big Sky,Big Sky,124.0,25.0,23.0,5.0,same_position_group_and_usage_within_5_pct
+Amari Jedkins,Brandon Gardner,Montana,Sacramento State,2026,Forward,13.0,13.8,0.8000000000000007,Big Sky,Big Sky,124.0,249.6,23.0,16.0,same_position_group_and_usage_within_5_pct
+Amari Jedkins,Shaqir Oneal,Montana,Sacramento State,2026,Forward,13.0,13.8,0.8000000000000007,Big Sky,Big Sky,124.0,601.4,23.0,31.0,same_position_group_and_usage_within_5_pct
+Amari Jedkins,Shaumba Ngoyi,Montana,Eastern Washington,2026,Forward,13.0,12.0,1.0,Big Sky,Big Sky,124.0,83.0,23.0,20.0,same_position_group_and_usage_within_5_pct
+Amari Jedkins,Brayden Barron,Montana,Portland State,2026,Forward,13.0,14.0,1.0,Big Sky,Big Sky,124.0,86.0,23.0,20.0,same_position_group_and_usage_within_5_pct
+Amari Jedkins,Ewan Steele,Montana,Idaho,2026,Forward,13.0,11.9,1.0999999999999996,Big Sky,Big Sky,124.0,96.0,23.0,14.0,same_position_group_and_usage_within_5_pct
+Amari Jedkins,Charles Chukwu,Montana,Portland State,2026,Forward,13.0,11.7,1.3000000000000007,Big Sky,Big Sky,124.0,84.0,23.0,21.0,same_position_group_and_usage_within_5_pct
+Amari Jedkins,Brody Rowbury,Montana,Idaho,2026,Forward,13.0,14.7,1.6999999999999993,Big Sky,Big Sky,124.0,805.0,23.0,33.0,same_position_group_and_usage_within_5_pct
+Amari Jedkins,Tre Vaughn Minott,Montana,Portland State,2026,Forward,13.0,15.4,2.4000000000000004,Big Sky,Big Sky,124.0,829.4000000000001,23.0,30.0,same_position_group_and_usage_within_5_pct
+Amari Jedkins,Declan Cutler,Montana,Weber State,2026,Forward,13.0,10.6,2.4000000000000004,Big Sky,Big Sky,124.0,189.8,23.0,26.0,same_position_group_and_usage_within_5_pct
+Amari Jedkins,Seth Joba,Montana,Idaho,2026,Forward,13.0,15.7,2.6999999999999993,Big Sky,Big Sky,124.0,570.0,23.0,33.0,same_position_group_and_usage_within_5_pct
+Amari Jedkins,Ring Nyeri,Montana,Northern Colorado,2026,Forward,13.0,15.7,2.6999999999999993,Big Sky,Big Sky,124.0,790.5,23.0,31.0,same_position_group_and_usage_within_5_pct
+Amari Jedkins,Egan Shields,Montana,Northern Colorado,2026,Forward,13.0,16.5,3.5,Big Sky,Big Sky,124.0,531.0,23.0,30.0,same_position_group_and_usage_within_5_pct
+Amari Jedkins,Malek Gomma,Montana,Weber State,2026,Forward,13.0,16.9,3.8999999999999986,Big Sky,Big Sky,124.0,771.9,23.0,31.0,same_position_group_and_usage_within_5_pct
+Amari Jedkins,Calum Rutherfurd,Montana,Montana State,2026,Forward,13.0,17.2,4.199999999999999,Big Sky,Big Sky,124.0,15.0,23.0,5.0,same_position_group_and_usage_within_5_pct
+Amari Jedkins,Viljami Vartiainen,Montana,Weber State,2026,Forward,13.0,17.4,4.399999999999999,Big Sky,Big Sky,124.0,742.5,23.0,25.0,same_position_group_and_usage_within_5_pct
+Amari Jedkins,Traivar Jackson,Montana,Northern Arizona,2026,Forward,13.0,17.5,4.5,Big Sky,Big Sky,124.0,704.0,23.0,32.0,same_position_group_and_usage_within_5_pct
+Amari Jedkins,Ibu Yamazaki,Montana,Northern Colorado,2026,Forward,13.0,17.6,4.600000000000001,Big Sky,Big Sky,124.0,840.1,23.0,31.0,same_position_group_and_usage_within_5_pct
+Amari Jedkins,Emmett Marquardt,Montana,Eastern Washington,2026,Forward,13.0,18.0,5.0,Big Sky,Big Sky,124.0,444.0,23.0,28.0,same_position_group_and_usage_within_5_pct
+Brooklyn Hicks,Trevor Hennig,Montana,Weber State,2026,Guard,20.9,21.4,0.5,Big Sky,Big Sky,674.0,617.5,31.0,25.0,same_position_group_and_usage_within_5_pct
+Brooklyn Hicks,Kavon Bradford,Montana,Northern Arizona,2026,Guard,20.9,21.8,0.9000000000000021,Big Sky,Big Sky,674.0,456.0,31.0,30.0,same_position_group_and_usage_within_5_pct
+Brooklyn Hicks,Jed Miller,Montana,Montana State,2026,Guard,20.9,19.9,1.0,Big Sky,Big Sky,674.0,1066.4,31.0,32.0,same_position_group_and_usage_within_5_pct
+Brooklyn Hicks,Keyon Kensie,Montana,Portland State,2026,Guard,20.9,19.6,1.2999999999999972,Big Sky,Big Sky,674.0,881.5999999999999,31.0,29.0,same_position_group_and_usage_within_5_pct
+Brooklyn Hicks,Ardarius Grayson,Montana,Weber State,2026,Guard,20.9,19.5,1.3999999999999986,Big Sky,Big Sky,674.0,402.0,31.0,30.0,same_position_group_and_usage_within_5_pct
+Brooklyn Hicks,Ariik Mawien,Montana,Northern Colorado,2026,Guard,20.9,22.3,1.4000000000000021,Big Sky,Big Sky,674.0,276.0,31.0,30.0,same_position_group_and_usage_within_5_pct
+Brooklyn Hicks,Isaiah Shaw,Montana,Northern Arizona,2026,Guard,20.9,22.4,1.5,Big Sky,Big Sky,674.0,530.7,31.0,29.0,same_position_group_and_usage_within_5_pct
+Brooklyn Hicks,Jamison Guerra,Montana,Idaho State,2026,Guard,20.9,19.1,1.7999999999999972,Big Sky,Big Sky,674.0,825.6,31.0,33.0,same_position_group_and_usage_within_5_pct
+Brooklyn Hicks,Louis Bond,Montana,Idaho State,2026,Guard,20.9,18.8,2.099999999999998,Big Sky,Big Sky,674.0,299.0,31.0,24.0,same_position_group_and_usage_within_5_pct
+Brooklyn Hicks,Johnny Radford,Montana,Eastern Washington,2026,Guard,20.9,18.7,2.1999999999999993,Big Sky,Big Sky,674.0,581.0,31.0,31.0,same_position_group_and_usage_within_5_pct
+Brooklyn Hicks,Cavin Holden,Montana,Montana State,2026,Guard,20.9,18.6,2.299999999999997,Big Sky,Big Sky,674.0,207.2,31.0,8.0,same_position_group_and_usage_within_5_pct
+Brooklyn Hicks,Duce Paschal,Montana,Weber State,2026,Guard,20.9,18.6,2.299999999999997,Big Sky,Big Sky,674.0,375.0,31.0,30.0,same_position_group_and_usage_within_5_pct
+Brooklyn Hicks,Jace Whiting,Montana,Weber State,2026,Guard,20.9,18.6,2.299999999999997,Big Sky,Big Sky,674.0,598.5,31.0,19.0,same_position_group_and_usage_within_5_pct
+Brooklyn Hicks,Kolton Mitchell,Montana,Idaho,2026,Guard,20.9,23.4,2.5,Big Sky,Big Sky,674.0,901.0,31.0,30.0,same_position_group_and_usage_within_5_pct
+Brooklyn Hicks,Sebastian Tidor,Montana,Portland State,2026,Guard,20.9,18.4,2.5,Big Sky,Big Sky,674.0,315.0,31.0,26.0,same_position_group_and_usage_within_5_pct
+Brooklyn Hicks,Ryan Abelman,Montana,Northern Arizona,2026,Guard,20.9,18.3,2.599999999999998,Big Sky,Big Sky,674.0,966.0,31.0,30.0,same_position_group_and_usage_within_5_pct
+Brooklyn Hicks,Jojo Anderson,Montana,Eastern Washington,2026,Guard,20.9,18.1,2.799999999999997,Big Sky,Big Sky,674.0,668.0,31.0,31.0,same_position_group_and_usage_within_5_pct
+Brooklyn Hicks,Vincent Delano,Montana,Northern Colorado,2026,Guard,20.9,18.1,2.799999999999997,Big Sky,Big Sky,674.0,632.4,31.0,31.0,same_position_group_and_usage_within_5_pct
+Brooklyn Hicks,Davian Brown,Montana,Montana State,2026,Guard,20.9,23.7,2.8000000000000007,Big Sky,Big Sky,674.0,525.0,31.0,21.0,same_position_group_and_usage_within_5_pct
+Brooklyn Hicks,Jayden Teat,Montana,Sacramento State,2026,Guard,20.9,23.8,2.900000000000002,Big Sky,Big Sky,674.0,423.4,31.0,29.0,same_position_group_and_usage_within_5_pct
+Brooklyn Hicks,Jeremiah Davis,Montana,Montana State,2026,Guard,20.9,17.7,3.1999999999999993,Big Sky,Big Sky,674.0,729.0,31.0,31.0,same_position_group_and_usage_within_5_pct
+Brooklyn Hicks,Jahni Summers,Montana,Sacramento State,2026,Guard,20.9,17.7,3.1999999999999993,Big Sky,Big Sky,674.0,799.8000000000001,31.0,31.0,same_position_group_and_usage_within_5_pct
+Brooklyn Hicks,Tijan Saine,Montana,Weber State,2026,Guard,20.9,24.2,3.3000000000000007,Big Sky,Big Sky,674.0,1007.5,31.0,31.0,same_position_group_and_usage_within_5_pct
+Brooklyn Hicks,Mataj Glover,Montana,Sacramento State,2026,Guard,20.9,17.4,3.5,Big Sky,Big Sky,674.0,394.4,31.0,29.0,same_position_group_and_usage_within_5_pct
+Brooklyn Hicks,Arne Osojnik,Montana,Northern Arizona,2026,Guard,20.9,24.5,3.6000000000000014,Big Sky,Big Sky,674.0,466.9,31.0,29.0,same_position_group_and_usage_within_5_pct
+Brooklyn Hicks,Cole Scherer,Montana,Eastern Washington,2026,Guard,20.9,17.2,3.6999999999999993,Big Sky,Big Sky,674.0,217.0,31.0,27.0,same_position_group_and_usage_within_5_pct
+Brooklyn Hicks,Maddox Monson,Montana,Eastern Washington,2026,Guard,20.9,17.2,3.6999999999999993,Big Sky,Big Sky,674.0,44.0,31.0,17.0,same_position_group_and_usage_within_5_pct
+Brooklyn Hicks,Jack Payne,Montana,Idaho,2026,Guard,20.9,16.9,4.0,Big Sky,Big Sky,674.0,682.0,31.0,31.0,same_position_group_and_usage_within_5_pct
+Brooklyn Hicks,Colt Ness,Montana,Portland State,2026,Guard,20.9,16.9,4.0,Big Sky,Big Sky,674.0,56.0,31.0,10.0,same_position_group_and_usage_within_5_pct
+Brooklyn Hicks,Prophet Johnson,Montana,Sacramento State,2026,Guard,20.9,25.1,4.200000000000003,Big Sky,Big Sky,674.0,1062.0,31.0,30.0,same_position_group_and_usage_within_5_pct
+Brooklyn Hicks,Biko Johnson,Montana,Idaho,2026,Guard,20.9,25.3,4.400000000000002,Big Sky,Big Sky,674.0,883.0,31.0,33.0,same_position_group_and_usage_within_5_pct
+Brooklyn Hicks,Aidan Sevilla,Montana,Idaho,2026,Guard,20.9,16.4,4.5,Big Sky,Big Sky,674.0,132.0,31.0,22.0,same_position_group_and_usage_within_5_pct
+Brooklyn Hicks,Zach Bloch,Montana,Northern Colorado,2026,Guard,20.9,16.4,4.5,Big Sky,Big Sky,674.0,1004.4,31.0,31.0,same_position_group_and_usage_within_5_pct
+Brooklyn Hicks,Martin Kheil,Montana,Idaho State,2026,Guard,20.9,16.1,4.799999999999997,Big Sky,Big Sky,674.0,882.0,31.0,31.0,same_position_group_and_usage_within_5_pct
+Brooklyn Hicks,Arman Madi,Montana,Sacramento State,2026,Guard,20.9,16.0,4.899999999999999,Big Sky,Big Sky,674.0,654.0,31.0,30.0,same_position_group_and_usage_within_5_pct
+Brooklyn Hicks,Seth Amunrud,Montana,Montana State,2026,Guard,20.9,15.9,4.999999999999998,Big Sky,Big Sky,674.0,503.7,31.0,24.0,same_position_group_and_usage_within_5_pct
+Chase Henderson,Jed Miller,Montana,Montana State,2026,Guard,20.4,19.9,0.5,Big Sky,Big Sky,134.0,1066.4,19.0,32.0,same_position_group_and_usage_within_5_pct
+Chase Henderson,Keyon Kensie,Montana,Portland State,2026,Guard,20.4,19.6,0.7999999999999972,Big Sky,Big Sky,134.0,881.5999999999999,19.0,29.0,same_position_group_and_usage_within_5_pct
+Chase Henderson,Ardarius Grayson,Montana,Weber State,2026,Guard,20.4,19.5,0.8999999999999986,Big Sky,Big Sky,134.0,402.0,19.0,30.0,same_position_group_and_usage_within_5_pct
+Chase Henderson,Trevor Hennig,Montana,Weber State,2026,Guard,20.4,21.4,1.0,Big Sky,Big Sky,134.0,617.5,19.0,25.0,same_position_group_and_usage_within_5_pct
+Chase Henderson,Jamison Guerra,Montana,Idaho State,2026,Guard,20.4,19.1,1.2999999999999972,Big Sky,Big Sky,134.0,825.6,19.0,33.0,same_position_group_and_usage_within_5_pct
+Chase Henderson,Kavon Bradford,Montana,Northern Arizona,2026,Guard,20.4,21.8,1.4000000000000021,Big Sky,Big Sky,134.0,456.0,19.0,30.0,same_position_group_and_usage_within_5_pct
+Chase Henderson,Louis Bond,Montana,Idaho State,2026,Guard,20.4,18.8,1.5999999999999979,Big Sky,Big Sky,134.0,299.0,19.0,24.0,same_position_group_and_usage_within_5_pct
+Chase Henderson,Johnny Radford,Montana,Eastern Washington,2026,Guard,20.4,18.7,1.6999999999999993,Big Sky,Big Sky,134.0,581.0,19.0,31.0,same_position_group_and_usage_within_5_pct
+Chase Henderson,Cavin Holden,Montana,Montana State,2026,Guard,20.4,18.6,1.7999999999999972,Big Sky,Big Sky,134.0,207.2,19.0,8.0,same_position_group_and_usage_within_5_pct
+Chase Henderson,Duce Paschal,Montana,Weber State,2026,Guard,20.4,18.6,1.7999999999999972,Big Sky,Big Sky,134.0,375.0,19.0,30.0,same_position_group_and_usage_within_5_pct
+Chase Henderson,Jace Whiting,Montana,Weber State,2026,Guard,20.4,18.6,1.7999999999999972,Big Sky,Big Sky,134.0,598.5,19.0,19.0,same_position_group_and_usage_within_5_pct
+Chase Henderson,Ariik Mawien,Montana,Northern Colorado,2026,Guard,20.4,22.3,1.9000000000000021,Big Sky,Big Sky,134.0,276.0,19.0,30.0,same_position_group_and_usage_within_5_pct
+Chase Henderson,Isaiah Shaw,Montana,Northern Arizona,2026,Guard,20.4,22.4,2.0,Big Sky,Big Sky,134.0,530.7,19.0,29.0,same_position_group_and_usage_within_5_pct
+Chase Henderson,Sebastian Tidor,Montana,Portland State,2026,Guard,20.4,18.4,2.0,Big Sky,Big Sky,134.0,315.0,19.0,26.0,same_position_group_and_usage_within_5_pct
+Chase Henderson,Ryan Abelman,Montana,Northern Arizona,2026,Guard,20.4,18.3,2.099999999999998,Big Sky,Big Sky,134.0,966.0,19.0,30.0,same_position_group_and_usage_within_5_pct
+Chase Henderson,Jojo Anderson,Montana,Eastern Washington,2026,Guard,20.4,18.1,2.299999999999997,Big Sky,Big Sky,134.0,668.0,19.0,31.0,same_position_group_and_usage_within_5_pct
+Chase Henderson,Vincent Delano,Montana,Northern Colorado,2026,Guard,20.4,18.1,2.299999999999997,Big Sky,Big Sky,134.0,632.4,19.0,31.0,same_position_group_and_usage_within_5_pct
+Chase Henderson,Jeremiah Davis,Montana,Montana State,2026,Guard,20.4,17.7,2.6999999999999993,Big Sky,Big Sky,134.0,729.0,19.0,31.0,same_position_group_and_usage_within_5_pct
+Chase Henderson,Jahni Summers,Montana,Sacramento State,2026,Guard,20.4,17.7,2.6999999999999993,Big Sky,Big Sky,134.0,799.8000000000001,19.0,31.0,same_position_group_and_usage_within_5_pct
+Chase Henderson,Kolton Mitchell,Montana,Idaho,2026,Guard,20.4,23.4,3.0,Big Sky,Big Sky,134.0,901.0,19.0,30.0,same_position_group_and_usage_within_5_pct
+Chase Henderson,Mataj Glover,Montana,Sacramento State,2026,Guard,20.4,17.4,3.0,Big Sky,Big Sky,134.0,394.4,19.0,29.0,same_position_group_and_usage_within_5_pct
+Chase Henderson,Cole Scherer,Montana,Eastern Washington,2026,Guard,20.4,17.2,3.1999999999999993,Big Sky,Big Sky,134.0,217.0,19.0,27.0,same_position_group_and_usage_within_5_pct
+Chase Henderson,Maddox Monson,Montana,Eastern Washington,2026,Guard,20.4,17.2,3.1999999999999993,Big Sky,Big Sky,134.0,44.0,19.0,17.0,same_position_group_and_usage_within_5_pct
+Chase Henderson,Davian Brown,Montana,Montana State,2026,Guard,20.4,23.7,3.3000000000000007,Big Sky,Big Sky,134.0,525.0,19.0,21.0,same_position_group_and_usage_within_5_pct
+Chase Henderson,Jayden Teat,Montana,Sacramento State,2026,Guard,20.4,23.8,3.400000000000002,Big Sky,Big Sky,134.0,423.4,19.0,29.0,same_position_group_and_usage_within_5_pct
+Chase Henderson,Jack Payne,Montana,Idaho,2026,Guard,20.4,16.9,3.5,Big Sky,Big Sky,134.0,682.0,19.0,31.0,same_position_group_and_usage_within_5_pct
+Chase Henderson,Colt Ness,Montana,Portland State,2026,Guard,20.4,16.9,3.5,Big Sky,Big Sky,134.0,56.0,19.0,10.0,same_position_group_and_usage_within_5_pct
+Chase Henderson,Tijan Saine,Montana,Weber State,2026,Guard,20.4,24.2,3.8000000000000007,Big Sky,Big Sky,134.0,1007.5,19.0,31.0,same_position_group_and_usage_within_5_pct
+Chase Henderson,Aidan Sevilla,Montana,Idaho,2026,Guard,20.4,16.4,4.0,Big Sky,Big Sky,134.0,132.0,19.0,22.0,same_position_group_and_usage_within_5_pct
+Chase Henderson,Zach Bloch,Montana,Northern Colorado,2026,Guard,20.4,16.4,4.0,Big Sky,Big Sky,134.0,1004.4,19.0,31.0,same_position_group_and_usage_within_5_pct
+Chase Henderson,Arne Osojnik,Montana,Northern Arizona,2026,Guard,20.4,24.5,4.100000000000001,Big Sky,Big Sky,134.0,466.9,19.0,29.0,same_position_group_and_usage_within_5_pct
+Chase Henderson,Martin Kheil,Montana,Idaho State,2026,Guard,20.4,16.1,4.299999999999997,Big Sky,Big Sky,134.0,882.0,19.0,31.0,same_position_group_and_usage_within_5_pct
+Chase Henderson,Arman Madi,Montana,Sacramento State,2026,Guard,20.4,16.0,4.399999999999999,Big Sky,Big Sky,134.0,654.0,19.0,30.0,same_position_group_and_usage_within_5_pct
+Chase Henderson,Seth Amunrud,Montana,Montana State,2026,Guard,20.4,15.9,4.499999999999998,Big Sky,Big Sky,134.0,503.7,19.0,24.0,same_position_group_and_usage_within_5_pct
+Chase Henderson,Miles Klapper,Montana,Idaho,2026,Guard,20.4,15.7,4.699999999999999,Big Sky,Big Sky,134.0,341.0,19.0,27.0,same_position_group_and_usage_within_5_pct
+Chase Henderson,Prophet Johnson,Montana,Sacramento State,2026,Guard,20.4,25.1,4.700000000000003,Big Sky,Big Sky,134.0,1062.0,19.0,30.0,same_position_group_and_usage_within_5_pct
+Chase Henderson,Biko Johnson,Montana,Idaho,2026,Guard,20.4,25.3,4.900000000000002,Big Sky,Big Sky,134.0,883.0,19.0,33.0,same_position_group_and_usage_within_5_pct
+Chase Henderson,Oakland Fort,Montana,Northern Arizona,2026,Guard,20.4,15.4,4.999999999999998,Big Sky,Big Sky,134.0,321.9,19.0,29.0,same_position_group_and_usage_within_5_pct
+Connor Dick,Tyler Powell,Montana,Eastern Washington,2026,Guard,15.1,15.0,0.09999999999999964,Big Sky,Big Sky,237.0,520.0,25.0,31.0,same_position_group_and_usage_within_5_pct
+Connor Dick,Tanner Braketa,Montana,Northern Colorado,2026,Guard,15.1,14.9,0.1999999999999993,Big Sky,Big Sky,237.0,92.4,25.0,12.0,same_position_group_and_usage_within_5_pct
+Connor Dick,Chris Komin,Montana,Northern Arizona,2026,Guard,15.1,15.3,0.20000000000000107,Big Sky,Big Sky,237.0,821.5,25.0,31.0,same_position_group_and_usage_within_5_pct
+Connor Dick,Oakland Fort,Montana,Northern Arizona,2026,Guard,15.1,15.4,0.3000000000000007,Big Sky,Big Sky,237.0,321.9,25.0,29.0,same_position_group_and_usage_within_5_pct
+Connor Dick,Lachlan Brewer,Montana,Idaho State,2026,Guard,15.1,14.7,0.40000000000000036,Big Sky,Big Sky,237.0,956.8,25.0,33.0,same_position_group_and_usage_within_5_pct
+Connor Dick,Brycen Long,Montana,Portland State,2026,Guard,15.1,14.7,0.40000000000000036,Big Sky,Big Sky,237.0,260.0,25.0,26.0,same_position_group_and_usage_within_5_pct
+Connor Dick,Miles Klapper,Montana,Idaho,2026,Guard,15.1,15.7,0.5999999999999996,Big Sky,Big Sky,237.0,341.0,25.0,27.0,same_position_group_and_usage_within_5_pct
+Connor Dick,Seth Amunrud,Montana,Montana State,2026,Guard,15.1,15.9,0.8000000000000007,Big Sky,Big Sky,237.0,503.7,25.0,24.0,same_position_group_and_usage_within_5_pct
+Connor Dick,Arman Madi,Montana,Sacramento State,2026,Guard,15.1,16.0,0.9000000000000004,Big Sky,Big Sky,237.0,654.0,25.0,30.0,same_position_group_and_usage_within_5_pct
+Connor Dick,Martin Kheil,Montana,Idaho State,2026,Guard,15.1,16.1,1.0000000000000018,Big Sky,Big Sky,237.0,882.0,25.0,31.0,same_position_group_and_usage_within_5_pct
+Connor Dick,Brennan Peterson,Montana,Northern Arizona,2026,Guard,15.1,13.9,1.1999999999999993,Big Sky,Big Sky,237.0,620.8,25.0,32.0,same_position_group_and_usage_within_5_pct
+Connor Dick,Aidan Sevilla,Montana,Idaho,2026,Guard,15.1,16.4,1.299999999999999,Big Sky,Big Sky,237.0,132.0,25.0,22.0,same_position_group_and_usage_within_5_pct
+Connor Dick,Zach Bloch,Montana,Northern Colorado,2026,Guard,15.1,16.4,1.299999999999999,Big Sky,Big Sky,237.0,1004.4,25.0,31.0,same_position_group_and_usage_within_5_pct
+Connor Dick,Isaiah Williams,Montana,Portland State,2026,Guard,15.1,13.7,1.4000000000000004,Big Sky,Big Sky,237.0,279.4,25.0,23.0,same_position_group_and_usage_within_5_pct
+Connor Dick,Jack Payne,Montana,Idaho,2026,Guard,15.1,16.9,1.799999999999999,Big Sky,Big Sky,237.0,682.0,25.0,31.0,same_position_group_and_usage_within_5_pct
+Connor Dick,Colt Ness,Montana,Portland State,2026,Guard,15.1,16.9,1.799999999999999,Big Sky,Big Sky,237.0,56.0,25.0,10.0,same_position_group_and_usage_within_5_pct
+Connor Dick,Erez Poran,Montana,Northern Arizona,2026,Guard,15.1,13.2,1.9000000000000004,Big Sky,Big Sky,237.0,71.5,25.0,13.0,same_position_group_and_usage_within_5_pct
+Connor Dick,Kelcy Phipps,Montana,Portland State,2026,Guard,15.1,13.2,1.9000000000000004,Big Sky,Big Sky,237.0,504.6,25.0,30.0,same_position_group_and_usage_within_5_pct
+Connor Dick,Cole Scherer,Montana,Eastern Washington,2026,Guard,15.1,17.2,2.0999999999999996,Big Sky,Big Sky,237.0,217.0,25.0,27.0,same_position_group_and_usage_within_5_pct
+Connor Dick,Maddox Monson,Montana,Eastern Washington,2026,Guard,15.1,17.2,2.0999999999999996,Big Sky,Big Sky,237.0,44.0,25.0,17.0,same_position_group_and_usage_within_5_pct
+Connor Dick,Alex Dupre,Montana,Portland State,2026,Guard,15.1,12.8,2.299999999999999,Big Sky,Big Sky,237.0,431.2,25.0,29.0,same_position_group_and_usage_within_5_pct
+Connor Dick,Mataj Glover,Montana,Sacramento State,2026,Guard,15.1,17.4,2.299999999999999,Big Sky,Big Sky,237.0,394.4,25.0,29.0,same_position_group_and_usage_within_5_pct
+Connor Dick,Jeremiah Davis,Montana,Montana State,2026,Guard,15.1,17.7,2.5999999999999996,Big Sky,Big Sky,237.0,729.0,25.0,31.0,same_position_group_and_usage_within_5_pct
+Connor Dick,Jahni Summers,Montana,Sacramento State,2026,Guard,15.1,17.7,2.5999999999999996,Big Sky,Big Sky,237.0,799.8000000000001,25.0,31.0,same_position_group_and_usage_within_5_pct
+Connor Dick,Mozae Downing Rivers,Montana,Portland State,2026,Guard,15.1,12.1,3.0,Big Sky,Big Sky,237.0,100.8,25.0,18.0,same_position_group_and_usage_within_5_pct
+Connor Dick,Jojo Anderson,Montana,Eastern Washington,2026,Guard,15.1,18.1,3.0000000000000018,Big Sky,Big Sky,237.0,668.0,25.0,31.0,same_position_group_and_usage_within_5_pct
+Connor Dick,Vincent Delano,Montana,Northern Colorado,2026,Guard,15.1,18.1,3.0000000000000018,Big Sky,Big Sky,237.0,632.4,25.0,31.0,same_position_group_and_usage_within_5_pct
+Connor Dick,Ryan Abelman,Montana,Northern Arizona,2026,Guard,15.1,18.3,3.200000000000001,Big Sky,Big Sky,237.0,966.0,25.0,30.0,same_position_group_and_usage_within_5_pct
+Connor Dick,Sebastian Tidor,Montana,Portland State,2026,Guard,15.1,18.4,3.299999999999999,Big Sky,Big Sky,237.0,315.0,25.0,26.0,same_position_group_and_usage_within_5_pct
+Connor Dick,Straton Rogers,Montana,Eastern Washington,2026,Guard,15.1,11.7,3.4000000000000004,Big Sky,Big Sky,237.0,687.0,25.0,31.0,same_position_group_and_usage_within_5_pct
+Connor Dick,Howie Keene,Montana,Montana State,2026,Guard,15.1,11.6,3.5,Big Sky,Big Sky,237.0,288.0,25.0,25.0,same_position_group_and_usage_within_5_pct
+Connor Dick,Cavin Holden,Montana,Montana State,2026,Guard,15.1,18.6,3.5000000000000018,Big Sky,Big Sky,237.0,207.2,25.0,8.0,same_position_group_and_usage_within_5_pct
+Connor Dick,Duce Paschal,Montana,Weber State,2026,Guard,15.1,18.6,3.5000000000000018,Big Sky,Big Sky,237.0,375.0,25.0,30.0,same_position_group_and_usage_within_5_pct
+Connor Dick,Jace Whiting,Montana,Weber State,2026,Guard,15.1,18.6,3.5000000000000018,Big Sky,Big Sky,237.0,598.5,25.0,19.0,same_position_group_and_usage_within_5_pct
+Connor Dick,Johnny Radford,Montana,Eastern Washington,2026,Guard,15.1,18.7,3.5999999999999996,Big Sky,Big Sky,237.0,581.0,25.0,31.0,same_position_group_and_usage_within_5_pct
+Connor Dick,Cheikh Sow,Montana,Idaho State,2026,Guard,15.1,11.5,3.5999999999999996,Big Sky,Big Sky,237.0,528.0,25.0,31.0,same_position_group_and_usage_within_5_pct
+Connor Dick,Quin Patterson,Montana,Idaho State,2026,Guard,15.1,11.4,3.6999999999999993,Big Sky,Big Sky,237.0,210.0,25.0,25.0,same_position_group_and_usage_within_5_pct
+Connor Dick,Louis Bond,Montana,Idaho State,2026,Guard,15.1,18.8,3.700000000000001,Big Sky,Big Sky,237.0,299.0,25.0,24.0,same_position_group_and_usage_within_5_pct
+Connor Dick,Isaiah Bronson,Montana,Sacramento State,2026,Guard,15.1,11.3,3.799999999999999,Big Sky,Big Sky,237.0,21.0,25.0,6.0,same_position_group_and_usage_within_5_pct
+Connor Dick,Jamison Guerra,Montana,Idaho State,2026,Guard,15.1,19.1,4.000000000000002,Big Sky,Big Sky,237.0,825.6,25.0,33.0,same_position_group_and_usage_within_5_pct
+Connor Dick,Elijah Thomas,Montana,Eastern Washington,2026,Guard,15.1,10.9,4.199999999999999,Big Sky,Big Sky,237.0,302.0,25.0,28.0,same_position_group_and_usage_within_5_pct
+Connor Dick,Trevon Blassingame,Montana,Idaho,2026,Guard,15.1,10.9,4.199999999999999,Big Sky,Big Sky,237.0,526.0,25.0,32.0,same_position_group_and_usage_within_5_pct
+Connor Dick,Romari Robinson,Montana,Sacramento State,2026,Guard,15.1,10.8,4.299999999999999,Big Sky,Big Sky,237.0,266.4,25.0,24.0,same_position_group_and_usage_within_5_pct
+Connor Dick,Ardarius Grayson,Montana,Weber State,2026,Guard,15.1,19.5,4.4,Big Sky,Big Sky,237.0,402.0,25.0,30.0,same_position_group_and_usage_within_5_pct
+Connor Dick,Keyon Kensie,Montana,Portland State,2026,Guard,15.1,19.6,4.500000000000002,Big Sky,Big Sky,237.0,881.5999999999999,25.0,29.0,same_position_group_and_usage_within_5_pct
+Connor Dick,Jed Miller,Montana,Montana State,2026,Guard,15.1,19.9,4.799999999999999,Big Sky,Big Sky,237.0,1066.4,25.0,32.0,same_position_group_and_usage_within_5_pct
+Courtney Anderson,Trevor Hennig,Montana,Weber State,2026,Guard,20.8,21.4,0.5999999999999979,Big Sky,Big Sky,114.0,617.5,10.0,25.0,same_position_group_and_usage_within_5_pct
+Courtney Anderson,Jed Miller,Montana,Montana State,2026,Guard,20.8,19.9,0.9000000000000021,Big Sky,Big Sky,114.0,1066.4,10.0,32.0,same_position_group_and_usage_within_5_pct
+Courtney Anderson,Kavon Bradford,Montana,Northern Arizona,2026,Guard,20.8,21.8,1.0,Big Sky,Big Sky,114.0,456.0,10.0,30.0,same_position_group_and_usage_within_5_pct
+Courtney Anderson,Keyon Kensie,Montana,Portland State,2026,Guard,20.8,19.6,1.1999999999999993,Big Sky,Big Sky,114.0,881.5999999999999,10.0,29.0,same_position_group_and_usage_within_5_pct
+Courtney Anderson,Ardarius Grayson,Montana,Weber State,2026,Guard,20.8,19.5,1.3000000000000007,Big Sky,Big Sky,114.0,402.0,10.0,30.0,same_position_group_and_usage_within_5_pct
+Courtney Anderson,Ariik Mawien,Montana,Northern Colorado,2026,Guard,20.8,22.3,1.5,Big Sky,Big Sky,114.0,276.0,10.0,30.0,same_position_group_and_usage_within_5_pct
+Courtney Anderson,Isaiah Shaw,Montana,Northern Arizona,2026,Guard,20.8,22.4,1.5999999999999979,Big Sky,Big Sky,114.0,530.7,10.0,29.0,same_position_group_and_usage_within_5_pct
+Courtney Anderson,Jamison Guerra,Montana,Idaho State,2026,Guard,20.8,19.1,1.6999999999999993,Big Sky,Big Sky,114.0,825.6,10.0,33.0,same_position_group_and_usage_within_5_pct
+Courtney Anderson,Louis Bond,Montana,Idaho State,2026,Guard,20.8,18.8,2.0,Big Sky,Big Sky,114.0,299.0,10.0,24.0,same_position_group_and_usage_within_5_pct
+Courtney Anderson,Johnny Radford,Montana,Eastern Washington,2026,Guard,20.8,18.7,2.1000000000000014,Big Sky,Big Sky,114.0,581.0,10.0,31.0,same_position_group_and_usage_within_5_pct
+Courtney Anderson,Cavin Holden,Montana,Montana State,2026,Guard,20.8,18.6,2.1999999999999993,Big Sky,Big Sky,114.0,207.2,10.0,8.0,same_position_group_and_usage_within_5_pct
+Courtney Anderson,Duce Paschal,Montana,Weber State,2026,Guard,20.8,18.6,2.1999999999999993,Big Sky,Big Sky,114.0,375.0,10.0,30.0,same_position_group_and_usage_within_5_pct
+Courtney Anderson,Jace Whiting,Montana,Weber State,2026,Guard,20.8,18.6,2.1999999999999993,Big Sky,Big Sky,114.0,598.5,10.0,19.0,same_position_group_and_usage_within_5_pct
+Courtney Anderson,Sebastian Tidor,Montana,Portland State,2026,Guard,20.8,18.4,2.400000000000002,Big Sky,Big Sky,114.0,315.0,10.0,26.0,same_position_group_and_usage_within_5_pct
+Courtney Anderson,Ryan Abelman,Montana,Northern Arizona,2026,Guard,20.8,18.3,2.5,Big Sky,Big Sky,114.0,966.0,10.0,30.0,same_position_group_and_usage_within_5_pct
+Courtney Anderson,Kolton Mitchell,Montana,Idaho,2026,Guard,20.8,23.4,2.599999999999998,Big Sky,Big Sky,114.0,901.0,10.0,30.0,same_position_group_and_usage_within_5_pct
+Courtney Anderson,Jojo Anderson,Montana,Eastern Washington,2026,Guard,20.8,18.1,2.6999999999999993,Big Sky,Big Sky,114.0,668.0,10.0,31.0,same_position_group_and_usage_within_5_pct
+Courtney Anderson,Vincent Delano,Montana,Northern Colorado,2026,Guard,20.8,18.1,2.6999999999999993,Big Sky,Big Sky,114.0,632.4,10.0,31.0,same_position_group_and_usage_within_5_pct
+Courtney Anderson,Davian Brown,Montana,Montana State,2026,Guard,20.8,23.7,2.8999999999999986,Big Sky,Big Sky,114.0,525.0,10.0,21.0,same_position_group_and_usage_within_5_pct
+Courtney Anderson,Jayden Teat,Montana,Sacramento State,2026,Guard,20.8,23.8,3.0,Big Sky,Big Sky,114.0,423.4,10.0,29.0,same_position_group_and_usage_within_5_pct
+Courtney Anderson,Jeremiah Davis,Montana,Montana State,2026,Guard,20.8,17.7,3.1000000000000014,Big Sky,Big Sky,114.0,729.0,10.0,31.0,same_position_group_and_usage_within_5_pct
+Courtney Anderson,Jahni Summers,Montana,Sacramento State,2026,Guard,20.8,17.7,3.1000000000000014,Big Sky,Big Sky,114.0,799.8000000000001,10.0,31.0,same_position_group_and_usage_within_5_pct
+Courtney Anderson,Tijan Saine,Montana,Weber State,2026,Guard,20.8,24.2,3.3999999999999986,Big Sky,Big Sky,114.0,1007.5,10.0,31.0,same_position_group_and_usage_within_5_pct
+Courtney Anderson,Mataj Glover,Montana,Sacramento State,2026,Guard,20.8,17.4,3.400000000000002,Big Sky,Big Sky,114.0,394.4,10.0,29.0,same_position_group_and_usage_within_5_pct
+Courtney Anderson,Cole Scherer,Montana,Eastern Washington,2026,Guard,20.8,17.2,3.6000000000000014,Big Sky,Big Sky,114.0,217.0,10.0,27.0,same_position_group_and_usage_within_5_pct
+Courtney Anderson,Maddox Monson,Montana,Eastern Washington,2026,Guard,20.8,17.2,3.6000000000000014,Big Sky,Big Sky,114.0,44.0,10.0,17.0,same_position_group_and_usage_within_5_pct
+Courtney Anderson,Arne Osojnik,Montana,Northern Arizona,2026,Guard,20.8,24.5,3.6999999999999993,Big Sky,Big Sky,114.0,466.9,10.0,29.0,same_position_group_and_usage_within_5_pct
+Courtney Anderson,Jack Payne,Montana,Idaho,2026,Guard,20.8,16.9,3.900000000000002,Big Sky,Big Sky,114.0,682.0,10.0,31.0,same_position_group_and_usage_within_5_pct
+Courtney Anderson,Colt Ness,Montana,Portland State,2026,Guard,20.8,16.9,3.900000000000002,Big Sky,Big Sky,114.0,56.0,10.0,10.0,same_position_group_and_usage_within_5_pct
+Courtney Anderson,Prophet Johnson,Montana,Sacramento State,2026,Guard,20.8,25.1,4.300000000000001,Big Sky,Big Sky,114.0,1062.0,10.0,30.0,same_position_group_and_usage_within_5_pct
+Courtney Anderson,Aidan Sevilla,Montana,Idaho,2026,Guard,20.8,16.4,4.400000000000002,Big Sky,Big Sky,114.0,132.0,10.0,22.0,same_position_group_and_usage_within_5_pct
+Courtney Anderson,Zach Bloch,Montana,Northern Colorado,2026,Guard,20.8,16.4,4.400000000000002,Big Sky,Big Sky,114.0,1004.4,10.0,31.0,same_position_group_and_usage_within_5_pct
+Courtney Anderson,Biko Johnson,Montana,Idaho,2026,Guard,20.8,25.3,4.5,Big Sky,Big Sky,114.0,883.0,10.0,33.0,same_position_group_and_usage_within_5_pct
+Courtney Anderson,Martin Kheil,Montana,Idaho State,2026,Guard,20.8,16.1,4.699999999999999,Big Sky,Big Sky,114.0,882.0,10.0,31.0,same_position_group_and_usage_within_5_pct
+Courtney Anderson,Arman Madi,Montana,Sacramento State,2026,Guard,20.8,16.0,4.800000000000001,Big Sky,Big Sky,114.0,654.0,10.0,30.0,same_position_group_and_usage_within_5_pct
+Courtney Anderson,Seth Amunrud,Montana,Montana State,2026,Guard,20.8,15.9,4.9,Big Sky,Big Sky,114.0,503.7,10.0,24.0,same_position_group_and_usage_within_5_pct
+Grant Kepley,Jamison Guerra,Montana,Idaho State,2026,Guard,19.0,19.1,0.10000000000000142,Big Sky,Big Sky,543.0,825.6,25.0,33.0,same_position_group_and_usage_within_5_pct
+Grant Kepley,Louis Bond,Montana,Idaho State,2026,Guard,19.0,18.8,0.1999999999999993,Big Sky,Big Sky,543.0,299.0,25.0,24.0,same_position_group_and_usage_within_5_pct
+Grant Kepley,Johnny Radford,Montana,Eastern Washington,2026,Guard,19.0,18.7,0.3000000000000007,Big Sky,Big Sky,543.0,581.0,25.0,31.0,same_position_group_and_usage_within_5_pct
+Grant Kepley,Cavin Holden,Montana,Montana State,2026,Guard,19.0,18.6,0.3999999999999986,Big Sky,Big Sky,543.0,207.2,25.0,8.0,same_position_group_and_usage_within_5_pct
+Grant Kepley,Duce Paschal,Montana,Weber State,2026,Guard,19.0,18.6,0.3999999999999986,Big Sky,Big Sky,543.0,375.0,25.0,30.0,same_position_group_and_usage_within_5_pct
+Grant Kepley,Jace Whiting,Montana,Weber State,2026,Guard,19.0,18.6,0.3999999999999986,Big Sky,Big Sky,543.0,598.5,25.0,19.0,same_position_group_and_usage_within_5_pct
+Grant Kepley,Ardarius Grayson,Montana,Weber State,2026,Guard,19.0,19.5,0.5,Big Sky,Big Sky,543.0,402.0,25.0,30.0,same_position_group_and_usage_within_5_pct
+Grant Kepley,Keyon Kensie,Montana,Portland State,2026,Guard,19.0,19.6,0.6000000000000014,Big Sky,Big Sky,543.0,881.5999999999999,25.0,29.0,same_position_group_and_usage_within_5_pct
+Grant Kepley,Sebastian Tidor,Montana,Portland State,2026,Guard,19.0,18.4,0.6000000000000014,Big Sky,Big Sky,543.0,315.0,25.0,26.0,same_position_group_and_usage_within_5_pct
+Grant Kepley,Ryan Abelman,Montana,Northern Arizona,2026,Guard,19.0,18.3,0.6999999999999993,Big Sky,Big Sky,543.0,966.0,25.0,30.0,same_position_group_and_usage_within_5_pct
+Grant Kepley,Jojo Anderson,Montana,Eastern Washington,2026,Guard,19.0,18.1,0.8999999999999986,Big Sky,Big Sky,543.0,668.0,25.0,31.0,same_position_group_and_usage_within_5_pct
+Grant Kepley,Jed Miller,Montana,Montana State,2026,Guard,19.0,19.9,0.8999999999999986,Big Sky,Big Sky,543.0,1066.4,25.0,32.0,same_position_group_and_usage_within_5_pct
+Grant Kepley,Vincent Delano,Montana,Northern Colorado,2026,Guard,19.0,18.1,0.8999999999999986,Big Sky,Big Sky,543.0,632.4,25.0,31.0,same_position_group_and_usage_within_5_pct
+Grant Kepley,Jeremiah Davis,Montana,Montana State,2026,Guard,19.0,17.7,1.3000000000000007,Big Sky,Big Sky,543.0,729.0,25.0,31.0,same_position_group_and_usage_within_5_pct
+Grant Kepley,Jahni Summers,Montana,Sacramento State,2026,Guard,19.0,17.7,1.3000000000000007,Big Sky,Big Sky,543.0,799.8000000000001,25.0,31.0,same_position_group_and_usage_within_5_pct
+Grant Kepley,Mataj Glover,Montana,Sacramento State,2026,Guard,19.0,17.4,1.6000000000000014,Big Sky,Big Sky,543.0,394.4,25.0,29.0,same_position_group_and_usage_within_5_pct
+Grant Kepley,Cole Scherer,Montana,Eastern Washington,2026,Guard,19.0,17.2,1.8000000000000007,Big Sky,Big Sky,543.0,217.0,25.0,27.0,same_position_group_and_usage_within_5_pct
+Grant Kepley,Maddox Monson,Montana,Eastern Washington,2026,Guard,19.0,17.2,1.8000000000000007,Big Sky,Big Sky,543.0,44.0,25.0,17.0,same_position_group_and_usage_within_5_pct
+Grant Kepley,Jack Payne,Montana,Idaho,2026,Guard,19.0,16.9,2.1000000000000014,Big Sky,Big Sky,543.0,682.0,25.0,31.0,same_position_group_and_usage_within_5_pct
+Grant Kepley,Colt Ness,Montana,Portland State,2026,Guard,19.0,16.9,2.1000000000000014,Big Sky,Big Sky,543.0,56.0,25.0,10.0,same_position_group_and_usage_within_5_pct
+Grant Kepley,Trevor Hennig,Montana,Weber State,2026,Guard,19.0,21.4,2.3999999999999986,Big Sky,Big Sky,543.0,617.5,25.0,25.0,same_position_group_and_usage_within_5_pct
+Grant Kepley,Aidan Sevilla,Montana,Idaho,2026,Guard,19.0,16.4,2.6000000000000014,Big Sky,Big Sky,543.0,132.0,25.0,22.0,same_position_group_and_usage_within_5_pct
+Grant Kepley,Zach Bloch,Montana,Northern Colorado,2026,Guard,19.0,16.4,2.6000000000000014,Big Sky,Big Sky,543.0,1004.4,25.0,31.0,same_position_group_and_usage_within_5_pct
+Grant Kepley,Kavon Bradford,Montana,Northern Arizona,2026,Guard,19.0,21.8,2.8000000000000007,Big Sky,Big Sky,543.0,456.0,25.0,30.0,same_position_group_and_usage_within_5_pct
+Grant Kepley,Martin Kheil,Montana,Idaho State,2026,Guard,19.0,16.1,2.8999999999999986,Big Sky,Big Sky,543.0,882.0,25.0,31.0,same_position_group_and_usage_within_5_pct
+Grant Kepley,Arman Madi,Montana,Sacramento State,2026,Guard,19.0,16.0,3.0,Big Sky,Big Sky,543.0,654.0,25.0,30.0,same_position_group_and_usage_within_5_pct
+Grant Kepley,Seth Amunrud,Montana,Montana State,2026,Guard,19.0,15.9,3.0999999999999996,Big Sky,Big Sky,543.0,503.7,25.0,24.0,same_position_group_and_usage_within_5_pct
+Grant Kepley,Miles Klapper,Montana,Idaho,2026,Guard,19.0,15.7,3.3000000000000007,Big Sky,Big Sky,543.0,341.0,25.0,27.0,same_position_group_and_usage_within_5_pct
+Grant Kepley,Ariik Mawien,Montana,Northern Colorado,2026,Guard,19.0,22.3,3.3000000000000007,Big Sky,Big Sky,543.0,276.0,25.0,30.0,same_position_group_and_usage_within_5_pct
+Grant Kepley,Isaiah Shaw,Montana,Northern Arizona,2026,Guard,19.0,22.4,3.3999999999999986,Big Sky,Big Sky,543.0,530.7,25.0,29.0,same_position_group_and_usage_within_5_pct
+Grant Kepley,Oakland Fort,Montana,Northern Arizona,2026,Guard,19.0,15.4,3.5999999999999996,Big Sky,Big Sky,543.0,321.9,25.0,29.0,same_position_group_and_usage_within_5_pct
+Grant Kepley,Chris Komin,Montana,Northern Arizona,2026,Guard,19.0,15.3,3.6999999999999993,Big Sky,Big Sky,543.0,821.5,25.0,31.0,same_position_group_and_usage_within_5_pct
+Grant Kepley,Tyler Powell,Montana,Eastern Washington,2026,Guard,19.0,15.0,4.0,Big Sky,Big Sky,543.0,520.0,25.0,31.0,same_position_group_and_usage_within_5_pct
+Grant Kepley,Tanner Braketa,Montana,Northern Colorado,2026,Guard,19.0,14.9,4.1,Big Sky,Big Sky,543.0,92.4,25.0,12.0,same_position_group_and_usage_within_5_pct
+Grant Kepley,Lachlan Brewer,Montana,Idaho State,2026,Guard,19.0,14.7,4.300000000000001,Big Sky,Big Sky,543.0,956.8,25.0,33.0,same_position_group_and_usage_within_5_pct
+Grant Kepley,Brycen Long,Montana,Portland State,2026,Guard,19.0,14.7,4.300000000000001,Big Sky,Big Sky,543.0,260.0,25.0,26.0,same_position_group_and_usage_within_5_pct
+Grant Kepley,Kolton Mitchell,Montana,Idaho,2026,Guard,19.0,23.4,4.399999999999999,Big Sky,Big Sky,543.0,901.0,25.0,30.0,same_position_group_and_usage_within_5_pct
+Grant Kepley,Davian Brown,Montana,Montana State,2026,Guard,19.0,23.7,4.699999999999999,Big Sky,Big Sky,543.0,525.0,25.0,21.0,same_position_group_and_usage_within_5_pct
+Grant Kepley,Jayden Teat,Montana,Sacramento State,2026,Guard,19.0,23.8,4.800000000000001,Big Sky,Big Sky,543.0,423.4,25.0,29.0,same_position_group_and_usage_within_5_pct
+Kadyn Betts,Bourgeois Tshilobo,Montana,Weber State,2026,Forward,24.2,24.3,0.10000000000000142,Big Sky,Big Sky,59.0,32.9,9.0,7.0,same_position_group_and_usage_within_5_pct
+Kadyn Betts,Brock Wisne,Montana,Northern Colorado,2026,Forward,24.2,24.5,0.3000000000000007,Big Sky,Big Sky,59.0,957.0,9.0,30.0,same_position_group_and_usage_within_5_pct
+Kadyn Betts,Jackson Rasmussen,Montana,Idaho,2026,Forward,24.2,23.2,1.0,Big Sky,Big Sky,59.0,995.0,9.0,32.0,same_position_group_and_usage_within_5_pct
+Kadyn Betts,Christian King,Montana,Montana State,2026,Forward,24.2,25.5,1.3000000000000007,Big Sky,Big Sky,59.0,726.3,9.0,28.0,same_position_group_and_usage_within_5_pct
+Kadyn Betts,Connor Hollenbeck,Montana,Idaho State,2026,Forward,24.2,22.7,1.5,Big Sky,Big Sky,59.0,953.6,9.0,33.0,same_position_group_and_usage_within_5_pct
+Kadyn Betts,Blake Daberkow,Montana,Idaho State,2026,Forward,24.2,22.4,1.8000000000000007,Big Sky,Big Sky,59.0,248.0,9.0,32.0,same_position_group_and_usage_within_5_pct
+Kadyn Betts,Kiree Huie,Montana,Eastern Washington,2026,Forward,24.2,26.5,2.3000000000000007,Big Sky,Big Sky,59.0,792.0,9.0,31.0,same_position_group_and_usage_within_5_pct
+Kadyn Betts,Karl Markus Poom,Montana,Northern Arizona,2026,Forward,24.2,26.9,2.6999999999999993,Big Sky,Big Sky,59.0,627.2,9.0,32.0,same_position_group_and_usage_within_5_pct
+Kadyn Betts,Diego Campisano,Montana,Northern Arizona,2026,Forward,24.2,20.5,3.6999999999999993,Big Sky,Big Sky,59.0,465.4,9.0,26.0,same_position_group_and_usage_within_5_pct
+Kadyn Betts,Jeremiah Cherry,Montana,Sacramento State,2026,Forward,24.2,28.9,4.699999999999999,Big Sky,Big Sky,59.0,187.2,9.0,6.0,same_position_group_and_usage_within_5_pct
+Kadyn Betts,Nigel Burris,Montana,Weber State,2026,Forward,24.2,19.5,4.699999999999999,Big Sky,Big Sky,59.0,716.1,9.0,31.0,same_position_group_and_usage_within_5_pct
+Kadyn Betts,Hunter Caldwell,Montana,Northern Colorado,2026,Forward,24.2,19.4,4.800000000000001,Big Sky,Big Sky,59.0,75.60000000000001,9.0,14.0,same_position_group_and_usage_within_5_pct
+Kenyon Aguino,David Hansen,Montana,Weber State,2026,Forward,18.1,18.1,0.0,Big Sky,Big Sky,726.0,140.0,31.0,25.0,same_position_group_and_usage_within_5_pct
+Kenyon Aguino,Emmett Marquardt,Montana,Eastern Washington,2026,Forward,18.1,18.0,0.10000000000000142,Big Sky,Big Sky,726.0,444.0,31.0,28.0,same_position_group_and_usage_within_5_pct
+Kenyon Aguino,Evan Otten,Montana,Idaho State,2026,Forward,18.1,18.3,0.1999999999999993,Big Sky,Big Sky,726.0,473.6,31.0,33.0,same_position_group_and_usage_within_5_pct
+Kenyon Aguino,Mark Lavrenov,Montana,Sacramento State,2026,Forward,18.1,18.4,0.29999999999999716,Big Sky,Big Sky,726.0,802.9,31.0,31.0,same_position_group_and_usage_within_5_pct
+Kenyon Aguino,Ibu Yamazaki,Montana,Northern Colorado,2026,Forward,18.1,17.6,0.5,Big Sky,Big Sky,726.0,840.1,31.0,31.0,same_position_group_and_usage_within_5_pct
+Kenyon Aguino,Traivar Jackson,Montana,Northern Arizona,2026,Forward,18.1,17.5,0.6000000000000014,Big Sky,Big Sky,726.0,704.0,31.0,32.0,same_position_group_and_usage_within_5_pct
+Kenyon Aguino,Viljami Vartiainen,Montana,Weber State,2026,Forward,18.1,17.4,0.7000000000000028,Big Sky,Big Sky,726.0,742.5,31.0,25.0,same_position_group_and_usage_within_5_pct
+Kenyon Aguino,Jaden Steppe,Montana,Montana State,2026,Forward,18.1,19.0,0.8999999999999986,Big Sky,Big Sky,726.0,483.6,31.0,32.0,same_position_group_and_usage_within_5_pct
+Kenyon Aguino,Calum Rutherfurd,Montana,Montana State,2026,Forward,18.1,17.2,0.9000000000000021,Big Sky,Big Sky,726.0,15.0,31.0,5.0,same_position_group_and_usage_within_5_pct
+Kenyon Aguino,Waka Mbatch,Montana,Montana State,2026,Forward,18.1,19.1,1.0,Big Sky,Big Sky,726.0,137.5,31.0,11.0,same_position_group_and_usage_within_5_pct
+Kenyon Aguino,Malek Gomma,Montana,Weber State,2026,Forward,18.1,16.9,1.2000000000000028,Big Sky,Big Sky,726.0,771.9,31.0,31.0,same_position_group_and_usage_within_5_pct
+Kenyon Aguino,Hunter Caldwell,Montana,Northern Colorado,2026,Forward,18.1,19.4,1.2999999999999972,Big Sky,Big Sky,726.0,75.60000000000001,31.0,14.0,same_position_group_and_usage_within_5_pct
+Kenyon Aguino,Nigel Burris,Montana,Weber State,2026,Forward,18.1,19.5,1.3999999999999986,Big Sky,Big Sky,726.0,716.1,31.0,31.0,same_position_group_and_usage_within_5_pct
+Kenyon Aguino,Egan Shields,Montana,Northern Colorado,2026,Forward,18.1,16.5,1.6000000000000014,Big Sky,Big Sky,726.0,531.0,31.0,30.0,same_position_group_and_usage_within_5_pct
+Kenyon Aguino,Diego Campisano,Montana,Northern Arizona,2026,Forward,18.1,20.5,2.3999999999999986,Big Sky,Big Sky,726.0,465.4,31.0,26.0,same_position_group_and_usage_within_5_pct
+Kenyon Aguino,Seth Joba,Montana,Idaho,2026,Forward,18.1,15.7,2.400000000000002,Big Sky,Big Sky,726.0,570.0,31.0,33.0,same_position_group_and_usage_within_5_pct
+Kenyon Aguino,Ring Nyeri,Montana,Northern Colorado,2026,Forward,18.1,15.7,2.400000000000002,Big Sky,Big Sky,726.0,790.5,31.0,31.0,same_position_group_and_usage_within_5_pct
+Kenyon Aguino,Tre Vaughn Minott,Montana,Portland State,2026,Forward,18.1,15.4,2.700000000000001,Big Sky,Big Sky,726.0,829.4000000000001,31.0,30.0,same_position_group_and_usage_within_5_pct
+Kenyon Aguino,Brody Rowbury,Montana,Idaho,2026,Forward,18.1,14.7,3.400000000000002,Big Sky,Big Sky,726.0,805.0,31.0,33.0,same_position_group_and_usage_within_5_pct
+Kenyon Aguino,Brayden Barron,Montana,Portland State,2026,Forward,18.1,14.0,4.100000000000001,Big Sky,Big Sky,726.0,86.0,31.0,20.0,same_position_group_and_usage_within_5_pct
+Kenyon Aguino,Blake Daberkow,Montana,Idaho State,2026,Forward,18.1,22.4,4.299999999999997,Big Sky,Big Sky,726.0,248.0,31.0,32.0,same_position_group_and_usage_within_5_pct
+Kenyon Aguino,Brandon Gardner,Montana,Sacramento State,2026,Forward,18.1,13.8,4.300000000000001,Big Sky,Big Sky,726.0,249.6,31.0,16.0,same_position_group_and_usage_within_5_pct
+Kenyon Aguino,Shaqir Oneal,Montana,Sacramento State,2026,Forward,18.1,13.8,4.300000000000001,Big Sky,Big Sky,726.0,601.4,31.0,31.0,same_position_group_and_usage_within_5_pct
+Kenyon Aguino,Chris Hodges,Montana,Montana State,2026,Forward,18.1,13.6,4.500000000000002,Big Sky,Big Sky,726.0,728.5,31.0,32.0,same_position_group_and_usage_within_5_pct
+Kenyon Aguino,Jeremiah Nyarko,Montana,Sacramento State,2026,Forward,18.1,13.6,4.500000000000002,Big Sky,Big Sky,726.0,25.0,31.0,5.0,same_position_group_and_usage_within_5_pct
+Kenyon Aguino,Connor Hollenbeck,Montana,Idaho State,2026,Forward,18.1,22.7,4.599999999999998,Big Sky,Big Sky,726.0,953.6,31.0,33.0,same_position_group_and_usage_within_5_pct
+Money Williams,Gus Etchison,Montana,Idaho State,2026,Guard,33.2,35.6,2.3999999999999986,Big Sky,Big Sky,960.0,406.1,31.0,32.0,same_position_group_and_usage_within_5_pct
+Tejon Sawyer,Nigel Burris,Montana,Weber State,2026,Forward,19.7,19.5,0.1999999999999993,Big Sky,Big Sky,849.0,716.1,31.0,31.0,same_position_group_and_usage_within_5_pct
+Tejon Sawyer,Hunter Caldwell,Montana,Northern Colorado,2026,Forward,19.7,19.4,0.3000000000000007,Big Sky,Big Sky,849.0,75.60000000000001,31.0,14.0,same_position_group_and_usage_within_5_pct
+Tejon Sawyer,Waka Mbatch,Montana,Montana State,2026,Forward,19.7,19.1,0.5999999999999979,Big Sky,Big Sky,849.0,137.5,31.0,11.0,same_position_group_and_usage_within_5_pct
+Tejon Sawyer,Jaden Steppe,Montana,Montana State,2026,Forward,19.7,19.0,0.6999999999999993,Big Sky,Big Sky,849.0,483.6,31.0,32.0,same_position_group_and_usage_within_5_pct
+Tejon Sawyer,Diego Campisano,Montana,Northern Arizona,2026,Forward,19.7,20.5,0.8000000000000007,Big Sky,Big Sky,849.0,465.4,31.0,26.0,same_position_group_and_usage_within_5_pct
+Tejon Sawyer,Mark Lavrenov,Montana,Sacramento State,2026,Forward,19.7,18.4,1.3000000000000007,Big Sky,Big Sky,849.0,802.9,31.0,31.0,same_position_group_and_usage_within_5_pct
+Tejon Sawyer,Evan Otten,Montana,Idaho State,2026,Forward,19.7,18.3,1.3999999999999986,Big Sky,Big Sky,849.0,473.6,31.0,33.0,same_position_group_and_usage_within_5_pct
+Tejon Sawyer,David Hansen,Montana,Weber State,2026,Forward,19.7,18.1,1.5999999999999979,Big Sky,Big Sky,849.0,140.0,31.0,25.0,same_position_group_and_usage_within_5_pct
+Tejon Sawyer,Emmett Marquardt,Montana,Eastern Washington,2026,Forward,19.7,18.0,1.6999999999999993,Big Sky,Big Sky,849.0,444.0,31.0,28.0,same_position_group_and_usage_within_5_pct
+Tejon Sawyer,Ibu Yamazaki,Montana,Northern Colorado,2026,Forward,19.7,17.6,2.099999999999998,Big Sky,Big Sky,849.0,840.1,31.0,31.0,same_position_group_and_usage_within_5_pct
+Tejon Sawyer,Traivar Jackson,Montana,Northern Arizona,2026,Forward,19.7,17.5,2.1999999999999993,Big Sky,Big Sky,849.0,704.0,31.0,32.0,same_position_group_and_usage_within_5_pct
+Tejon Sawyer,Viljami Vartiainen,Montana,Weber State,2026,Forward,19.7,17.4,2.3000000000000007,Big Sky,Big Sky,849.0,742.5,31.0,25.0,same_position_group_and_usage_within_5_pct
+Tejon Sawyer,Calum Rutherfurd,Montana,Montana State,2026,Forward,19.7,17.2,2.5,Big Sky,Big Sky,849.0,15.0,31.0,5.0,same_position_group_and_usage_within_5_pct
+Tejon Sawyer,Blake Daberkow,Montana,Idaho State,2026,Forward,19.7,22.4,2.6999999999999993,Big Sky,Big Sky,849.0,248.0,31.0,32.0,same_position_group_and_usage_within_5_pct
+Tejon Sawyer,Malek Gomma,Montana,Weber State,2026,Forward,19.7,16.9,2.8000000000000007,Big Sky,Big Sky,849.0,771.9,31.0,31.0,same_position_group_and_usage_within_5_pct
+Tejon Sawyer,Connor Hollenbeck,Montana,Idaho State,2026,Forward,19.7,22.7,3.0,Big Sky,Big Sky,849.0,953.6,31.0,33.0,same_position_group_and_usage_within_5_pct
+Tejon Sawyer,Egan Shields,Montana,Northern Colorado,2026,Forward,19.7,16.5,3.1999999999999993,Big Sky,Big Sky,849.0,531.0,31.0,30.0,same_position_group_and_usage_within_5_pct
+Tejon Sawyer,Jackson Rasmussen,Montana,Idaho,2026,Forward,19.7,23.2,3.5,Big Sky,Big Sky,849.0,995.0,31.0,32.0,same_position_group_and_usage_within_5_pct
+Tejon Sawyer,Seth Joba,Montana,Idaho,2026,Forward,19.7,15.7,4.0,Big Sky,Big Sky,849.0,570.0,31.0,33.0,same_position_group_and_usage_within_5_pct
+Tejon Sawyer,Ring Nyeri,Montana,Northern Colorado,2026,Forward,19.7,15.7,4.0,Big Sky,Big Sky,849.0,790.5,31.0,31.0,same_position_group_and_usage_within_5_pct
+Tejon Sawyer,Tre Vaughn Minott,Montana,Portland State,2026,Forward,19.7,15.4,4.299999999999999,Big Sky,Big Sky,849.0,829.4000000000001,31.0,30.0,same_position_group_and_usage_within_5_pct
+Tejon Sawyer,Bourgeois Tshilobo,Montana,Weber State,2026,Forward,19.7,24.3,4.600000000000001,Big Sky,Big Sky,849.0,32.9,31.0,7.0,same_position_group_and_usage_within_5_pct
+Tejon Sawyer,Brock Wisne,Montana,Northern Colorado,2026,Forward,19.7,24.5,4.800000000000001,Big Sky,Big Sky,849.0,957.0,31.0,30.0,same_position_group_and_usage_within_5_pct
+Tejon Sawyer,Brody Rowbury,Montana,Idaho,2026,Forward,19.7,14.7,5.0,Big Sky,Big Sky,849.0,805.0,31.0,33.0,same_position_group_and_usage_within_5_pct
+Trae Taylor,Brody Rowbury,Montana,Idaho,2026,Forward,14.7,14.7,0.0,Big Sky,Big Sky,210.6,805.0,26.0,33.0,same_position_group_and_usage_within_5_pct
+Trae Taylor,Brayden Barron,Montana,Portland State,2026,Forward,14.7,14.0,0.6999999999999993,Big Sky,Big Sky,210.6,86.0,26.0,20.0,same_position_group_and_usage_within_5_pct
+Trae Taylor,Tre Vaughn Minott,Montana,Portland State,2026,Forward,14.7,15.4,0.7000000000000011,Big Sky,Big Sky,210.6,829.4000000000001,26.0,30.0,same_position_group_and_usage_within_5_pct
+Trae Taylor,Brandon Gardner,Montana,Sacramento State,2026,Forward,14.7,13.8,0.8999999999999986,Big Sky,Big Sky,210.6,249.6,26.0,16.0,same_position_group_and_usage_within_5_pct
+Trae Taylor,Shaqir Oneal,Montana,Sacramento State,2026,Forward,14.7,13.8,0.8999999999999986,Big Sky,Big Sky,210.6,601.4,26.0,31.0,same_position_group_and_usage_within_5_pct
+Trae Taylor,Seth Joba,Montana,Idaho,2026,Forward,14.7,15.7,1.0,Big Sky,Big Sky,210.6,570.0,26.0,33.0,same_position_group_and_usage_within_5_pct
+Trae Taylor,Ring Nyeri,Montana,Northern Colorado,2026,Forward,14.7,15.7,1.0,Big Sky,Big Sky,210.6,790.5,26.0,31.0,same_position_group_and_usage_within_5_pct
+Trae Taylor,Chris Hodges,Montana,Montana State,2026,Forward,14.7,13.6,1.0999999999999996,Big Sky,Big Sky,210.6,728.5,26.0,32.0,same_position_group_and_usage_within_5_pct
+Trae Taylor,Jeremiah Nyarko,Montana,Sacramento State,2026,Forward,14.7,13.6,1.0999999999999996,Big Sky,Big Sky,210.6,25.0,26.0,5.0,same_position_group_and_usage_within_5_pct
+Trae Taylor,Egan Shields,Montana,Northern Colorado,2026,Forward,14.7,16.5,1.8000000000000007,Big Sky,Big Sky,210.6,531.0,26.0,30.0,same_position_group_and_usage_within_5_pct
+Trae Taylor,Malek Gomma,Montana,Weber State,2026,Forward,14.7,16.9,2.1999999999999993,Big Sky,Big Sky,210.6,771.9,26.0,31.0,same_position_group_and_usage_within_5_pct
+Trae Taylor,Calum Rutherfurd,Montana,Montana State,2026,Forward,14.7,17.2,2.5,Big Sky,Big Sky,210.6,15.0,26.0,5.0,same_position_group_and_usage_within_5_pct
+Trae Taylor,Shaumba Ngoyi,Montana,Eastern Washington,2026,Forward,14.7,12.0,2.6999999999999993,Big Sky,Big Sky,210.6,83.0,26.0,20.0,same_position_group_and_usage_within_5_pct
+Trae Taylor,Viljami Vartiainen,Montana,Weber State,2026,Forward,14.7,17.4,2.6999999999999993,Big Sky,Big Sky,210.6,742.5,26.0,25.0,same_position_group_and_usage_within_5_pct
+Trae Taylor,Ewan Steele,Montana,Idaho,2026,Forward,14.7,11.9,2.799999999999999,Big Sky,Big Sky,210.6,96.0,26.0,14.0,same_position_group_and_usage_within_5_pct
+Trae Taylor,Traivar Jackson,Montana,Northern Arizona,2026,Forward,14.7,17.5,2.8000000000000007,Big Sky,Big Sky,210.6,704.0,26.0,32.0,same_position_group_and_usage_within_5_pct
+Trae Taylor,Ibu Yamazaki,Montana,Northern Colorado,2026,Forward,14.7,17.6,2.900000000000002,Big Sky,Big Sky,210.6,840.1,26.0,31.0,same_position_group_and_usage_within_5_pct
+Trae Taylor,Charles Chukwu,Montana,Portland State,2026,Forward,14.7,11.7,3.0,Big Sky,Big Sky,210.6,84.0,26.0,21.0,same_position_group_and_usage_within_5_pct
+Trae Taylor,Emmett Marquardt,Montana,Eastern Washington,2026,Forward,14.7,18.0,3.3000000000000007,Big Sky,Big Sky,210.6,444.0,26.0,28.0,same_position_group_and_usage_within_5_pct
+Trae Taylor,David Hansen,Montana,Weber State,2026,Forward,14.7,18.1,3.400000000000002,Big Sky,Big Sky,210.6,140.0,26.0,25.0,same_position_group_and_usage_within_5_pct
+Trae Taylor,Evan Otten,Montana,Idaho State,2026,Forward,14.7,18.3,3.6000000000000014,Big Sky,Big Sky,210.6,473.6,26.0,33.0,same_position_group_and_usage_within_5_pct
+Trae Taylor,Mark Lavrenov,Montana,Sacramento State,2026,Forward,14.7,18.4,3.6999999999999993,Big Sky,Big Sky,210.6,802.9,26.0,31.0,same_position_group_and_usage_within_5_pct
+Trae Taylor,Declan Cutler,Montana,Weber State,2026,Forward,14.7,10.6,4.1,Big Sky,Big Sky,210.6,189.8,26.0,26.0,same_position_group_and_usage_within_5_pct
+Trae Taylor,Jaden Steppe,Montana,Montana State,2026,Forward,14.7,19.0,4.300000000000001,Big Sky,Big Sky,210.6,483.6,26.0,32.0,same_position_group_and_usage_within_5_pct
+Trae Taylor,Waka Mbatch,Montana,Montana State,2026,Forward,14.7,19.1,4.400000000000002,Big Sky,Big Sky,210.6,137.5,26.0,11.0,same_position_group_and_usage_within_5_pct
+Trae Taylor,Hunter Caldwell,Montana,Northern Colorado,2026,Forward,14.7,19.4,4.699999999999999,Big Sky,Big Sky,210.6,75.60000000000001,26.0,14.0,same_position_group_and_usage_within_5_pct
+Trae Taylor,Nigel Burris,Montana,Weber State,2026,Forward,14.7,19.5,4.800000000000001,Big Sky,Big Sky,210.6,716.1,26.0,31.0,same_position_group_and_usage_within_5_pct
+Tyler Isaak,Lachlan Brewer,Montana,Idaho State,2026,Guard,14.3,14.7,0.3999999999999986,Big Sky,Big Sky,698.0,956.8,31.0,33.0,same_position_group_and_usage_within_5_pct
+Tyler Isaak,Brycen Long,Montana,Portland State,2026,Guard,14.3,14.7,0.3999999999999986,Big Sky,Big Sky,698.0,260.0,31.0,26.0,same_position_group_and_usage_within_5_pct
+Tyler Isaak,Brennan Peterson,Montana,Northern Arizona,2026,Guard,14.3,13.9,0.40000000000000036,Big Sky,Big Sky,698.0,620.8,31.0,32.0,same_position_group_and_usage_within_5_pct
+Tyler Isaak,Tanner Braketa,Montana,Northern Colorado,2026,Guard,14.3,14.9,0.5999999999999996,Big Sky,Big Sky,698.0,92.4,31.0,12.0,same_position_group_and_usage_within_5_pct
+Tyler Isaak,Isaiah Williams,Montana,Portland State,2026,Guard,14.3,13.7,0.6000000000000014,Big Sky,Big Sky,698.0,279.4,31.0,23.0,same_position_group_and_usage_within_5_pct
+Tyler Isaak,Tyler Powell,Montana,Eastern Washington,2026,Guard,14.3,15.0,0.6999999999999993,Big Sky,Big Sky,698.0,520.0,31.0,31.0,same_position_group_and_usage_within_5_pct
+Tyler Isaak,Chris Komin,Montana,Northern Arizona,2026,Guard,14.3,15.3,1.0,Big Sky,Big Sky,698.0,821.5,31.0,31.0,same_position_group_and_usage_within_5_pct
+Tyler Isaak,Oakland Fort,Montana,Northern Arizona,2026,Guard,14.3,15.4,1.0999999999999996,Big Sky,Big Sky,698.0,321.9,31.0,29.0,same_position_group_and_usage_within_5_pct
+Tyler Isaak,Erez Poran,Montana,Northern Arizona,2026,Guard,14.3,13.2,1.1000000000000014,Big Sky,Big Sky,698.0,71.5,31.0,13.0,same_position_group_and_usage_within_5_pct
+Tyler Isaak,Kelcy Phipps,Montana,Portland State,2026,Guard,14.3,13.2,1.1000000000000014,Big Sky,Big Sky,698.0,504.6,31.0,30.0,same_position_group_and_usage_within_5_pct
+Tyler Isaak,Miles Klapper,Montana,Idaho,2026,Guard,14.3,15.7,1.3999999999999986,Big Sky,Big Sky,698.0,341.0,31.0,27.0,same_position_group_and_usage_within_5_pct
+Tyler Isaak,Alex Dupre,Montana,Portland State,2026,Guard,14.3,12.8,1.5,Big Sky,Big Sky,698.0,431.2,31.0,29.0,same_position_group_and_usage_within_5_pct
+Tyler Isaak,Seth Amunrud,Montana,Montana State,2026,Guard,14.3,15.9,1.5999999999999996,Big Sky,Big Sky,698.0,503.7,31.0,24.0,same_position_group_and_usage_within_5_pct
+Tyler Isaak,Arman Madi,Montana,Sacramento State,2026,Guard,14.3,16.0,1.6999999999999993,Big Sky,Big Sky,698.0,654.0,31.0,30.0,same_position_group_and_usage_within_5_pct
+Tyler Isaak,Martin Kheil,Montana,Idaho State,2026,Guard,14.3,16.1,1.8000000000000007,Big Sky,Big Sky,698.0,882.0,31.0,31.0,same_position_group_and_usage_within_5_pct
+Tyler Isaak,Aidan Sevilla,Montana,Idaho,2026,Guard,14.3,16.4,2.099999999999998,Big Sky,Big Sky,698.0,132.0,31.0,22.0,same_position_group_and_usage_within_5_pct
+Tyler Isaak,Zach Bloch,Montana,Northern Colorado,2026,Guard,14.3,16.4,2.099999999999998,Big Sky,Big Sky,698.0,1004.4,31.0,31.0,same_position_group_and_usage_within_5_pct
+Tyler Isaak,Mozae Downing Rivers,Montana,Portland State,2026,Guard,14.3,12.1,2.200000000000001,Big Sky,Big Sky,698.0,100.8,31.0,18.0,same_position_group_and_usage_within_5_pct
+Tyler Isaak,Jack Payne,Montana,Idaho,2026,Guard,14.3,16.9,2.599999999999998,Big Sky,Big Sky,698.0,682.0,31.0,31.0,same_position_group_and_usage_within_5_pct
+Tyler Isaak,Colt Ness,Montana,Portland State,2026,Guard,14.3,16.9,2.599999999999998,Big Sky,Big Sky,698.0,56.0,31.0,10.0,same_position_group_and_usage_within_5_pct
+Tyler Isaak,Straton Rogers,Montana,Eastern Washington,2026,Guard,14.3,11.7,2.6000000000000014,Big Sky,Big Sky,698.0,687.0,31.0,31.0,same_position_group_and_usage_within_5_pct
+Tyler Isaak,Howie Keene,Montana,Montana State,2026,Guard,14.3,11.6,2.700000000000001,Big Sky,Big Sky,698.0,288.0,31.0,25.0,same_position_group_and_usage_within_5_pct
+Tyler Isaak,Cheikh Sow,Montana,Idaho State,2026,Guard,14.3,11.5,2.8000000000000007,Big Sky,Big Sky,698.0,528.0,31.0,31.0,same_position_group_and_usage_within_5_pct
+Tyler Isaak,Cole Scherer,Montana,Eastern Washington,2026,Guard,14.3,17.2,2.8999999999999986,Big Sky,Big Sky,698.0,217.0,31.0,27.0,same_position_group_and_usage_within_5_pct
+Tyler Isaak,Maddox Monson,Montana,Eastern Washington,2026,Guard,14.3,17.2,2.8999999999999986,Big Sky,Big Sky,698.0,44.0,31.0,17.0,same_position_group_and_usage_within_5_pct
+Tyler Isaak,Quin Patterson,Montana,Idaho State,2026,Guard,14.3,11.4,2.9000000000000004,Big Sky,Big Sky,698.0,210.0,31.0,25.0,same_position_group_and_usage_within_5_pct
+Tyler Isaak,Isaiah Bronson,Montana,Sacramento State,2026,Guard,14.3,11.3,3.0,Big Sky,Big Sky,698.0,21.0,31.0,6.0,same_position_group_and_usage_within_5_pct
+Tyler Isaak,Mataj Glover,Montana,Sacramento State,2026,Guard,14.3,17.4,3.099999999999998,Big Sky,Big Sky,698.0,394.4,31.0,29.0,same_position_group_and_usage_within_5_pct
+Tyler Isaak,Jeremiah Davis,Montana,Montana State,2026,Guard,14.3,17.7,3.3999999999999986,Big Sky,Big Sky,698.0,729.0,31.0,31.0,same_position_group_and_usage_within_5_pct
+Tyler Isaak,Jahni Summers,Montana,Sacramento State,2026,Guard,14.3,17.7,3.3999999999999986,Big Sky,Big Sky,698.0,799.8000000000001,31.0,31.0,same_position_group_and_usage_within_5_pct
+Tyler Isaak,Elijah Thomas,Montana,Eastern Washington,2026,Guard,14.3,10.9,3.4000000000000004,Big Sky,Big Sky,698.0,302.0,31.0,28.0,same_position_group_and_usage_within_5_pct
+Tyler Isaak,Trevon Blassingame,Montana,Idaho,2026,Guard,14.3,10.9,3.4000000000000004,Big Sky,Big Sky,698.0,526.0,31.0,32.0,same_position_group_and_usage_within_5_pct
+Tyler Isaak,Romari Robinson,Montana,Sacramento State,2026,Guard,14.3,10.8,3.5,Big Sky,Big Sky,698.0,266.4,31.0,24.0,same_position_group_and_usage_within_5_pct
+Tyler Isaak,Jojo Anderson,Montana,Eastern Washington,2026,Guard,14.3,18.1,3.8000000000000007,Big Sky,Big Sky,698.0,668.0,31.0,31.0,same_position_group_and_usage_within_5_pct
+Tyler Isaak,Vincent Delano,Montana,Northern Colorado,2026,Guard,14.3,18.1,3.8000000000000007,Big Sky,Big Sky,698.0,632.4,31.0,31.0,same_position_group_and_usage_within_5_pct
+Tyler Isaak,Ryan Abelman,Montana,Northern Arizona,2026,Guard,14.3,18.3,4.0,Big Sky,Big Sky,698.0,966.0,31.0,30.0,same_position_group_and_usage_within_5_pct
+Tyler Isaak,Sebastian Tidor,Montana,Portland State,2026,Guard,14.3,18.4,4.099999999999998,Big Sky,Big Sky,698.0,315.0,31.0,26.0,same_position_group_and_usage_within_5_pct
+Tyler Isaak,Cavin Holden,Montana,Montana State,2026,Guard,14.3,18.6,4.300000000000001,Big Sky,Big Sky,698.0,207.2,31.0,8.0,same_position_group_and_usage_within_5_pct
+Tyler Isaak,Duce Paschal,Montana,Weber State,2026,Guard,14.3,18.6,4.300000000000001,Big Sky,Big Sky,698.0,375.0,31.0,30.0,same_position_group_and_usage_within_5_pct
+Tyler Isaak,Jace Whiting,Montana,Weber State,2026,Guard,14.3,18.6,4.300000000000001,Big Sky,Big Sky,698.0,598.5,31.0,19.0,same_position_group_and_usage_within_5_pct
+Tyler Isaak,Johnny Radford,Montana,Eastern Washington,2026,Guard,14.3,18.7,4.399999999999999,Big Sky,Big Sky,698.0,581.0,31.0,31.0,same_position_group_and_usage_within_5_pct
+Tyler Isaak,Louis Bond,Montana,Idaho State,2026,Guard,14.3,18.8,4.5,Big Sky,Big Sky,698.0,299.0,31.0,24.0,same_position_group_and_usage_within_5_pct
+Tyler Isaak,Jamison Guerra,Montana,Idaho State,2026,Guard,14.3,19.1,4.800000000000001,Big Sky,Big Sky,698.0,825.6,31.0,33.0,same_position_group_and_usage_within_5_pct
+Tyler Thompson,Lachlan Brewer,Montana,Idaho State,2026,Guard,14.5,14.7,0.1999999999999993,Big Sky,Big Sky,871.0,956.8,30.0,33.0,same_position_group_and_usage_within_5_pct
+Tyler Thompson,Brycen Long,Montana,Portland State,2026,Guard,14.5,14.7,0.1999999999999993,Big Sky,Big Sky,871.0,260.0,30.0,26.0,same_position_group_and_usage_within_5_pct
+Tyler Thompson,Tanner Braketa,Montana,Northern Colorado,2026,Guard,14.5,14.9,0.40000000000000036,Big Sky,Big Sky,871.0,92.4,30.0,12.0,same_position_group_and_usage_within_5_pct
+Tyler Thompson,Tyler Powell,Montana,Eastern Washington,2026,Guard,14.5,15.0,0.5,Big Sky,Big Sky,871.0,520.0,30.0,31.0,same_position_group_and_usage_within_5_pct
+Tyler Thompson,Brennan Peterson,Montana,Northern Arizona,2026,Guard,14.5,13.9,0.5999999999999996,Big Sky,Big Sky,871.0,620.8,30.0,32.0,same_position_group_and_usage_within_5_pct
+Tyler Thompson,Chris Komin,Montana,Northern Arizona,2026,Guard,14.5,15.3,0.8000000000000007,Big Sky,Big Sky,871.0,821.5,30.0,31.0,same_position_group_and_usage_within_5_pct
+Tyler Thompson,Isaiah Williams,Montana,Portland State,2026,Guard,14.5,13.7,0.8000000000000007,Big Sky,Big Sky,871.0,279.4,30.0,23.0,same_position_group_and_usage_within_5_pct
+Tyler Thompson,Oakland Fort,Montana,Northern Arizona,2026,Guard,14.5,15.4,0.9000000000000004,Big Sky,Big Sky,871.0,321.9,30.0,29.0,same_position_group_and_usage_within_5_pct
+Tyler Thompson,Miles Klapper,Montana,Idaho,2026,Guard,14.5,15.7,1.1999999999999993,Big Sky,Big Sky,871.0,341.0,30.0,27.0,same_position_group_and_usage_within_5_pct
+Tyler Thompson,Erez Poran,Montana,Northern Arizona,2026,Guard,14.5,13.2,1.3000000000000007,Big Sky,Big Sky,871.0,71.5,30.0,13.0,same_position_group_and_usage_within_5_pct
+Tyler Thompson,Kelcy Phipps,Montana,Portland State,2026,Guard,14.5,13.2,1.3000000000000007,Big Sky,Big Sky,871.0,504.6,30.0,30.0,same_position_group_and_usage_within_5_pct
+Tyler Thompson,Seth Amunrud,Montana,Montana State,2026,Guard,14.5,15.9,1.4000000000000004,Big Sky,Big Sky,871.0,503.7,30.0,24.0,same_position_group_and_usage_within_5_pct
+Tyler Thompson,Arman Madi,Montana,Sacramento State,2026,Guard,14.5,16.0,1.5,Big Sky,Big Sky,871.0,654.0,30.0,30.0,same_position_group_and_usage_within_5_pct
+Tyler Thompson,Martin Kheil,Montana,Idaho State,2026,Guard,14.5,16.1,1.6000000000000014,Big Sky,Big Sky,871.0,882.0,30.0,31.0,same_position_group_and_usage_within_5_pct
+Tyler Thompson,Alex Dupre,Montana,Portland State,2026,Guard,14.5,12.8,1.6999999999999993,Big Sky,Big Sky,871.0,431.2,30.0,29.0,same_position_group_and_usage_within_5_pct
+Tyler Thompson,Aidan Sevilla,Montana,Idaho,2026,Guard,14.5,16.4,1.8999999999999986,Big Sky,Big Sky,871.0,132.0,30.0,22.0,same_position_group_and_usage_within_5_pct
+Tyler Thompson,Zach Bloch,Montana,Northern Colorado,2026,Guard,14.5,16.4,1.8999999999999986,Big Sky,Big Sky,871.0,1004.4,30.0,31.0,same_position_group_and_usage_within_5_pct
+Tyler Thompson,Jack Payne,Montana,Idaho,2026,Guard,14.5,16.9,2.3999999999999986,Big Sky,Big Sky,871.0,682.0,30.0,31.0,same_position_group_and_usage_within_5_pct
+Tyler Thompson,Colt Ness,Montana,Portland State,2026,Guard,14.5,16.9,2.3999999999999986,Big Sky,Big Sky,871.0,56.0,30.0,10.0,same_position_group_and_usage_within_5_pct
+Tyler Thompson,Mozae Downing Rivers,Montana,Portland State,2026,Guard,14.5,12.1,2.4000000000000004,Big Sky,Big Sky,871.0,100.8,30.0,18.0,same_position_group_and_usage_within_5_pct
+Tyler Thompson,Cole Scherer,Montana,Eastern Washington,2026,Guard,14.5,17.2,2.6999999999999993,Big Sky,Big Sky,871.0,217.0,30.0,27.0,same_position_group_and_usage_within_5_pct
+Tyler Thompson,Maddox Monson,Montana,Eastern Washington,2026,Guard,14.5,17.2,2.6999999999999993,Big Sky,Big Sky,871.0,44.0,30.0,17.0,same_position_group_and_usage_within_5_pct
+Tyler Thompson,Straton Rogers,Montana,Eastern Washington,2026,Guard,14.5,11.7,2.8000000000000007,Big Sky,Big Sky,871.0,687.0,30.0,31.0,same_position_group_and_usage_within_5_pct
+Tyler Thompson,Mataj Glover,Montana,Sacramento State,2026,Guard,14.5,17.4,2.8999999999999986,Big Sky,Big Sky,871.0,394.4,30.0,29.0,same_position_group_and_usage_within_5_pct
+Tyler Thompson,Howie Keene,Montana,Montana State,2026,Guard,14.5,11.6,2.9000000000000004,Big Sky,Big Sky,871.0,288.0,30.0,25.0,same_position_group_and_usage_within_5_pct
+Tyler Thompson,Cheikh Sow,Montana,Idaho State,2026,Guard,14.5,11.5,3.0,Big Sky,Big Sky,871.0,528.0,30.0,31.0,same_position_group_and_usage_within_5_pct
+Tyler Thompson,Quin Patterson,Montana,Idaho State,2026,Guard,14.5,11.4,3.0999999999999996,Big Sky,Big Sky,871.0,210.0,30.0,25.0,same_position_group_and_usage_within_5_pct
+Tyler Thompson,Jeremiah Davis,Montana,Montana State,2026,Guard,14.5,17.7,3.1999999999999993,Big Sky,Big Sky,871.0,729.0,30.0,31.0,same_position_group_and_usage_within_5_pct
+Tyler Thompson,Isaiah Bronson,Montana,Sacramento State,2026,Guard,14.5,11.3,3.1999999999999993,Big Sky,Big Sky,871.0,21.0,30.0,6.0,same_position_group_and_usage_within_5_pct
+Tyler Thompson,Jahni Summers,Montana,Sacramento State,2026,Guard,14.5,17.7,3.1999999999999993,Big Sky,Big Sky,871.0,799.8000000000001,30.0,31.0,same_position_group_and_usage_within_5_pct
+Tyler Thompson,Elijah Thomas,Montana,Eastern Washington,2026,Guard,14.5,10.9,3.5999999999999996,Big Sky,Big Sky,871.0,302.0,30.0,28.0,same_position_group_and_usage_within_5_pct
+Tyler Thompson,Trevon Blassingame,Montana,Idaho,2026,Guard,14.5,10.9,3.5999999999999996,Big Sky,Big Sky,871.0,526.0,30.0,32.0,same_position_group_and_usage_within_5_pct
+Tyler Thompson,Jojo Anderson,Montana,Eastern Washington,2026,Guard,14.5,18.1,3.6000000000000014,Big Sky,Big Sky,871.0,668.0,30.0,31.0,same_position_group_and_usage_within_5_pct
+Tyler Thompson,Vincent Delano,Montana,Northern Colorado,2026,Guard,14.5,18.1,3.6000000000000014,Big Sky,Big Sky,871.0,632.4,30.0,31.0,same_position_group_and_usage_within_5_pct
+Tyler Thompson,Romari Robinson,Montana,Sacramento State,2026,Guard,14.5,10.8,3.6999999999999993,Big Sky,Big Sky,871.0,266.4,30.0,24.0,same_position_group_and_usage_within_5_pct
+Tyler Thompson,Ryan Abelman,Montana,Northern Arizona,2026,Guard,14.5,18.3,3.8000000000000007,Big Sky,Big Sky,871.0,966.0,30.0,30.0,same_position_group_and_usage_within_5_pct
+Tyler Thompson,Sebastian Tidor,Montana,Portland State,2026,Guard,14.5,18.4,3.8999999999999986,Big Sky,Big Sky,871.0,315.0,30.0,26.0,same_position_group_and_usage_within_5_pct
+Tyler Thompson,Cavin Holden,Montana,Montana State,2026,Guard,14.5,18.6,4.100000000000001,Big Sky,Big Sky,871.0,207.2,30.0,8.0,same_position_group_and_usage_within_5_pct
+Tyler Thompson,Duce Paschal,Montana,Weber State,2026,Guard,14.5,18.6,4.100000000000001,Big Sky,Big Sky,871.0,375.0,30.0,30.0,same_position_group_and_usage_within_5_pct
+Tyler Thompson,Jace Whiting,Montana,Weber State,2026,Guard,14.5,18.6,4.100000000000001,Big Sky,Big Sky,871.0,598.5,30.0,19.0,same_position_group_and_usage_within_5_pct
+Tyler Thompson,Johnny Radford,Montana,Eastern Washington,2026,Guard,14.5,18.7,4.199999999999999,Big Sky,Big Sky,871.0,581.0,30.0,31.0,same_position_group_and_usage_within_5_pct
+Tyler Thompson,Louis Bond,Montana,Idaho State,2026,Guard,14.5,18.8,4.300000000000001,Big Sky,Big Sky,871.0,299.0,30.0,24.0,same_position_group_and_usage_within_5_pct
+Tyler Thompson,Jamison Guerra,Montana,Idaho State,2026,Guard,14.5,19.1,4.600000000000001,Big Sky,Big Sky,871.0,825.6,30.0,33.0,same_position_group_and_usage_within_5_pct
+Tyler Thompson,Ardarius Grayson,Montana,Weber State,2026,Guard,14.5,19.5,5.0,Big Sky,Big Sky,871.0,402.0,30.0,30.0,same_position_group_and_usage_within_5_pct

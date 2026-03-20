@@ -1,0 +1,14 @@
+player_name,team_name,season,conference_name,position_group,archetype,ortg_percentile,ts_pct_percentile,efg_pct_percentile,turnover_rate_percentile,ortg_weighted_score,ts_pct_weighted_score,efg_pct_weighted_score,turnover_rate_weighted_score,ortg_source_column,ts_pct_source_column,efg_pct_source_column,turnover_rate_source_column,efficiency_score
+Amari Jedkins,Montana,2026,Big Sky,Forward,,20.0,25.0,25.0,92.31,7.0,7.5,6.25,9.23,ortg_percentile,ts_pct_percentile,efg_pct_percentile,turnover_rate,29.98
+Brooklyn Hicks,Montana,2026,Big Sky,Guard,,41.67,75.0,80.56,84.62,14.58,22.5,20.14,8.46,ortg_percentile,ts_pct_percentile,efg_pct_percentile,turnover_rate,65.68
+Chase Henderson,Montana,2026,Big Sky,Guard,,5.26,67.11,73.68,11.54,1.84,20.13,18.42,1.15,ortg_percentile,ts_pct_percentile,efg_pct_percentile,turnover_rate,41.55
+Connor Dick,Montana,2026,Big Sky,Guard,,29.35,47.83,28.26,26.92,10.27,14.35,7.07,2.69,ortg_percentile,ts_pct_percentile,efg_pct_percentile,turnover_rate,34.38
+Courtney Anderson,Montana,2026,Big Sky,Guard,,86.11,100.0,100.0,53.85,30.14,30.0,25.0,5.38,ortg_percentile,ts_pct_percentile,efg_pct_percentile,turnover_rate,90.52
+Grant Kepley,Montana,2026,Big Sky,Guard,,15.38,23.08,20.51,11.54,5.38,6.92,5.13,1.15,ortg_percentile,ts_pct_percentile,efg_pct_percentile,turnover_rate,18.59
+Kadyn Betts,Montana,2026,Big Sky,Forward,,8.33,100.0,100.0,0.0,2.92,30.0,25.0,0.0,ortg_percentile,ts_pct_percentile,efg_pct_percentile,turnover_rate,57.92
+Kenyon Aguino,Montana,2026,Big Sky,Forward,,57.69,69.23,69.23,69.23,20.19,20.77,17.31,6.92,ortg_percentile,ts_pct_percentile,efg_pct_percentile,turnover_rate,65.19
+Money Williams,Montana,2026,Big Sky,Guard,,0.0,100.0,100.0,26.92,0.0,30.0,25.0,2.69,ortg_percentile,ts_pct_percentile,efg_pct_percentile,turnover_rate,57.69
+Tejon Sawyer,Montana,2026,Big Sky,Forward,,20.83,77.08,79.17,46.15,7.29,23.12,19.79,4.62,ortg_percentile,ts_pct_percentile,efg_pct_percentile,turnover_rate,54.82
+Trae Taylor,Montana,2026,Big Sky,Forward,,37.04,62.96,88.89,38.46,12.96,18.89,22.22,3.85,ortg_percentile,ts_pct_percentile,efg_pct_percentile,turnover_rate,57.92
+Tyler Isaak,Montana,2026,Big Sky,Guard,,81.4,65.12,48.84,76.92,28.49,19.53,12.21,7.69,ortg_percentile,ts_pct_percentile,efg_pct_percentile,turnover_rate,67.92
+Tyler Thompson,Montana,2026,Big Sky,Guard,,45.45,86.36,86.36,61.54,15.91,25.91,21.59,6.15,ortg_percentile,ts_pct_percentile,efg_pct_percentile,turnover_rate,69.56

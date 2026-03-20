@@ -1,0 +1,14 @@
+player_name,team_name,season,position_group,player_archetype,shooting_score,playmaking_score,rebounding_score,defense_score,efficiency_score,overall_score_100,letter_grade,shooting_score_final_weight,playmaking_score_final_weight,rebounding_score_final_weight,defense_score_final_weight,efficiency_score_final_weight
+Courtney Anderson,Montana,2026,Guard,Off-Ball Shooter,100.0,22.46,46.39,40.97,90.52,62.75,D-,0.25,0.2,0.15,0.2,0.2
+Tyler Thompson,Montana,2026,Guard,Off-Ball Shooter,87.27,46.64,67.5,37.5,69.56,62.68,D-,0.25,0.2,0.15,0.2,0.2
+Tyler Isaak,Montana,2026,Guard,Secondary Playmaker,54.77,78.03,52.38,34.13,67.92,57.57,F,0.25,0.2,0.15,0.2,0.2
+Kadyn Betts,Montana,2026,Forward,Scoring Forward,95.0,42.25,33.33,40.21,57.92,56.83,F,0.25,0.2,0.15,0.2,0.2
+Brooklyn Hicks,Montana,2026,Guard,Off-Ball Shooter,64.72,35.04,82.64,36.04,65.68,55.93,F,0.25,0.2,0.15,0.2,0.2
+Kenyon Aguino,Montana,2026,Forward,Scoring Forward,56.54,81.2,31.73,37.02,65.19,55.58,F,0.25,0.2,0.15,0.2,0.2
+Tejon Sawyer,Montana,2026,Forward,3-and-D Forward,67.5,58.71,38.02,33.13,54.82,51.91,F,0.25,0.2,0.15,0.2,0.2
+Money Williams,Montana,2026,Guard,Primary Creator,45.0,50.0,85.0,25.0,57.69,50.54,F,0.25,0.2,0.15,0.2,0.2
+Chase Henderson,Montana,2026,Guard,Primary Creator,56.58,74.58,9.28,23.35,41.55,43.43,F,0.25,0.2,0.15,0.2,0.2
+Trae Taylor,Montana,2026,Forward,Scoring Forward,45.65,18.8,42.59,50.19,57.92,43.18,F,0.25,0.2,0.15,0.2,0.2
+Connor Dick,Montana,2026,Guard,Secondary Playmaker,28.26,36.43,79.13,48.97,34.38,42.89,F,0.25,0.2,0.15,0.2,0.2
+Grant Kepley,Montana,2026,Guard,Primary Creator,22.69,92.16,60.38,28.08,18.59,42.5,F,0.25,0.2,0.15,0.2,0.2
+Amari Jedkins,Montana,2026,Forward,3-and-D Forward,48.25,8.99,38.75,48.25,29.98,35.32,F,0.25,0.2,0.15,0.2,0.2

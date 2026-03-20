@@ -1,41 +1,71 @@
 """
 File: build_position_groups.py
-Last Modified: 2026-03-04
-Purpose: Build standardized player position groups for Montana players and the Big Sky comparison pool by converting raw position labels into the project's unified Guard and Forward position groups for use in peer grouping, archetype assignment, and downstream evaluation engine scoring in the NCAA Next Man Up project.
+
+Build player position groups for the NCAA Next Man Up project.
+
+Purpose:
+- Create a unified player position-group dataset for Montana players and the
+  Big Sky comparison pool.
+- Standardize all players into only two position groups:
+    * Guard
+    * Forward
+- Preserve the original `position_raw` field.
+- Export a reusable engineered dataset for downstream peer grouping,
+  archetype assignment, and evaluation scripts.
 
 Inputs:
 - data/processed/player_data/player_profile_montana.csv
 - data/processed/comparison_sets/player_profile_big_sky.csv
 
-Outputs:
+Output:
 - data/features/player_position_groups.csv
 """
+
 from __future__ import annotations
 
 from pathlib import Path
-from typing import Optional
+from typing import Iterable
 
 import pandas as pd
 
+
+# =========================
+# PATHS
+# =========================
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 
 MONTANA_PROFILE_PATH = (
     PROJECT_ROOT / "data" / "processed" / "player_data" / "player_profile_montana.csv"
 )
+
 BIG_SKY_PROFILE_PATH = (
     PROJECT_ROOT / "data" / "processed" / "comparison_sets" / "player_profile_big_sky.csv"
 )
-OUTPUT_PATH = PROJECT_ROOT / "data" / "features" / "player_position_groups.csv"
 
-REQUIRED_COLUMNS = {
+OUTPUT_PATH = (
+    PROJECT_ROOT / "data" / "features" / "player_position_groups.csv"
+)
+
+
+# =========================
+# REQUIRED COLUMNS
+# =========================
+
+REQUIRED_COLUMNS = [
     "player_name",
     "team_name",
     "season",
     "position_raw",
-}
+]
 
-OUTPUT_COLUMNS = [
+OPTIONAL_COLUMNS = [
+    "class",
+    "height",
+    "weight",
+]
+
+STANDARD_OUTPUT_COLUMNS = [
     "player_name",
     "team_name",
     "season",
@@ -44,198 +74,190 @@ OUTPUT_COLUMNS = [
     "height",
     "weight",
     "position_group",
-    "position_group_source",
+    "position_group_rule",
+    "source_dataset",
 ]
 
 
-def _read_csv(path: Path) -> pd.DataFrame:
+# =========================
+# VALIDATION HELPERS
+# =========================
+
+def _validate_file_exists(path: Path) -> None:
     if not path.exists():
-        raise FileNotFoundError(f"Required input file not found: {path}")
+        raise FileNotFoundError(f"Missing required file: {path}")
 
-    df = pd.read_csv(path)
 
-    if df.empty:
-        raise ValueError(f"Input file is empty: {path}")
+def _validate_required_columns(df: pd.DataFrame, required_columns: Iterable[str], path: Path) -> None:
+    missing = [col for col in required_columns if col not in df.columns]
+    if missing:
+        raise ValueError(f"{path} is missing required columns: {missing}")
 
-    missing_columns = REQUIRED_COLUMNS.difference(df.columns)
-    if missing_columns:
-        raise ValueError(
-            f"Input file is missing required columns {sorted(missing_columns)}: {path}"
-        )
 
-    return df
+# =========================
+# CLEANING HELPERS
+# =========================
+
+def _standardize_text(series: pd.Series) -> pd.Series:
+    return series.astype("string").str.strip().replace("", pd.NA)
 
 
 def _ensure_optional_columns(df: pd.DataFrame) -> pd.DataFrame:
-    for column in ["class", "height", "weight"]:
-        if column not in df.columns:
-            df[column] = pd.NA
+    for col in OPTIONAL_COLUMNS:
+        if col not in df.columns:
+            df[col] = pd.NA
     return df
 
 
-def _clean_text(value: object) -> str:
-    if pd.isna(value):
-        return ""
-    return str(value).strip()
+# =========================
+# LOADERS
+# =========================
 
+def _load_profile(path: Path, source: str) -> pd.DataFrame:
+    _validate_file_exists(path)
 
-def _normalize_position_text(position_raw: object) -> str:
-    text = _clean_text(position_raw).lower()
-    for char in ["/", "-", ",", ";", "|"]:
-        text = text.replace(char, " ")
-    text = " ".join(text.split())
-    return text
+    df = pd.read_csv(path)
+    _validate_required_columns(df, REQUIRED_COLUMNS, path)
 
+    df = _ensure_optional_columns(df)
 
-def _classify_position_group(position_raw: object) -> tuple[str, str]:
-    normalized = _normalize_position_text(position_raw)
-
-    if not normalized:
-        return "Forward", "default_missing_position_raw"
-
-    tokens = set(normalized.split())
-
-    guard_keywords = {
-        "g",
-        "pg",
-        "sg",
-        "guard",
-        "combo",
-        "point",
-        "shooting",
-    }
-    forward_keywords = {
-        "f",
-        "sf",
-        "pf",
-        "forward",
-        "wing",
-        "big",
-        "c",
-        "cf",
-        "fc",
-        "center",
-        "post",
-    }
-
-    if normalized in {"g", "pg", "sg"}:
-        return "Guard", "position_raw_exact_guard"
-
-    if normalized in {"f", "sf", "pf", "c", "fc", "cf"}:
-        return "Forward", "position_raw_exact_forward_or_center"
-
-    if "guard" in tokens or tokens.intersection({"pg", "sg", "g"}):
-        return "Guard", "position_raw_contains_guard_keyword"
-
-    if tokens.intersection(forward_keywords):
-        return "Forward", "position_raw_contains_forward_or_center_keyword"
-
-    if normalized.startswith("g"):
-        return "Guard", "position_raw_prefix_guard"
-
-    if normalized.startswith(("f", "c")):
-        return "Forward", "position_raw_prefix_forward_or_center"
-
-    return "Forward", "default_unmapped_to_forward"
-
-
-def _build_position_groups(df: pd.DataFrame) -> pd.DataFrame:
-    classified = df["position_raw"].apply(_classify_position_group)
-    df["position_group"] = classified.apply(lambda x: x[0])
-    df["position_group_source"] = classified.apply(lambda x: x[1])
-    return df
-
-
-def _standardize_core_fields(df: pd.DataFrame) -> pd.DataFrame:
-    for column in ["player_name", "team_name", "position_raw", "class", "height", "weight"]:
-        df[column] = df[column].apply(_clean_text)
+    text_cols = ["player_name", "team_name", "position_raw", "class", "height", "weight"]
+    for col in text_cols:
+        df[col] = _standardize_text(df[col])
 
     df["season"] = pd.to_numeric(df["season"], errors="coerce").astype("Int64")
-
-    df["player_name"] = df["player_name"].str.strip()
-    df["team_name"] = df["team_name"].str.strip()
-    df["position_raw"] = df["position_raw"].replace("", pd.NA)
+    df["source_dataset"] = source
 
     return df
 
 
-def _combine_profiles(montana_df: pd.DataFrame, big_sky_df: pd.DataFrame) -> pd.DataFrame:
-    combined_df = pd.concat([montana_df, big_sky_df], ignore_index=True, sort=False)
-    combined_df = _ensure_optional_columns(combined_df)
-    combined_df = _standardize_core_fields(combined_df)
+# =========================
+# POSITION LOGIC
+# =========================
 
-    combined_df = combined_df.drop_duplicates(
-        subset=["player_name", "team_name", "season"],
-        keep="first",
-    ).reset_index(drop=True)
+def _normalize_position(pos: str) -> str:
+    if pd.isna(pos):
+        return ""
 
-    return combined_df
+    pos = str(pos).lower().strip()
+    pos = pos.replace("-", "/").replace(",", "/")
+    pos = " ".join(pos.split())
 
+    replacements = {
+        "point guard": "pg",
+        "shooting guard": "sg",
+        "small forward": "sf",
+        "power forward": "pf",
+        "center": "c",
+        "wing": "f",
+        "big": "c",
+    }
+
+    for k, v in replacements.items():
+        pos = pos.replace(k, v)
+
+    return pos
+
+
+def _classify_position_group(position_raw: str) -> tuple[str, str]:
+    pos = _normalize_position(position_raw)
+
+    # Guards
+    if pos in {"pg", "sg", "g"}:
+        return "Guard", "direct_guard"
+
+    # Forwards (includes centers by design)
+    if pos in {"sf", "pf", "f", "c"}:
+        return "Forward", "forward_or_center"
+
+    # Hybrids
+    if "g" in pos and "f" in pos:
+        return "Guard", "hybrid_gf"
+
+    if "f" in pos or "c" in pos:
+        return "Forward", "forward_contains"
+
+    if "g" in pos:
+        return "Guard", "guard_contains"
+
+    # Final fallback (project rule: push ambiguity to Forward)
+    return "Forward", "fallback_forward"
+
+
+# =========================
+# CORE TRANSFORM
+# =========================
+
+def _apply_position_logic(df: pd.DataFrame) -> pd.DataFrame:
+    results = df["position_raw"].apply(_classify_position_group)
+    df[["position_group", "position_group_rule"]] = pd.DataFrame(results.tolist(), index=df.index)
+    return df
+
+
+def _deduplicate(df: pd.DataFrame) -> pd.DataFrame:
+    return (
+        df.sort_values(by=["player_name", "team_name", "season"])
+        .drop_duplicates(subset=["player_name", "team_name", "season"], keep="first")
+        .copy()
+    )
+
+
+# =========================
+# VALIDATION
+# =========================
 
 def _validate_output(df: pd.DataFrame) -> None:
     if df.empty:
-        raise ValueError("Output dataframe is empty after processing.")
-
-    missing_output_columns = [column for column in OUTPUT_COLUMNS if column not in df.columns]
-    if missing_output_columns:
-        raise ValueError(
-            f"Output dataframe is missing required columns: {missing_output_columns}"
-        )
+        raise ValueError("Output is empty.")
 
     if df["position_group"].isna().any():
-        missing_rows = df[df["position_group"].isna()][
-            ["player_name", "team_name", "season", "position_raw"]
-        ]
-        raise ValueError(
-            "Null position_group values remain after classification:\n"
-            f"{missing_rows.to_string(index=False)}"
-        )
+        raise ValueError("Null position_group values found.")
 
-    invalid_groups = sorted(
-        set(df["position_group"].dropna().unique()) - {"Guard", "Forward"}
-    )
-    if invalid_groups:
-        raise ValueError(f"Invalid position_group values found: {invalid_groups}")
+    valid = {"Guard", "Forward"}
+    invalid = set(df["position_group"].unique()) - valid
 
-    if df["season"].isna().any():
-        raise ValueError("Null season values remain in the output dataset.")
-
-    if df[["player_name", "team_name"]].isna().any().any():
-        raise ValueError("Null player_name or team_name values remain in the output dataset.")
+    if invalid:
+        raise ValueError(f"Invalid position groups found: {invalid}")
 
 
-def _finalize_output(df: pd.DataFrame) -> pd.DataFrame:
-    for column in OUTPUT_COLUMNS:
-        if column not in df.columns:
-            df[column] = pd.NA
+# =========================
+# MAIN BUILD
+# =========================
 
-    output_df = df[OUTPUT_COLUMNS].copy()
-    output_df = output_df.sort_values(
-        by=["team_name", "player_name", "season"],
-        ascending=[True, True, True],
+def build_player_position_groups() -> pd.DataFrame:
+
+    montana = _load_profile(MONTANA_PROFILE_PATH, "montana")
+    big_sky = _load_profile(BIG_SKY_PROFILE_PATH, "big_sky")
+
+    df = pd.concat([montana, big_sky], ignore_index=True)
+
+    df = _deduplicate(df)
+    df = _apply_position_logic(df)
+
+    df = df[STANDARD_OUTPUT_COLUMNS].copy()
+
+    df = df.sort_values(
+        by=["season", "team_name", "player_name"]
     ).reset_index(drop=True)
 
-    return output_df
+    _validate_output(df)
+
+    return df
 
 
-def save_output(df: pd.DataFrame, output_path: Path) -> None:
-    output_path.parent.mkdir(parents=True, exist_ok=True)
-    df.to_csv(output_path, index=False)
-
+# =========================
+# ENTRY POINT
+# =========================
 
 def main() -> None:
-    montana_df = _read_csv(MONTANA_PROFILE_PATH)
-    big_sky_df = _read_csv(BIG_SKY_PROFILE_PATH)
+    df = build_player_position_groups()
 
-    combined_df = _combine_profiles(montana_df, big_sky_df)
-    combined_df = _build_position_groups(combined_df)
+    OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
+    df.to_csv(OUTPUT_PATH, index=False)
 
-    output_df = _finalize_output(combined_df)
-    _validate_output(output_df)
-    save_output(output_df, OUTPUT_PATH)
-
-    print(f"Player position groups saved: {len(output_df)}")
-    print(f"Output written to: {OUTPUT_PATH}")
+    print(f"Saved: {OUTPUT_PATH}")
+    print(f"Rows: {len(df)}")
+    print(df["position_group"].value_counts())
 
 
 if __name__ == "__main__":

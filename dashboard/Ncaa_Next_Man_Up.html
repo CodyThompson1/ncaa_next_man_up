@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NCAA Next Man Up — University of Montana Grizzlies Analytics</title>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;500;600&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --maroon: #6F1B2A;
+  --maroon-dark: #3D0D16;
+  --maroon-mid: #8B2335;
+  --maroon-bright: #AA2D41;
+  --silver: #C8CACC;
+  --silver-dark: #8A8D92;
+  --silver-light: #E8EAEC;
+  --gold: #C8A951;
+  --gold-light: #E0C878;
+  --bg: #0C0C0E;
+  --bg2: #131316;
+  --bg3: #1A1A1E;
+  --bg4: #222228;
+  --bg5: #2A2A32;
+  --border: rgba(200,202,204,0.08);
+  --border2: rgba(200,202,204,0.15);
+  --border3: rgba(200,202,204,0.25);
+  --text: #ECEEF0;
+  --text2: #9EA2A8;
+  --text3: #5A5E66;
+  --green: #27AE60;
+  --green-light: #2ECC71;
+  --red: #C0392B;
+  --red-light: #E74C3C;
+  --blue: #2980B9;
+  --blue-light: #3B9FD4;
+  --amber: #D4880A;
+  --amber-light: #F39C12;
+  --r: 8px;
+  --r-lg: 14px;
+  --r-sm: 5px;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Source Sans 3', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; font-size: 14px; line-height: 1.6; overflow-x: hidden; }
+
+/* HEADER */
+.hdr {
+  background: var(--maroon-dark);
+  border-bottom: 2px solid var(--maroon);
+  position: sticky; top: 0; z-index: 200;
+  box-shadow: 0 2px 32px rgba(0,0,0,0.6);
+}
+.hdr-inner { max-width: 1440px; margin: 0 auto; padding: 0 2rem; display: flex; align-items: center; height: 68px; gap: 16px; }
+.hdr-logo { display: flex; align-items: center; gap: 14px; }
+.hdr-emblem {
+  width: 44px; height: 44px; flex-shrink: 0;
+  background: linear-gradient(135deg, var(--gold), var(--gold-light));
+  border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 0 0 2px rgba(200,169,81,0.3), 0 4px 16px rgba(200,169,81,0.2);
+}
+.hdr-emblem svg { width: 26px; height: 26px; }
+.hdr-wordmark { line-height: 1.1; }
+.hdr-brand { font-family: 'Oswald', sans-serif; font-size: 20px; font-weight: 600; color: #fff; letter-spacing: 0.04em; text-transform: uppercase; }
+.hdr-sub { font-size: 10px; color: rgba(255,255,255,0.45); letter-spacing: 0.12em; text-transform: uppercase; font-weight: 500; }
+.hdr-divider { width: 1px; height: 30px; background: rgba(255,255,255,0.12); }
+.hdr-season { font-size: 12px; color: var(--gold); font-weight: 600; letter-spacing: 0.06em; font-family: 'Oswald', sans-serif; }
+.hdr-right { margin-left: auto; display: flex; align-items: center; gap: 12px; }
+.hdr-tag { background: rgba(200,169,81,0.12); border: 1px solid rgba(200,169,81,0.25); border-radius: 99px; padding: 4px 12px; font-size: 11px; color: var(--gold); font-weight: 500; letter-spacing: 0.04em; white-space: nowrap; }
+.record-chip { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 6px; padding: 4px 12px; font-family: 'Oswald', sans-serif; font-size: 16px; font-weight: 600; color: #fff; letter-spacing: 0.04em; }
+
+/* NAV */
+.nav { background: var(--bg2); border-bottom: 1px solid var(--border); position: sticky; top: 68px; z-index: 100; }
+.nav-inner { max-width: 1440px; margin: 0 auto; padding: 0 2rem; display: flex; overflow-x: auto; scrollbar-width: none; }
+.nav-inner::-webkit-scrollbar { display: none; }
+.nav-btn { padding: 0 22px; height: 48px; font-size: 12px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text3); background: none; border: none; border-bottom: 2px solid transparent; cursor: pointer; font-family: 'Source Sans 3', sans-serif; white-space: nowrap; transition: all .18s; display: flex; align-items: center; gap: 8px; }
+.nav-btn:hover { color: var(--silver); }
+.nav-btn.active { color: var(--gold); border-bottom-color: var(--gold); }
+.nav-icon { font-size: 14px; }
+
+/* MAIN */
+.main { max-width: 1440px; margin: 0 auto; padding: 2rem; }
+.pg { display: none; }
+.pg.on { display: block; animation: pgIn .3s ease; }
+@keyframes pgIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+
+/* PAGE HERO */
+.pg-hero { margin-bottom: 2rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--border); display: flex; align-items: flex-end; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+.pg-title { font-family: 'Oswald', sans-serif; font-size: 40px; font-weight: 600; color: var(--text); line-height: 1; text-transform: uppercase; letter-spacing: 0.02em; }
+.pg-subtitle { font-size: 13px; color: var(--text2); margin-top: 8px; max-width: 600px; line-height: 1.55; }
+.pg-badge { background: var(--bg3); border: 1px solid var(--border2); border-radius: var(--r-sm); padding: 6px 14px; font-size: 11px; color: var(--text2); font-weight: 500; letter-spacing: 0.04em; white-space: nowrap; }
+
+/* GRID */
+.g4 { display: grid; grid-template-columns: repeat(4,1fr); gap: 1rem; margin-bottom: 1.5rem; }
+.g3 { display: grid; grid-template-columns: repeat(3,1fr); gap: 1rem; margin-bottom: 1.5rem; }
+.g2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem; }
+.g21 { display: grid; grid-template-columns: 2fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem; }
+.g12 { display: grid; grid-template-columns: 1fr 2fr; gap: 1.5rem; margin-bottom: 1.5rem; }
+
+/* KPIS */
+.kpi { background: var(--bg3); border: 1px solid var(--border); border-radius: var(--r-lg); padding: 1.25rem 1.5rem; position: relative; overflow: hidden; }
+.kpi::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; }
+.kpi.k-maroon::before { background: linear-gradient(90deg, var(--maroon-bright), var(--maroon)); }
+.kpi.k-gold::before { background: linear-gradient(90deg, var(--gold), var(--gold-light)); }
+.kpi.k-green::before { background: var(--green-light); }
+.kpi.k-red::before { background: var(--red-light); }
+.kpi.k-silver::before { background: var(--silver); }
+.kpi-label { font-size: 10px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text3); margin-bottom: 8px; }
+.kpi-value { font-family: 'Oswald', sans-serif; font-size: 36px; font-weight: 600; line-height: 1; }
+.kpi-sub { font-size: 11px; color: var(--text3); margin-top: 6px; line-height: 1.4; }
+.kpi.k-gold .kpi-value { color: var(--gold); }
+.kpi.k-green .kpi-value { color: var(--green-light); }
+.kpi.k-red .kpi-value { color: var(--red-light); }
+.kpi.k-maroon .kpi-value { color: var(--maroon-bright); }
+
+/* SECTION */
+.sec { margin-bottom: 2rem; }
+.sec-label { font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text3); margin-bottom: 1rem; display: flex; align-items: center; gap: 12px; }
+.sec-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+/* CARD */
+.card { background: var(--bg3); border: 1px solid var(--border); border-radius: var(--r-lg); padding: 1.5rem; margin-bottom: 1.5rem; }
+.card-hd { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.25rem; gap: 1rem; flex-wrap: wrap; }
+.card-title { font-family: 'Oswald', sans-serif; font-size: 16px; font-weight: 500; color: var(--text); text-transform: uppercase; letter-spacing: 0.04em; }
+
+/* TABLE */
+.tw { overflow-x: auto; }
+.tw::-webkit-scrollbar { height: 4px; }
+.tw::-webkit-scrollbar-track { background: var(--bg4); }
+.tw::-webkit-scrollbar-thumb { background: var(--border3); border-radius: 2px; }
+table { width: 100%; border-collapse: collapse; font-size: 13px; }
+thead th { padding: 9px 12px; text-align: left; font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text3); background: var(--bg4); border-bottom: 1px solid var(--border); white-space: nowrap; position: sticky; top: 0; }
+tbody td { padding: 10px 12px; border-bottom: 1px solid var(--border); color: var(--text); vertical-align: middle; white-space: nowrap; }
+tbody tr:last-child td { border-bottom: none; }
+tbody tr:hover td { background: rgba(255,255,255,0.025); }
+.td-num { font-family: 'Oswald', sans-serif; font-size: 18px; font-weight: 600; color: var(--gold); }
+.td-name { font-weight: 600; color: var(--text); }
+.td-pos { background: var(--bg5); border-radius: 4px; padding: 1px 7px; font-size: 10px; font-weight: 700; letter-spacing: 0.08em; color: var(--silver-dark); display: inline-block; }
+.td-num2 { font-family: 'Roboto Mono', monospace; font-size: 13px; }
+
+/* PLAYER AVATAR */
+.plr-av { width: 36px; height: 36px; border-radius: 50%; background: var(--maroon); border: 2px solid rgba(200,169,81,0.4); display: flex; align-items: center; justify-content: center; font-family: 'Oswald', sans-serif; font-size: 13px; font-weight: 600; color: var(--gold); flex-shrink: 0; }
+
+/* BADGES */
+.badge { display: inline-flex; align-items: center; justify-content: center; border-radius: 5px; font-size: 11px; font-weight: 700; padding: 3px 8px; letter-spacing: 0.04em; }
+.ba { background: rgba(46,204,113,0.15); color: #2ECC71; border: 1px solid rgba(46,204,113,0.3); }
+.bb { background: rgba(59,130,246,0.15); color: #60A5FA; border: 1px solid rgba(59,130,246,0.3); }
+.bc { background: rgba(245,158,11,0.15); color: #F59E0B; border: 1px solid rgba(245,158,11,0.3); }
+.bd { background: rgba(231,76,60,0.15); color: #E74C3C; border: 1px solid rgba(231,76,60,0.3); }
+
+/* ARCH PILLS */
+.arch { display: inline-flex; align-items: center; border-radius: 99px; padding: 3px 10px; font-size: 11px; font-weight: 600; white-space: nowrap; letter-spacing: 0.02em; }
+.apc { background: rgba(170,45,65,0.25); color: #F08888; border: 1px solid rgba(170,45,65,0.5); }
+.asp { background: rgba(41,128,185,0.2); color: #7EC8E3; border: 1px solid rgba(41,128,185,0.4); }
+.aob { background: rgba(39,174,96,0.2); color: #7DD8A0; border: 1px solid rgba(39,174,96,0.4); }
+.asf { background: rgba(200,169,81,0.2); color: #E0C878; border: 1px solid rgba(200,169,81,0.4); }
+.a3d { background: rgba(155,89,182,0.2); color: #C8A8E8; border: 1px solid rgba(155,89,182,0.4); }
+.aif { background: rgba(231,76,60,0.2); color: #F09898; border: 1px solid rgba(231,76,60,0.4); }
+.agf { background: rgba(100,116,139,0.2); color: #94A3B8; border: 1px solid rgba(100,116,139,0.4); }
+
+/* BARS */
+.barw { display: flex; align-items: center; gap: 10px; }
+.btrk { flex: 1; height: 7px; background: var(--bg5); border-radius: 4px; overflow: hidden; min-width: 50px; }
+.bfil { height: 100%; border-radius: 4px; transition: width .5s cubic-bezier(.4,0,.2,1); }
+.bnum { font-family: 'Roboto Mono', monospace; font-size: 12px; font-weight: 500; min-width: 26px; text-align: right; }
+
+/* SCORE BAR (tall) */
+.sbar { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
+.sbar-label { width: 100px; font-size: 12px; font-weight: 600; color: var(--text2); text-align: right; flex-shrink: 0; }
+.sbar-track { flex: 1; height: 10px; background: var(--bg5); border-radius: 5px; overflow: hidden; }
+.sbar-fill { height: 100%; border-radius: 5px; }
+.sbar-val { font-family: 'Roboto Mono', monospace; font-size: 13px; font-weight: 500; min-width: 32px; }
+.sbar-wt { font-size: 10px; color: var(--text3); min-width: 36px; font-family: 'Roboto Mono', monospace; }
+
+/* PLAYER HERO CARD */
+.plr-hero { background: linear-gradient(135deg, var(--maroon-dark) 0%, var(--bg3) 60%); border: 1px solid var(--border2); border-radius: var(--r-lg); padding: 2rem; margin-bottom: 1.5rem; display: flex; gap: 2rem; align-items: center; flex-wrap: wrap; position: relative; overflow: hidden; }
+.plr-hero::after { content: ''; position: absolute; top: -20px; right: -20px; width: 180px; height: 180px; background: radial-gradient(circle, rgba(111,27,42,0.3) 0%, transparent 70%); pointer-events: none; }
+.plr-av-lg { width: 88px; height: 88px; border-radius: 50%; background: linear-gradient(135deg, var(--maroon-dark), var(--maroon-mid)); border: 3px solid var(--gold); display: flex; align-items: center; justify-content: center; font-family: 'Oswald', sans-serif; font-size: 32px; font-weight: 700; color: var(--gold); flex-shrink: 0; box-shadow: 0 0 0 6px rgba(200,169,81,0.1), 0 8px 32px rgba(0,0,0,0.4); position: relative; z-index: 1; }
+.plr-info { flex: 1; min-width: 200px; position: relative; z-index: 1; }
+.plr-name { font-family: 'Oswald', sans-serif; font-size: 34px; font-weight: 700; color: var(--text); line-height: 1; text-transform: uppercase; letter-spacing: 0.02em; margin-bottom: 8px; }
+.plr-meta { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 10px; }
+.plr-meta span { font-size: 12px; color: var(--text2); display: flex; align-items: center; gap: 5px; }
+.plr-meta .dot { width: 3px; height: 3px; border-radius: 50%; background: var(--text3); }
+.plr-tags { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+.conf-tag { background: var(--bg4); border: 1px solid var(--border2); border-radius: 99px; padding: 3px 10px; font-size: 10px; color: var(--text2); font-weight: 500; letter-spacing: 0.04em; }
+.plr-score-block { text-align: center; position: relative; z-index: 1; }
+.score-ring { width: 110px; height: 110px; position: relative; flex-shrink: 0; }
+.score-ring svg { width: 110px; height: 110px; transform: rotate(-90deg); }
+.score-ring-inner { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+.score-num { font-family: 'Oswald', sans-serif; font-size: 36px; font-weight: 700; color: var(--gold); line-height: 1; }
+.score-lbl { font-size: 9px; color: var(--text3); text-transform: uppercase; letter-spacing: 0.1em; margin-top: 2px; }
+.grade-lrg { font-family: 'Oswald', sans-serif; font-size: 48px; font-weight: 700; line-height: 1; }
+
+/* FOUR FACTORS */
+.ff-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.5rem; }
+.ff-card { background: var(--bg3); border: 1px solid var(--border); border-radius: var(--r-lg); padding: 1.5rem; }
+.ff-num { font-family: 'Oswald', sans-serif; font-size: 30px; font-weight: 600; line-height: 1; }
+.ff-lbl { font-size: 10px; color: var(--text3); text-transform: uppercase; letter-spacing: 0.08em; margin-top: 4px; }
+.ff-row { display: flex; gap: 2rem; margin-top: 14px; }
+
+/* INSIGHT BOX */
+.insight { background: rgba(111,27,42,0.15); border: 1px solid rgba(111,27,42,0.35); border-left: 3px solid var(--maroon-bright); border-radius: var(--r); padding: 1rem 1.25rem; }
+.insight-title { font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--maroon-bright); margin-bottom: 6px; }
+.insight p { font-size: 13px; color: var(--text2); line-height: 1.65; }
+
+/* SELECT */
+select { background: var(--bg3); border: 1px solid var(--border2); border-radius: var(--r-sm); padding: 8px 12px; color: var(--text); font-size: 13px; font-family: 'Source Sans 3', sans-serif; cursor: pointer; outline: none; transition: border-color .15s; }
+select:focus { border-color: var(--maroon-bright); }
+
+/* SEASON STRIP */
+.strip { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 1.5rem; }
+.strip-dot { width: 13px; height: 13px; border-radius: 50%; cursor: pointer; transition: transform .15s; flex-shrink: 0; }
+.strip-dot:hover { transform: scale(1.4); }
+
+/* STAT HIGHLIGHT */
+.stat-hi { color: var(--green-light); font-weight: 600; }
+.stat-lo { color: var(--red-light); font-weight: 600; }
+.stat-mid { color: var(--amber-light); font-weight: 600; }
+.stat-na { color: var(--text3); }
+
+/* MINI RADAR */
+.radar-wrap { display: flex; justify-content: center; padding: 1rem 0; }
+
+/* ARCH DIST CARD */
+.adist { display: flex; flex-direction: column; gap: 8px; }
+.adist-row { display: flex; align-items: center; gap: 12px; }
+.adist-name { font-size: 12px; font-weight: 600; color: var(--text2); width: 140px; flex-shrink: 0; }
+.adist-bar { flex: 1; height: 6px; background: var(--bg5); border-radius: 3px; overflow: hidden; }
+.adist-fill { height: 100%; border-radius: 3px; }
+.adist-count { font-family: 'Roboto Mono', monospace; font-size: 11px; color: var(--text3); min-width: 20px; text-align: right; }
+
+/* RESPONSIVE */
+@media (max-width: 1024px) { .g4 { grid-template-columns: repeat(2,1fr); } .ff-grid { grid-template-columns: 1fr; } }
+@media (max-width: 768px) { .g3 { grid-template-columns: 1fr 1fr; } .g2 { grid-template-columns: 1fr; } .g21 { grid-template-columns: 1fr; } .g12 { grid-template-columns: 1fr; } .main { padding: 1rem; } .plr-hero { flex-direction: column; } .pg-title { font-size: 28px; } }
+@media (max-width: 480px) { .g4 { grid-template-columns: repeat(2,1fr); } .g3 { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="hdr">
+  <div class="hdr-inner">
+    <div class="hdr-logo">
+      <div class="hdr-emblem">
+        <svg viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M13 3C8 3 4 7 4 12c0 4.4 2.9 8.1 7 9.4V23h4v-1.6c4.1-1.3 7-5 7-9.4 0-5-4-9-9-9z" fill="#3D0D16"/>
+          <path d="M9 10.5c0-1.1.9-2 2-2s2 .9 2 2-.9 2-2 2-2-.9-2-2zm4 0c0-1.1.9-2 2-2s2 .9 2 2-.9 2-2 2-2-.9-2-2z" fill="#3D0D16"/>
+          <circle cx="11" cy="10.5" r="1" fill="#3D0D16"/>
+          <circle cx="15" cy="10.5" r="1" fill="#3D0D16"/>
+          <text x="13" y="19" text-anchor="middle" font-family="Georgia,serif" font-weight="bold" font-size="10" fill="#3D0D16">M</text>
+          <path d="M13 2C7.5 2 3 6.5 3 12s4.5 10 10 10 10-4.5 10-10S18.5 2 13 2zm0 18c-4.4 0-8-3.6-8-8s3.6-8 8-8 8 3.6 8 8-3.6 8-8 8z" fill="#3D0D16" opacity="0.3"/>
+          <text x="13" y="17" text-anchor="middle" font-family="Georgia,serif" font-weight="bold" font-size="11" fill="#3D0D16">UM</text>
+        </svg>
+      </div>
+      <div class="hdr-wordmark">
+        <div class="hdr-brand">NCAA Next Man Up</div>
+        <div class="hdr-sub">University of Montana Grizzlies · Men's Basketball</div>
+      </div>
+    </div>
+    <div class="hdr-divider"></div>
+    <div class="hdr-season">2025–26 Season</div>
+    <div class="hdr-right">
+      <div class="record-chip">16 – 15</div>
+      <div class="hdr-tag">MSBA Capstone · Cody Thompson</div>
+    </div>
+  </div>
+</header>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <button class="nav-btn active" onclick="showPg('info',this)"><span class="nav-icon">🏟</span>Team Info</button>
+    <button class="nav-btn" onclick="showPg('team',this)"><span class="nav-icon">📊</span>Team Data</button>
+    <button class="nav-btn" onclick="showPg('players',this)"><span class="nav-icon">📋</span>Player Data</button>
+    <button class="nav-btn" onclick="showPg('arch',this)"><span class="nav-icon">🗂</span>Player Archetypes</button>
+    <button class="nav-btn" onclick="showPg('eval',this)"><span class="nav-icon">⭐</span>Player Evaluation</button>
+  </div>
+</nav>
+
+<main class="main">
+
+<!-- ======================================================
+     PAGE 1 · TEAM INFO
+====================================================== -->
+<div class="pg on" id="pg-info">
+  <div class="pg-hero">
+    <div>
+      <div class="pg-title">Team Information</div>
+      <div class="pg-subtitle">Season overview, roster profiles, and game-by-game results for the 2025–26 University of Montana Grizzlies men's basketball program. Big Sky Conference.</div>
+    </div>
+    <div class="pg-badge">Big Sky Conference · Adams Center · Missoula, MT</div>
+  </div>
+
+  <div class="g4">
+    <div class="kpi k-maroon"><div class="kpi-label">Overall Record</div><div class="kpi-value">16–15</div><div class="kpi-sub">2025–26 Season · .516 win rate</div></div>
+    <div class="kpi k-green"><div class="kpi-label">Home Record</div><div class="kpi-value">11–6</div><div class="kpi-sub">Adams Center advantage</div></div>
+    <div class="kpi k-red"><div class="kpi-label">Away Record</div><div class="kpi-value">5–9</div><div class="kpi-sub">Road &amp; neutral sites</div></div>
+    <div class="kpi k-gold"><div class="kpi-label">Biggest Win</div><div class="kpi-value">+65</div><div class="kpi-sub">vs. Northwest Indian, 106–41</div></div>
+  </div>
+
+  <div class="sec-label">Season results — every game</div>
+  <div class="strip" id="sstrip"></div>
+
+  <div class="sec-label">2025–26 Roster</div>
+  <div class="card" style="padding:0;overflow:hidden">
+    <div class="tw">
+      <table>
+        <thead><tr><th>#</th><th>Player</th><th>Pos</th><th>Class</th><th>Height</th><th>Weight</th><th>Hometown</th><th>High School</th></tr></thead>
+        <tbody id="rtb"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="sec-label">2025–26 Game Log — 31 games</div>
+  <div class="card" style="padding:0;overflow:hidden">
+    <div class="tw">
+      <table>
+        <thead><tr><th>Gm</th><th>Date</th><th>Opponent</th><th>Site</th><th>W/L</th><th>UM</th><th>Opp</th><th>Margin</th><th>Record</th><th>Streak</th></tr></thead>
+        <tbody id="gtb"></tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- ======================================================
+     PAGE 2 · TEAM DATA
+====================================================== -->
+<div class="pg" id="pg-team">
+  <div class="pg-hero">
+    <div>
+      <div class="pg-title">Team Analytics</div>
+      <div class="pg-subtitle">Advanced efficiency ratings, the Four Factors of winning basketball, and team shooting profile. All metrics are pace-adjusted for accurate cross-team comparison.</div>
+    </div>
+  </div>
+
+  <div class="sec-label">Core efficiency ratings</div>
+  <div class="g4">
+    <div class="kpi k-green"><div class="kpi-label">Offensive Rating</div><div class="kpi-value">109.0</div><div class="kpi-sub">Points scored per 100 possessions</div></div>
+    <div class="kpi k-maroon"><div class="kpi-label">Defensive Rating</div><div class="kpi-value">106.5</div><div class="kpi-sub">Points allowed per 100 possessions</div></div>
+    <div class="kpi k-green"><div class="kpi-label">Net Rating</div><div class="kpi-value">+2.5</div><div class="kpi-sub">ORTG − DRTG · Best win predictor</div></div>
+    <div class="kpi k-gold"><div class="kpi-label">True Shooting %</div><div class="kpi-value">61.0%</div><div class="kpi-sub">Team-wide efficiency · all shot types</div></div>
+  </div>
+
+  <div class="sec-label">The Four Factors of winning basketball</div>
+  <div class="card" style="margin-bottom:1rem;background:rgba(111,27,42,0.1);border-color:rgba(111,27,42,0.3)">
+    <p style="font-size:13px;color:var(--text2);line-height:1.65">Developed by Dean Oliver, the <strong style="color:var(--text)">Four Factors</strong> identify the statistical drivers of wins — listed in order of impact: <strong style="color:var(--gold)">Shooting Efficiency (40%)</strong>, <strong style="color:var(--silver)">Turnover Rate (25%)</strong>, <strong style="color:var(--silver)">Offensive Rebounding (20%)</strong>, and <strong style="color:var(--silver)">Free Throw Rate (15%)</strong>. Improving in any factor produces real wins. Improving in all four produces a championship contender.</p>
+  </div>
+  <div class="ff-grid">
+    <div class="ff-card">
+      <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:8px">
+        <div>
+          <div style="font-size:11px;color:var(--gold);font-weight:700;text-transform:uppercase;letter-spacing:.08em;margin-bottom:3px">① Shooting Efficiency · ~40% of winning</div>
+          <div style="font-family:'Oswald',sans-serif;font-size:16px;font-weight:500;color:var(--text)">Effective Field Goal % (EFG%)</div>
+        </div>
+        <div style="font-family:'Oswald',sans-serif;font-size:10px;color:var(--text3);text-transform:uppercase;letter-spacing:.06em;text-align:right;margin-top:2px">Most important<br>factor</div>
+      </div>
+      <div style="font-size:12px;color:var(--text2);line-height:1.55;margin-bottom:14px">Adjusts field goal % for the extra value of three-pointers (worth 1.5× a two-pointer). The single biggest driver of winning. Conference average ≈ 50.5%. Higher is better on offense; lower allowed is better on defense.</div>
+      <div class="ff-row">
+        <div><div class="ff-num" style="color:var(--green-light)">50.3%</div><div class="ff-lbl">Offense</div></div>
+        <div><div class="ff-num" style="color:var(--amber-light)">47.8%</div><div class="ff-lbl">Defense (allowed)</div></div>
+      </div>
+    </div>
+    <div class="ff-card">
+      <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:8px">
+        <div>
+          <div style="font-size:11px;color:var(--silver-dark);font-weight:700;text-transform:uppercase;letter-spacing:.08em;margin-bottom:3px">② Turnovers · ~25% of winning</div>
+          <div style="font-family:'Oswald',sans-serif;font-size:16px;font-weight:500;color:var(--text)">Turnover Rate (TOV%)</div>
+        </div>
+      </div>
+      <div style="font-size:12px;color:var(--text2);line-height:1.55;margin-bottom:14px">Percentage of possessions ending in a turnover before a shot attempt. Turnovers directly eliminate scoring opportunities. Lower is better offensively. Big Sky average ≈ 15%. Montana sits slightly above average at 16.8%.</div>
+      <div class="ff-row">
+        <div><div class="ff-num" style="color:var(--amber-light)">16.8%</div><div class="ff-lbl">Offense (team)</div></div>
+        <div><div class="ff-num" style="color:var(--green-light)">17.2%</div><div class="ff-lbl">Defense (forced)</div></div>
+      </div>
+    </div>
+    <div class="ff-card">
+      <div style="margin-bottom:8px">
+        <div style="font-size:11px;color:var(--silver-dark);font-weight:700;text-transform:uppercase;letter-spacing:.08em;margin-bottom:3px">③ Off. Rebounding · ~20% of winning</div>
+        <div style="font-family:'Oswald',sans-serif;font-size:16px;font-weight:500;color:var(--text)">Offensive Rebound % (ORB%)</div>
+      </div>
+      <div style="font-size:12px;color:var(--text2);line-height:1.55;margin-bottom:14px">Percentage of available offensive rebounds secured. Extra possessions from offensive boards are among the highest-value plays in basketball — they extend possessions and create second-chance opportunities critical in close games.</div>
+      <div class="ff-row">
+        <div><div class="ff-num" style="color:var(--blue-light)">28.4%</div><div class="ff-lbl">Off. rebound rate</div></div>
+        <div><div class="ff-num" style="color:var(--blue-light)">71.6%</div><div class="ff-lbl">Def. rebound rate</div></div>
+      </div>
+    </div>
+    <div class="ff-card">
+      <div style="margin-bottom:8px">
+        <div style="font-size:11px;color:var(--silver-dark);font-weight:700;text-transform:uppercase;letter-spacing:.08em;margin-bottom:3px">④ Free Throws · ~15% of winning</div>
+        <div style="font-family:'Oswald',sans-serif;font-size:16px;font-weight:500;color:var(--text)">Free Throw Rate (FT Rate)</div>
+      </div>
+      <div style="font-size:12px;color:var(--text2);line-height:1.55;margin-bottom:14px">Free throws made per field goal attempt. A high FT Rate reflects an aggressive attack of the basket, creating high-value uncontested scoring. Particularly crucial in late-game situations when defenses tighten.</div>
+      <div class="ff-row">
+        <div><div class="ff-num" style="color:var(--blue-light)">25.5%</div><div class="ff-lbl">Offense (team)</div></div>
+        <div><div class="ff-num" style="color:var(--blue-light)">22.1%</div><div class="ff-lbl">Defense (allowed)</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec-label">Team shooting profile</div>
+  <div class="g3">
+    <div class="kpi k-silver" style="--kpi-ac:var(--silver)"><div class="kpi-label">Field Goal %</div><div class="kpi-value">44.2%</div><div class="kpi-sub">All shot attempts</div></div>
+    <div class="kpi k-silver"><div class="kpi-label">Three-Point %</div><div class="kpi-value">35.1%</div><div class="kpi-sub">Beyond the arc</div></div>
+    <div class="kpi k-silver"><div class="kpi-label">Free Throw %</div><div class="kpi-value">73.2%</div><div class="kpi-sub">At the line</div></div>
+    <div class="kpi k-silver"><div class="kpi-label">3PA Rate</div><div class="kpi-value">42.1%</div><div class="kpi-sub">Three-point attempts / all FGA</div></div>
+    <div class="kpi k-silver"><div class="kpi-label">Points Per Game</div><div class="kpi-value">75.8</div><div class="kpi-sub">Team average</div></div>
+    <div class="kpi k-silver"><div class="kpi-label">Opp. Points Allowed</div><div class="kpi-value">73.0</div><div class="kpi-sub">Per game average</div></div>
+  </div>
+
+  <div class="sec-label">Advanced metric glossary</div>
+  <div class="card" style="padding:0;overflow:hidden">
+    <div class="tw">
+      <table>
+        <thead><tr><th>Metric</th><th>Abbrev.</th><th>Team Value</th><th>Definition</th><th>Why Coaches Use It</th></tr></thead>
+        <tbody>
+          <tr><td class="td-name">Offensive Rating</td><td style="font-family:'Roboto Mono',monospace;font-size:12px;color:var(--gold)">ORTG</td><td><span style="font-family:'Oswald',sans-serif;font-size:18px;font-weight:600;color:var(--green-light)">109.0</span></td><td style="color:var(--text2);font-size:12px;white-space:normal;max-width:240px">Points scored per 100 possessions; pace-neutral</td><td style="color:var(--text3);font-size:11px;white-space:normal;max-width:200px">Best measure of offensive quality independent of pace</td></tr>
+          <tr><td class="td-name">Defensive Rating</td><td style="font-family:'Roboto Mono',monospace;font-size:12px;color:var(--gold)">DRTG</td><td><span style="font-family:'Oswald',sans-serif;font-size:18px;font-weight:600;color:var(--amber-light)">106.5</span></td><td style="color:var(--text2);font-size:12px;white-space:normal">Points allowed per 100 possessions; pace-neutral</td><td style="color:var(--text3);font-size:11px;white-space:normal">True defensive quality regardless of game tempo</td></tr>
+          <tr><td class="td-name">Net Rating</td><td style="font-family:'Roboto Mono',monospace;font-size:12px;color:var(--gold)">NET</td><td><span style="font-family:'Oswald',sans-serif;font-size:18px;font-weight:600;color:var(--green-light)">+2.5</span></td><td style="color:var(--text2);font-size:12px;white-space:normal">ORTG minus DRTG</td><td style="color:var(--text3);font-size:11px;white-space:normal">Best single predictor of team quality and future win rate</td></tr>
+          <tr><td class="td-name">True Shooting %</td><td style="font-family:'Roboto Mono',monospace;font-size:12px;color:var(--gold)">TS%</td><td><span style="font-family:'Oswald',sans-serif;font-size:18px;font-weight:600;color:var(--text)">61.0%</span></td><td style="color:var(--text2);font-size:12px;white-space:normal">Pts ÷ (2 × (FGA + 0.44 × FTA)); all shot types</td><td style="color:var(--text3);font-size:11px;white-space:normal">Most complete shooting efficiency measure</td></tr>
+          <tr><td class="td-name">Effective FG%</td><td style="font-family:'Roboto Mono',monospace;font-size:12px;color:var(--gold)">EFG%</td><td><span style="font-family:'Oswald',sans-serif;font-size:18px;font-weight:600;color:var(--text)">50.3%</span></td><td style="color:var(--text2);font-size:12px;white-space:normal">(FGM + 0.5 × 3PM) ÷ FGA</td><td style="color:var(--text3);font-size:11px;white-space:normal">Adjusts for 1.5× value of three-pointers</td></tr>
+          <tr><td class="td-name">Usage Rate</td><td style="font-family:'Roboto Mono',monospace;font-size:12px;color:var(--gold)">USG%</td><td style="color:var(--text3)">Player-level</td><td style="color:var(--text2);font-size:12px;white-space:normal">% of team plays used by player while on court</td><td style="color:var(--text3);font-size:11px;white-space:normal">Identifies primary vs. role players; context for all other stats</td></tr>
+          <tr><td class="td-name">Player Efficiency Rating</td><td style="font-family:'Roboto Mono',monospace;font-size:12px;color:var(--gold)">PER</td><td style="color:var(--text3)">Player-level</td><td style="color:var(--text2);font-size:12px;white-space:normal">All-in-one per-minute rating; league avg = 15</td><td style="color:var(--text3);font-size:11px;white-space:normal">Quick single-number quality summary for rotation decisions</td></tr>
+          <tr><td class="td-name">Box Plus/Minus</td><td style="font-family:'Roboto Mono',monospace;font-size:12px;color:var(--gold)">BPM</td><td style="color:var(--text3)">Player-level</td><td style="color:var(--text2);font-size:12px;white-space:normal">Points above/below average per 100 possessions</td><td style="color:var(--text3);font-size:11px;white-space:normal">Estimates overall contribution vs. an average player</td></tr>
+          <tr><td class="td-name">Win Shares</td><td style="font-family:'Roboto Mono',monospace;font-size:12px;color:var(--gold)">WS</td><td style="color:var(--text3)">Player-level</td><td style="color:var(--text2);font-size:12px;white-space:normal">Estimated team wins attributed to a player</td><td style="color:var(--text3);font-size:11px;white-space:normal">Holistic value metric combining offense and defense</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- ======================================================
+     PAGE 3 · PLAYER DATA
+====================================================== -->
+<div class="pg" id="pg-players">
+  <div class="pg-hero">
+    <div>
+      <div class="pg-title">Player Statistics</div>
+      <div class="pg-subtitle">Traditional and advanced statistics for all Montana players. All advanced metrics are pace-adjusted. Color coding reflects performance relative to team and conference benchmarks.</div>
+    </div>
+  </div>
+
+  <div style="display:flex;align-items:center;gap:12px;margin-bottom:1.5rem;flex-wrap:wrap">
+    <span style="font-size:11px;color:var(--text3);font-weight:600;text-transform:uppercase;letter-spacing:.08em">Filter:</span>
+    <select id="pfil" onchange="fpRender()">
+      <option value="all">All Positions</option>
+      <option value="G">Guards</option>
+      <option value="F">Forwards</option>
+    </select>
+    <select id="psrt" onchange="fpRender()">
+      <option value="mpg">Sort: Min/Game</option>
+      <option value="ppg">Sort: Points</option>
+      <option value="rpg">Sort: Rebounds</option>
+      <option value="apg">Sort: Assists</option>
+      <option value="ortg">Sort: ORTG</option>
+      <option value="ts">Sort: TS%</option>
+      <option value="usg">Sort: Usage</option>
+      <option value="ws">Sort: Win Shares</option>
+      <option value="bpm">Sort: BPM</option>
+      <option value="per">Sort: PER</option>
+    </select>
+    <div style="margin-left:auto;display:flex;gap:16px;font-size:11px;color:var(--text3)">
+      <span style="display:flex;align-items:center;gap:5px"><span style="width:8px;height:8px;border-radius:50%;background:var(--green-light);display:inline-block"></span>Elite</span>
+      <span style="display:flex;align-items:center;gap:5px"><span style="width:8px;height:8px;border-radius:50%;background:var(--blue-light);display:inline-block"></span>Good</span>
+      <span style="display:flex;align-items:center;gap:5px"><span style="width:8px;height:8px;border-radius:50%;background:var(--amber-light);display:inline-block"></span>Average</span>
+      <span style="display:flex;align-items:center;gap:5px"><span style="width:8px;height:8px;border-radius:50%;background:var(--red-light);display:inline-block"></span>Below</span>
+    </div>
+  </div>
+
+  <div class="sec-label">Traditional statistics</div>
+  <div class="card" style="padding:0;overflow:hidden;margin-bottom:1.5rem">
+    <div class="tw">
+      <table>
+        <thead><tr><th>Player</th><th>Pos</th><th>#</th><th>Cls</th><th>G</th><th>MPG</th><th>PPG</th><th>RPG</th><th>APG</th><th>SPG</th><th>BPG</th><th>TPG</th><th>FG%</th><th>3P%</th><th>FT%</th></tr></thead>
+        <tbody id="trtb"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="sec-label">Advanced analytics</div>
+  <div class="insight" style="margin-bottom:1rem">
+    <div class="insight-title">How to read advanced stats</div>
+    <p>ORTG ≥ 110 is above-average scoring efficiency. DRTG ≤ 105 is strong defensively. BPM &gt; 0 means a player adds value above a replacement-level player. Win Shares of 2+ for a single season indicates meaningful team contribution. USG% &gt; 25 = primary offensive option.</p>
+  </div>
+  <div class="card" style="padding:0;overflow:hidden">
+    <div class="tw">
+      <table>
+        <thead><tr><th>Player</th><th>ORTG</th><th>DRTG</th><th>Net</th><th>TS%</th><th>EFG%</th><th>USG%</th><th>AST%</th><th>ORB%</th><th>DRB%</th><th>STL%</th><th>BLK%</th><th>TOV%</th><th>PER</th><th>BPM</th><th>Win Shares</th></tr></thead>
+        <tbody id="advtb"></tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- ======================================================
+     PAGE 4 · ARCHETYPES
+====================================================== -->
+<div class="pg" id="pg-arch">
+  <div class="pg-hero">
+    <div>
+      <div class="pg-title">Player Archetypes</div>
+      <div class="pg-subtitle">Each player is assigned an archetype based on their statistical profile — reflecting the role they actually fill on the court. Archetypes determine how skill areas are weighted in the evaluation engine, ensuring players are judged by the standards of their role.</div>
+    </div>
+  </div>
+
+  <div class="g2">
+    <div class="card">
+      <div class="card-hd"><div class="card-title">Roster Archetype Distribution</div></div>
+      <div class="adist" id="adist"></div>
+    </div>
+    <div class="card">
+      <div class="card-hd"><div class="card-title">System Methodology</div></div>
+      <div style="font-size:13px;color:var(--text2);line-height:1.7">
+        <p style="margin-bottom:10px">The archetype system classifies players using a rules-based scoring approach applied to their statistical profile. Key indicators include <strong style="color:var(--text)">usage rate</strong>, <strong style="color:var(--text)">assist rate</strong>, <strong style="color:var(--text)">three-point attempt rate</strong>, <strong style="color:var(--text)">rebounding rate</strong>, and <strong style="color:var(--text)">defensive activity</strong>.</p>
+        <p style="margin-bottom:10px">Each archetype carries a unique <strong style="color:var(--gold)">weight profile</strong> across the five skill areas. A Primary Creator, for example, is weighted more heavily on Playmaking and Shooting, while a 3-and-D Forward is evaluated more on Defense.</p>
+        <p>This ensures that every player is compared to <strong style="color:var(--text)">relevant peers</strong> — guards with similar usage and position, forwards with comparable role responsibilities — rather than a single conference-wide benchmark.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec-label">Player archetype assignments</div>
+  <div class="card" style="padding:0;overflow:hidden;margin-bottom:1.5rem">
+    <div class="tw">
+      <table>
+        <thead><tr><th>Player</th><th>Pos</th><th>Archetype</th><th>Peer Group</th><th>Assignment Rationale</th></tr></thead>
+        <tbody id="archtb"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="sec-label">Archetype definitions &amp; weight profiles</div>
+  <div id="archdef" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:1rem"></div>
+</div>
+
+<!-- ======================================================
+     PAGE 5 · EVALUATION
+====================================================== -->
+<div class="pg" id="pg-eval">
+  <div class="pg-hero">
+    <div>
+      <div class="pg-title">Player Evaluation Tool</div>
+      <div class="pg-subtitle">Role-based performance scores derived from percentile rankings within each player's peer group — players with similar position and usage. A score of 50 = exactly average within peer group. Scores are not raw statistics; they reflect role-adjusted effectiveness.</div>
+    </div>
+  </div>
+
+  <div style="display:flex;align-items:center;gap:12px;margin-bottom:1.5rem;flex-wrap:wrap">
+    <span style="font-size:11px;color:var(--text3);font-weight:600;text-transform:uppercase;letter-spacing:.08em">Select Player:</span>
+    <select id="esel" onchange="renderEval()" style="font-size:14px;padding:9px 16px;min-width:280px"></select>
+  </div>
+
+  <div id="evalHero"></div>
+
+  <div class="g2" id="evalSkillsWrap">
+    <div class="card">
+      <div class="card-hd"><div class="card-title">Skill Profile</div><div style="font-size:11px;color:var(--text3)">Percentile within peer group</div></div>
+      <div id="evalSkills"></div>
+    </div>
+    <div class="card">
+      <div class="card-hd"><div class="card-title">Score Breakdown</div></div>
+      <div class="tw">
+        <table>
+          <thead><tr><th>Skill Area</th><th>Score / 100</th><th>Grade</th><th>Role Weight</th></tr></thead>
+          <tbody id="evalDtb"></tbody>
+        </table>
+      </div>
+      <div id="evalIns" style="margin-top:1.25rem"></div>
+    </div>
+  </div>
+
+  <div class="sec-label">Component metric deep-dive</div>
+  <div class="card">
+    <div class="card-hd"><div class="card-title">Individual Metric Percentiles</div><div style="font-size:11px;color:var(--text3)">All percentiles within peer group</div></div>
+    <div id="evalBreak" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem"></div>
+  </div>
+
+  <div class="sec-label">Full team rankings</div>
+  <div class="card" style="padding:0;overflow:hidden">
+    <div class="tw">
+      <table>
+        <thead><tr><th>Rank</th><th>Player</th><th>Archetype</th><th>Shooting</th><th>Playmaking</th><th>Rebounding</th><th>Defense</th><th>Efficiency</th><th>Overall</th><th>Grade</th><th>Confidence</th></tr></thead>
+        <tbody id="rankTb"></tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+</main>
+
+<script>
+// ============================================================
+// DATA
+// ============================================================
+const PL = [{"name":"Courtney Anderson","arch":"Off-Ball Shooter","grade":"A-","conf":"Very High","score":78.5,"pos":"G","num":"13","cls":"SO","ht":"6-5","wt":"182","town":"Vallejo, CA","hs":"Dublin (CA)","G":10,"mpg":11.4,"ppg":2.8,"rpg":0.7,"apg":0.1,"spg":0.1,"bpg":0.1,"tpg":0.3,"fgp":51.4,"tp3":46.7,"ftp":77.8,"ortg":123,"drtg":110,"ts":72.6,"efg":71.4,"usg":20.8,"ast_pct":3.4,"orb":7.0,"drb":7.4,"stl_pct":1.0,"blk_pct":1.9,"per":18.4,"bpm":6.5,"ws":0.4,"tov_pct":15.1,"shoot":100.0,"play":22.5,"reb":46.4,"def_":41.0,"eff":90.5,"tp3_pct":100.0,"efg_pct_pct":100.0,"ts_pct_pct":100.0,"stl_pct_pct":5.6,"blk_pct_pct":80.6,"drtg_pct":52.8,"trb_pct_pct":59.7,"orb_pct_pct":97.2,"drb_pct_pct":5.6,"ortg_pct":86.1,"ts_pct_eff":100.0,"tov_pct_pct":53.9,"w_shoot":0.34,"w_play":0.08,"w_reb":0.1,"w_def":0.15,"w_eff":0.33,"peer_size":36,"arch_reason":"Strongest guard indicators: 3P%=46.7%, three_pa=14.8, TS%=72.6%."},{"name":"Tyler Thompson","arch":"Off-Ball Shooter","grade":"B+","conf":"High","score":70.7,"pos":"G","num":"4","cls":"SO","ht":"6-6","wt":"190","town":"Fairfield, CA","hs":"Vanden (CA)","G":30,"mpg":29.0,"ppg":0.6,"rpg":0.3,"apg":0.1,"spg":0.1,"bpg":0.0,"tpg":0.1,"fgp":42.6,"tp3":40.4,"ftp":85.2,"ortg":108,"drtg":106,"ts":61.0,"efg":59.1,"usg":14.5,"ast_pct":7.6,"orb":0.6,"drb":14.2,"stl_pct":1.5,"blk_pct":1.6,"per":11.1,"bpm":0.6,"ws":2.0,"tov_pct":15.0,"shoot":87.3,"play":46.6,"reb":67.5,"def_":37.5,"eff":69.6,"tp3_pct":86.4,"efg_pct_pct":86.4,"ts_pct_pct":86.4,"stl_pct_pct":28.4,"blk_pct_pct":73.9,"drtg_pct":77.3,"trb_pct_pct":73.9,"orb_pct_pct":10.2,"drb_pct_pct":83.0,"ortg_pct":45.5,"ts_pct_eff":86.4,"tov_pct_pct":61.5,"w_shoot":0.34,"w_play":0.08,"w_reb":0.1,"w_def":0.15,"w_eff":0.33,"peer_size":44,"arch_reason":"Strongest guard indicators: 3PA rate=81.7%, EFG%=59.1%, TS%=61.0%."},{"name":"Tyler Isaak","arch":"Secondary Playmaker","grade":"B","conf":"High","score":63.3,"pos":"G","num":"8","cls":"JR","ht":"6-3","wt":"185","town":"Alamo, CA","hs":"San Ramon Valley (CA)","G":31,"mpg":22.5,"ppg":0.5,"rpg":0.2,"apg":0.2,"spg":0.1,"bpg":0.0,"tpg":0.1,"fgp":41.3,"tp3":32.1,"ftp":87.1,"ortg":118,"drtg":108,"ts":57.6,"efg":50.4,"usg":14.3,"ast_pct":17.5,"orb":1.1,"drb":11.5,"stl_pct":1.6,"blk_pct":0.6,"per":12.1,"bpm":-1.5,"ws":2.0,"tov_pct":13.9,"shoot":54.8,"play":78.0,"reb":52.4,"def_":34.1,"eff":67.9,"tp3_pct":51.2,"efg_pct_pct":48.8,"ts_pct_pct":65.1,"stl_pct_pct":31.4,"blk_pct_pct":44.2,"drtg_pct":69.8,"trb_pct_pct":55.8,"orb_pct_pct":22.1,"drb_pct_pct":60.5,"ortg_pct":81.4,"ts_pct_eff":65.1,"tov_pct_pct":76.9,"w_shoot":0.22,"w_play":0.3,"w_reb":0.08,"w_def":0.12,"w_eff":0.28,"peer_size":43,"arch_reason":"Strongest guard indicators: AST%=17.5%, assist_rate=17.5%, TS%=57.6%."},{"name":"Brooklyn Hicks","arch":"Off-Ball Shooter","grade":"B-","conf":"High","score":59.7,"pos":"G","num":"3","cls":"JR","ht":"6-3","wt":"185","town":"Seattle, WA","hs":"Timberline (WA)","G":31,"mpg":21.7,"ppg":0.7,"rpg":0.3,"apg":0.1,"spg":0.1,"bpg":0.0,"tpg":0.1,"fgp":47.0,"tp3":35.2,"ftp":69.1,"ortg":109,"drtg":104,"ts":57.4,"efg":55.6,"usg":20.9,"ast_pct":7.7,"orb":4.5,"drb":15.7,"stl_pct":2.3,"blk_pct":0.5,"per":15.0,"bpm":-0.4,"ws":1.9,"tov_pct":12.0,"shoot":64.7,"play":35.0,"reb":82.6,"def_":36.0,"eff":65.7,"tp3_pct":52.8,"efg_pct_pct":80.6,"ts_pct_pct":75.0,"stl_pct_pct":59.7,"blk_pct_pct":47.2,"drtg_pct":91.7,"trb_pct_pct":86.1,"orb_pct_pct":69.4,"drb_pct_pct":83.3,"ortg_pct":41.7,"ts_pct_eff":75.0,"tov_pct_pct":84.6,"w_shoot":0.34,"w_play":0.08,"w_reb":0.1,"w_def":0.15,"w_eff":0.33,"peer_size":36,"arch_reason":"Strongest guard indicators: EFG%=55.6%, TS%=57.4%, 3PA=8.8."},{"name":"Kadyn Betts","arch":"Scoring Forward","grade":"B-","conf":"High","score":57.7,"pos":"F","num":"7","cls":"JR","ht":"6-8","wt":"215","town":"Pueblo, CO","hs":"Pueblo Central (CO)","G":9,"mpg":6.6,"ppg":3.0,"rpg":1.1,"apg":0.2,"spg":0.0,"bpg":0.1,"tpg":1.0,"fgp":56.3,"tp3":62.5,"ftp":83.3,"ortg":100,"drtg":110,"ts":74.3,"efg":71.9,"usg":24.2,"ast_pct":6.5,"orb":6.8,"drb":12.5,"stl_pct":0.0,"blk_pct":1.8,"per":12.0,"bpm":-8.9,"ws":0.1,"tov_pct":32.3,"shoot":95.0,"play":42.2,"reb":33.3,"def_":40.2,"eff":57.9,"tp3_pct":100.0,"efg_pct_pct":100.0,"ts_pct_pct":100.0,"stl_pct_pct":4.2,"blk_pct_pct":75.0,"drtg_pct":50.0,"trb_pct_pct":29.2,"orb_pct_pct":41.7,"drb_pct_pct":33.3,"ortg_pct":8.3,"ts_pct_eff":100.0,"tov_pct_pct":0.0,"w_shoot":0.26,"w_play":0.1,"w_reb":0.18,"w_def":0.14,"w_eff":0.32,"peer_size":12,"arch_reason":"Strongest forward indicators: TS%=74.3%, EFG%=71.9%, USG%=24.2%."},{"name":"Kenyon Aguino","arch":"Scoring Forward","grade":"B-","conf":"High","score":56.4,"pos":"F","num":"24","cls":"FR","ht":"6-7","wt":"222","town":"Albuquerque, NM","hs":"Volcano Vista (NM)","G":31,"mpg":23.4,"ppg":0.7,"rpg":0.3,"apg":0.1,"spg":0.0,"bpg":0.0,"tpg":0.1,"fgp":55.5,"tp3":32.3,"ftp":70.9,"ortg":119,"drtg":107,"ts":61.0,"efg":58.2,"usg":18.1,"ast_pct":12.7,"orb":6.9,"drb":13.4,"stl_pct":1.3,"blk_pct":1.9,"per":15.7,"bpm":0.7,"ws":2.4,"tov_pct":14.4,"shoot":56.5,"play":81.2,"reb":31.7,"def_":37.0,"eff":65.2,"tp3_pct":46.1,"efg_pct_pct":69.2,"ts_pct_pct":69.2,"stl_pct_pct":51.9,"blk_pct_pct":38.5,"drtg_pct":76.9,"trb_pct_pct":30.8,"orb_pct_pct":34.6,"drb_pct_pct":30.8,"ortg_pct":57.7,"ts_pct_eff":69.2,"tov_pct_pct":69.2,"w_shoot":0.26,"w_play":0.1,"w_reb":0.18,"w_def":0.14,"w_eff":0.32,"peer_size":26,"arch_reason":"Strongest forward indicators: TS%=61.0%, EFG%=58.2%, AST%=12.7%."},{"name":"Money Williams","arch":"Primary Creator","grade":"B-","conf":"Moderate","score":54.8,"pos":"G","num":"0","cls":"JR","ht":"6-4","wt":"200","town":"Oakland, CA","hs":"Oakland (CA)","G":31,"mpg":31.0,"ppg":1.2,"rpg":0.2,"apg":0.3,"spg":0.1,"bpg":0.0,"tpg":0.2,"fgp":49.1,"tp3":33.9,"ftp":85.6,"ortg":111,"drtg":106,"ts":61.2,"efg":54.4,"usg":33.2,"ast_pct":34.7,"orb":2.1,"drb":12.5,"stl_pct":1.8,"blk_pct":1.0,"per":21.1,"bpm":1.9,"ws":3.7,"tov_pct":20.1,"shoot":45.0,"play":50.0,"reb":85.0,"def_":25.0,"eff":57.7,"tp3_pct":0.0,"efg_pct_pct":100.0,"ts_pct_pct":100.0,"stl_pct_pct":0.0,"blk_pct_pct":100.0,"drtg_pct":100.0,"trb_pct_pct":100.0,"orb_pct_pct":0.0,"drb_pct_pct":100.0,"ortg_pct":0.0,"ts_pct_eff":100.0,"tov_pct_pct":26.9,"w_shoot":0.2,"w_play":0.34,"w_reb":0.06,"w_def":0.1,"w_eff":0.3,"peer_size":1,"arch_reason":"Strongest guard indicators: USG%=33.2%, AST%=34.7%, assist_rate=34.7%."},{"name":"Chase Henderson","arch":"Primary Creator","grade":"B-","conf":"High","score":54.0,"pos":"G","num":"2","cls":"JR","ht":"6-0","wt":"165","town":"Des Moines, IA","hs":"Hoover (IA)","G":19,"mpg":7.1,"ppg":1.0,"rpg":0.2,"apg":0.2,"spg":0.1,"bpg":0.0,"tpg":0.3,"fgp":45.9,"tp3":35.7,"ftp":85.7,"ortg":93,"drtg":110,"ts":55.8,"efg":52.7,"usg":20.4,"ast_pct":15.1,"orb":1.0,"drb":7.9,"stl_pct":1.3,"blk_pct":0.0,"per":7.6,"bpm":-6.0,"ws":0.1,"tov_pct":24.4,"shoot":56.6,"play":74.6,"reb":9.3,"def_":23.4,"eff":41.5,"tp3_pct":57.9,"efg_pct_pct":73.7,"ts_pct_pct":67.1,"stl_pct_pct":7.9,"blk_pct_pct":6.6,"drtg_pct":52.6,"trb_pct_pct":7.9,"orb_pct_pct":17.1,"drb_pct_pct":7.9,"ortg_pct":5.3,"ts_pct_eff":67.1,"tov_pct_pct":11.5,"w_shoot":0.2,"w_play":0.34,"w_reb":0.06,"w_def":0.1,"w_eff":0.3,"peer_size":38,"arch_reason":"Strongest guard indicators: AST%=15.1%, USG%=20.4%, assist_rate=15.1%."},{"name":"Grant Kepley","arch":"Primary Creator","grade":"C+","conf":"High","score":51.6,"pos":"G","num":"11","cls":"SO","ht":"6-4","wt":"180","town":"Bellingham, WA","hs":"Sehome (WA)","G":25,"mpg":21.7,"ppg":0.6,"rpg":0.3,"apg":0.3,"spg":0.1,"bpg":0.0,"tpg":0.2,"fgp":39.7,"tp3":28.9,"ftp":69.2,"ortg":96,"drtg":107,"ts":50.7,"efg":45.0,"usg":19.0,"ast_pct":23.1,"orb":1.5,"drb":12.0,"stl_pct":1.8,"blk_pct":0.2,"per":8.8,"bpm":-4.2,"ws":0.8,"tov_pct":24.4,"shoot":22.7,"play":92.2,"reb":60.4,"def_":28.1,"eff":18.6,"tp3_pct":28.2,"efg_pct_pct":20.5,"ts_pct_pct":23.1,"stl_pct_pct":41.0,"blk_pct_pct":17.9,"drtg_pct":76.9,"trb_pct_pct":64.1,"orb_pct_pct":33.3,"drb_pct_pct":66.7,"ortg_pct":15.4,"ts_pct_eff":23.1,"tov_pct_pct":11.5,"w_shoot":0.2,"w_play":0.34,"w_reb":0.06,"w_def":0.1,"w_eff":0.3,"peer_size":39,"arch_reason":"Strongest guard indicators: FT rate=53.7%, AST%=23.1%, assist_rate=23.1%."},{"name":"Tejon Sawyer","arch":"3-and-D Forward","grade":"C+","conf":"High","score":51.2,"pos":"F","num":"32","cls":"SR","ht":"6-8","wt":"252","town":"Richmond, CA","hs":"Salesian Prep","G":31,"mpg":27.4,"ppg":0.8,"rpg":0.4,"apg":0.1,"spg":0.0,"bpg":0.0,"tpg":0.1,"fgp":58.5,"tp3":35.8,"ftp":69.4,"ortg":112,"drtg":105,"ts":65.1,"efg":64.3,"usg":19.7,"ast_pct":8.5,"orb":4.1,"drb":17.8,"stl_pct":1.1,"blk_pct":1.8,"per":15.6,"bpm":-0.8,"ws":2.5,"tov_pct":16.6,"shoot":67.5,"play":58.7,"reb":38.0,"def_":33.1,"eff":54.8,"tp3_pct":54.2,"efg_pct_pct":79.2,"ts_pct_pct":77.1,"stl_pct_pct":41.7,"blk_pct_pct":54.2,"drtg_pct":87.5,"trb_pct_pct":39.6,"orb_pct_pct":12.5,"drb_pct_pct":60.4,"ortg_pct":20.8,"ts_pct_eff":77.1,"tov_pct_pct":46.1,"w_shoot":0.26,"w_play":0.05,"w_reb":0.14,"w_def":0.27,"w_eff":0.28,"peer_size":24,"arch_reason":"Strongest forward indicators: 3P%=35.8%, 3PA=5.4, 3PA rate=32.7%."},{"name":"Trae Taylor","arch":"Scoring Forward","grade":"C+","conf":"High","score":50.7,"pos":"F","num":"1","cls":"SR","ht":"6-9","wt":"207","town":"San Diego, CA","hs":"Mission Bay (CA)","G":26,"mpg":8.1,"ppg":2.3,"rpg":1.7,"apg":0.0,"spg":0.2,"bpg":0.2,"tpg":0.4,"fgp":66.7,"tp3":0.0,"ftp":39.1,"ortg":114,"drtg":106,"ts":61.1,"efg":66.7,"usg":14.7,"ast_pct":0.9,"orb":13.9,"drb":11.1,"stl_pct":1.6,"blk_pct":2.5,"per":12.9,"bpm":-3.2,"ws":0.6,"tov_pct":16.7,"shoot":45.6,"play":18.8,"reb":42.6,"def_":50.2,"eff":57.9,"tp3_pct":20.4,"efg_pct_pct":88.9,"ts_pct_pct":63.0,"stl_pct_pct":85.2,"blk_pct_pct":37.0,"drtg_pct":72.2,"trb_pct_pct":40.7,"orb_pct_pct":85.2,"drb_pct_pct":3.7,"ortg_pct":37.0,"ts_pct_eff":63.0,"tov_pct_pct":38.5,"w_shoot":0.26,"w_play":0.1,"w_reb":0.18,"w_def":0.14,"w_eff":0.32,"peer_size":27,"arch_reason":"Strongest forward indicators: EFG%=66.7%, FT rate=59.0%, TS%=61.1%."},{"name":"Amari Jedkins","arch":"3-and-D Forward","grade":"C+","conf":"High","score":44.0,"pos":"F","num":"5","cls":"JR","ht":"6-7","wt":"195","town":"Racine, WI","hs":"Case (WI)","G":23,"mpg":5.4,"ppg":0.6,"rpg":0.5,"apg":0.0,"spg":0.1,"bpg":0.1,"tpg":0.0,"fgp":44.4,"tp3":33.3,"ftp":60.0,"ortg":110,"drtg":101,"ts":52.8,"efg":51.9,"usg":13.0,"ast_pct":1.4,"orb":6.4,"drb":17.0,"stl_pct":2.7,"blk_pct":3.4,"per":11.8,"bpm":-3.7,"ws":0.4,"tov_pct":6.4,"shoot":48.2,"play":9.0,"reb":38.8,"def_":48.2,"eff":30.0,"tp3_pct":60.0,"efg_pct_pct":25.0,"ts_pct_pct":25.0,"stl_pct_pct":100.0,"blk_pct_pct":45.0,"drtg_pct":95.0,"trb_pct_pct":40.0,"orb_pct_pct":25.0,"drb_pct_pct":50.0,"ortg_pct":20.0,"ts_pct_eff":25.0,"tov_pct_pct":92.3,"w_shoot":0.26,"w_play":0.05,"w_reb":0.14,"w_def":0.27,"w_eff":0.28,"peer_size":20,"arch_reason":"Strongest forward indicators: STL%=2.7%, 3PA rate=44.4%, DRTG=101."},{"name":"Connor Dick","arch":"Secondary Playmaker","grade":"C","conf":"Moderate","score":38.0,"pos":"G","num":"10","cls":"JR","ht":"6-3","wt":"194","town":"Missoula, MT","hs":"Hellgate (MT)","G":25,"mpg":9.5,"ppg":0.6,"rpg":0.4,"apg":0.1,"spg":0.1,"bpg":0.1,"tpg":0.1,"fgp":40.5,"tp3":23.5,"ftp":75.9,"ortg":104,"drtg":104,"ts":53.8,"efg":45.2,"usg":15.1,"ast_pct":5.6,"orb":7.8,"drb":12.0,"stl_pct":2.4,"blk_pct":3.1,"per":10.1,"bpm":-3.1,"ws":0.5,"tov_pct":20.1,"shoot":28.3,"play":36.4,"reb":79.1,"def_":49.0,"eff":34.4,"tp3_pct":15.2,"efg_pct_pct":28.3,"ts_pct_pct":47.8,"stl_pct_pct":57.6,"blk_pct_pct":97.8,"drtg_pct":89.1,"trb_pct_pct":87.0,"orb_pct_pct":95.7,"drb_pct_pct":60.9,"ortg_pct":29.4,"ts_pct_eff":47.8,"tov_pct_pct":26.9,"w_shoot":0.22,"w_play":0.3,"w_reb":0.08,"w_def":0.12,"w_eff":0.28,"peer_size":46,"arch_reason":"Strongest guard indicators: STL%=2.4%, TS%=53.8%, EFG%=45.2%."}];
+
+const SC = [{"date":"2025-11-03","opp":"Northwest Indian","loc":"home","res":"win","tp":106,"op":41,"rec":"1-0","streak":"W 1"},{"date":"2025-11-05","opp":"Ottawa (AZ)","loc":"home","res":"win","tp":73,"op":39,"rec":"2-0","streak":"W 2"},{"date":"2025-11-08","opp":"Stanford","loc":"away","res":"loss","tp":68,"op":91,"rec":"2-1","streak":"L 1"},{"date":"2025-11-11","opp":"Nevada-Las Vegas","loc":"away","res":"win","tp":102,"op":93,"rec":"3-1","streak":"W 1"},{"date":"2025-11-14","opp":"Cal Poly","loc":"home","res":"win","tp":90,"op":82,"rec":"4-1","streak":"W 2"},{"date":"2025-11-18","opp":"Texas A&M","loc":"away","res":"loss","tp":81,"op":86,"rec":"4-2","streak":"L 1"},{"date":"2025-11-23","opp":"Lamar","loc":"home","res":"loss","tp":63,"op":68,"rec":"4-3","streak":"L 2"},{"date":"2025-11-25","opp":"Oakland","loc":"home","res":"loss","tp":87,"op":95,"rec":"4-4","streak":"L 3"},{"date":"2025-12-03","opp":"North Dakota State","loc":"home","res":"loss","tp":72,"op":81,"rec":"4-5","streak":"L 4"},{"date":"2025-12-06","opp":"North Dakota","loc":"away","res":"win","tp":79,"op":75,"rec":"5-5","streak":"W 1"},{"date":"2025-12-10","opp":"Salish Kootenai","loc":"home","res":"win","tp":102,"op":46,"rec":"6-5","streak":"W 2"},{"date":"2025-12-17","opp":"Montana Tech","loc":"home","res":"loss","tp":75,"op":82,"rec":"6-6","streak":"L 1"},{"date":"2025-12-20","opp":"Louisville (11)","loc":"away","res":"loss","tp":54,"op":94,"rec":"6-7","streak":"L 2"},{"date":"2026-01-01","opp":"Northern Arizona","loc":"home","res":"win","tp":78,"op":64,"rec":"7-7","streak":"W 1"},{"date":"2026-01-03","opp":"Northern Colorado","loc":"home","res":"win","tp":88,"op":79,"rec":"8-7","streak":"W 2"},{"date":"2026-01-08","opp":"Idaho","loc":"away","res":"win","tp":79,"op":73,"rec":"9-7","streak":"W 3"},{"date":"2026-01-10","opp":"Eastern Washington","loc":"away","res":"loss","tp":65,"op":66,"rec":"9-8","streak":"L 1"},{"date":"2026-01-17","opp":"Montana State","loc":"away","res":"loss","tp":67,"op":76,"rec":"9-9","streak":"L 2"},{"date":"2026-01-19","opp":"Northern Arizona","loc":"away","res":"win","tp":98,"op":72,"rec":"10-9","streak":"W 1"},{"date":"2026-01-22","opp":"Weber State","loc":"home","res":"win","tp":81,"op":65,"rec":"11-9","streak":"W 2"},{"date":"2026-01-24","opp":"Idaho State","loc":"home","res":"win","tp":69,"op":60,"rec":"12-9","streak":"W 3"},{"date":"2026-01-29","opp":"Portland State","loc":"away","res":"win","tp":64,"op":60,"rec":"13-9","streak":"W 4"},{"date":"2026-01-31","opp":"Sacramento State","loc":"away","res":"loss","tp":79,"op":86,"rec":"13-10","streak":"L 1"},{"date":"2026-02-05","opp":"Eastern Washington","loc":"home","res":"loss","tp":74,"op":82,"rec":"13-11","streak":"L 2"},{"date":"2026-02-07","opp":"Idaho","loc":"home","res":"win","tp":73,"op":68,"rec":"14-11","streak":"W 1"},{"date":"2026-02-14","opp":"Montana State","loc":"home","res":"loss","tp":71,"op":82,"rec":"14-12","streak":"L 1"},{"date":"2026-02-19","opp":"Idaho State","loc":"away","res":"loss","tp":69,"op":73,"rec":"14-13","streak":"L 2"},{"date":"2026-02-21","opp":"Weber State","loc":"away","res":"loss","tp":72,"op":92,"rec":"14-14","streak":"L 3"},{"date":"2026-02-26","opp":"Sacramento State","loc":"home","res":"win","tp":81,"op":73,"rec":"15-14","streak":"W 1"},{"date":"2026-02-28","opp":"Portland State","loc":"home","res":"win","tp":74,"op":68,"rec":"16-14","streak":"W 2"},{"date":"2026-03-02","opp":"Northern Colorado","loc":"away","res":"loss","tp":57,"op":85,"rec":"16-15","streak":"L 1"}];
+
+const ROSTER = [
+  {num:'0',name:'Money Williams',pos:'G',cls:'JR',ht:'6-4',wt:'200',town:'Oakland, CA',hs:'Oakland (CA)'},
+  {num:'1',name:'Trae Taylor',pos:'F',cls:'SR',ht:'6-9',wt:'207',town:'San Diego, CA',hs:'Mission Bay (CA)'},
+  {num:'2',name:'Chase Henderson',pos:'G',cls:'JR',ht:'6-0',wt:'165',town:'Des Moines, IA',hs:'Hoover (IA)'},
+  {num:'3',name:'Brooklyn Hicks',pos:'G',cls:'JR',ht:'6-3',wt:'185',town:'Seattle, WA',hs:'Timberline (WA)'},
+  {num:'4',name:'Tyler Thompson',pos:'G',cls:'SO',ht:'6-6',wt:'190',town:'Fairfield, CA',hs:'Vanden (CA)'},
+  {num:'5',name:'Amari Jedkins',pos:'F',cls:'JR',ht:'6-7',wt:'195',town:'Racine, WI',hs:'Case (WI)'},
+  {num:'7',name:'Kadyn Betts',pos:'F',cls:'JR',ht:'6-8',wt:'215',town:'Pueblo, CO',hs:'Pueblo Central (CO)'},
+  {num:'8',name:'Tyler Isaak',pos:'G',cls:'JR',ht:'6-3',wt:'185',town:'Alamo, CA',hs:'San Ramon Valley (CA)'},
+  {num:'10',name:'Connor Dick',pos:'G',cls:'JR',ht:'6-3',wt:'194',town:'Missoula, MT',hs:'Hellgate (MT)'},
+  {num:'11',name:'Grant Kepley',pos:'G',cls:'SO',ht:'6-4',wt:'180',town:'Bellingham, WA',hs:'Sehome (WA)'},
+  {num:'13',name:'Courtney Anderson',pos:'G',cls:'SO',ht:'6-5',wt:'182',town:'Vallejo, CA',hs:'Dublin (CA)'},
+  {num:'24',name:'Kenyon Aguino',pos:'F',cls:'FR',ht:'6-7',wt:'222',town:'Albuquerque, NM',hs:'Volcano Vista (NM)'},
+  {num:'32',name:'Tejon Sawyer',pos:'F',cls:'SR',ht:'6-8',wt:'252',town:'Richmond, CA',hs:'Salesian Prep'},
+];
+
+const ARCHS = {
+  'Primary Creator':    {cls:'apc', icon:'🎯', wt:{s:20,p:34,r:6,d:10,e:30}, desc:'High-usage guard generating offense through dribble penetration, passing, and shot creation. Defined by assist rate, usage rate, and foul drawing. The primary ballhandler and offensive engine.'},
+  'Secondary Playmaker':{cls:'asp', icon:'🔀', wt:{s:22,p:30,r:8,d:12,e:28}, desc:'Guards who facilitate ball movement without bearing the full primary creation load. Balanced role combining playmaking with shooting efficiency. Keeps the offense organized and flowing.'},
+  'Off-Ball Shooter':   {cls:'aob', icon:'💫', wt:{s:34,p:8,r:10,d:15,e:33}, desc:'Perimeter-oriented guard who operates off the ball. Specializes in catch-and-shoot opportunities, floor spacing, and three-point efficiency. Defined by 3P%, EFG%, and off-ball movement.'},
+  'Scoring Forward':    {cls:'asf', icon:'💪', wt:{s:26,p:10,r:18,d:14,e:32}, desc:'High-usage forward who scores efficiently in both post and perimeter situations. Blends athleticism with interior skill. High-volume output with a focus on efficiency over pure creation.'},
+  '3-and-D Forward':   {cls:'a3d', icon:'🛡', wt:{s:26,p:5,r:14,d:27,e:28}, desc:'Two-way forward valued for perimeter shooting (3P%) and defensive activity (STL%, BLK%). A versatile connector in modern lineups — creates spacing and brings defensive effort and energy.'},
+  'Interior Forward':  {cls:'aif', icon:'🏀', wt:{s:10,p:8,r:30,d:28,e:24}, desc:'Rim-running big focused on finishing, screen-setting, and securing possessions. Interior impact and rim protection define this role. Key contributor to the rebounding and paint game.'},
+  'Glue Forward':      {cls:'agf', icon:'🔗', wt:{s:18,p:12,r:22,d:24,e:24}, desc:'Versatile forward contributing across multiple areas without elite numbers in any single category. The team-glue role that holds a rotation together — valuable for depth and flexibility.'},
+};
+
+// ============================================================
+// HELPERS
+// ============================================================
+const f1 = v => (+(v||0)).toFixed(1);
+const f0 = v => Math.round(+(v||0));
+const ini = n => n.split(' ').map(w=>w[0]).join('').slice(0,2).toUpperCase();
+const gc  = g => g.startsWith('A')?'ba':g.startsWith('B')?'bb':g.startsWith('C')?'bc':'bd';
+const ac  = a => ({'Primary Creator':'apc','Secondary Playmaker':'asp','Off-Ball Shooter':'aob','Scoring Forward':'asf','3-and-D Forward':'a3d','Interior Forward':'aif','Glue Forward':'agf'})[a]||'agf';
+const ap  = a => `<span class="arch ${ac(a)}">${a}</span>`;
+const bc  = v => v>=80?'#2ECC71':v>=60?'#3B9FD4':v>=40?'#F39C12':'#E74C3C';
+const wc  = v => v>=80?'var(--green-light)':v>=60?'var(--blue-light)':v>=40?'var(--amber-light)':'var(--red-light)';
+const co  = v => v>=110?'var(--green-light)':v<100?'var(--red-light)':'var(--text)';
+const cd  = v => v<=105?'var(--green-light)':v>112?'var(--red-light)':'var(--text)';
+const cbm = v => v>0?'var(--green-light)':v<-4?'var(--red-light)':'var(--text)';
+
+function brow(v){
+  const p=f0(v),col=bc(v);
+  return `<div class="barw"><div class="btrk"><div class="bfil" style="width:${p}%;background:${col}"></div></div><span class="bnum" style="color:${col}">${p}</span></div>`;
+}
+function sbrow(label,v,weight=''){
+  const p=f0(v),col=bc(v);
+  return `<div class="sbar">
+    <div class="sbar-label">${label}</div>
+    <div class="sbar-track"><div class="sbar-fill" style="width:${p}%;background:${col}"></div></div>
+    <div class="sbar-val" style="color:${col}">${p}</div>
+    ${weight?`<div class="sbar-wt">${weight}%</div>`:''}
+  </div>`;
+}
+
+// ============================================================
+// PAGE 1 BUILD
+// ============================================================
+(function buildP1(){
+  // Season strip
+  const strip = document.getElementById('sstrip');
+  SC.forEach(g => {
+    const d = new Date(g.date).toLocaleDateString('en-US',{month:'short',day:'numeric'});
+    strip.innerHTML += `<div class="strip-dot" style="background:${g.res==='win'?'var(--green-light)':'var(--red-light)'}" title="${d} — ${g.opp} (${g.rec}) ${g.streak}"></div>`;
+  });
+
+  // Roster
+  const rtb = document.getElementById('rtb');
+  ROSTER.forEach(p => {
+    rtb.innerHTML += `<tr>
+      <td class="td-num">${p.num}</td>
+      <td style="display:flex;align-items:center;gap:10px"><div class="plr-av">${ini(p.name)}</div><span class="td-name">${p.name}</span></td>
+      <td><span class="td-pos">${p.pos}</span></td>
+      <td style="color:var(--text2)">${p.cls}</td>
+      <td>${p.ht}</td>
+      <td style="color:var(--text2)">${p.wt} lbs</td>
+      <td style="color:var(--text2);font-size:12px">${p.town}</td>
+      <td style="color:var(--text3);font-size:12px">${p.hs}</td>
+    </tr>`;
+  });
+
+  // Games
+  const gtb = document.getElementById('gtb');
+  SC.forEach((g,i) => {
+    const w=g.res==='win', diff=g.tp-g.op;
+    const d=new Date(g.date).toLocaleDateString('en-US',{month:'short',day:'numeric'});
+    gtb.innerHTML += `<tr>
+      <td style="color:var(--text3);font-size:11px;font-family:'Roboto Mono',monospace">${i+1}</td>
+      <td style="color:var(--text2);font-size:12px;font-family:'Roboto Mono',monospace">${d}</td>
+      <td class="td-name">${g.opp}</td>
+      <td style="font-size:11px;color:var(--text3)">${g.loc==='home'?'Home':'Away'}</td>
+      <td style="font-weight:700;color:${w?'var(--green-light)':'var(--red-light)'}">${w?'W':'L'}</td>
+      <td style="font-weight:600;font-family:'Roboto Mono',monospace">${g.tp}</td>
+      <td style="color:var(--text2);font-family:'Roboto Mono',monospace">${g.op}</td>
+      <td style="font-weight:700;color:${diff>0?'var(--green-light)':diff<0?'var(--red-light)':'var(--text2)'};font-family:'Roboto Mono',monospace">${diff>0?'+':''}${diff}</td>
+      <td style="color:var(--text3);font-size:12px;font-family:'Roboto Mono',monospace">${g.rec}</td>
+      <td style="color:${g.streak.startsWith('W')?'var(--green-light)':'var(--red-light)'};font-size:12px;font-weight:600">${g.streak}</td>
+    </tr>`;
+  });
+})();
+
+// ============================================================
+// PAGE 3: PLAYER DATA
+// ============================================================
+let filtPL = [...PL];
+function fpRender(){
+  const pos = document.getElementById('pfil').value;
+  const srt = document.getElementById('psrt').value;
+  filtPL = PL.filter(p => pos==='all'||p.pos===pos);
+  filtPL.sort((a,b)=>b[srt]-a[srt]);
+  const tt=document.getElementById('trtb'), at=document.getElementById('advtb');
+  tt.innerHTML=''; at.innerHTML='';
+  filtPL.forEach(p=>{
+    tt.innerHTML+=`<tr>
+      <td style="display:flex;align-items:center;gap:8px"><div class="plr-av" style="width:30px;height:30px;font-size:11px">${ini(p.name)}</div><span class="td-name">${p.name}</span></td>
+      <td><span class="td-pos">${p.pos}</span></td>
+      <td class="td-num" style="font-size:16px">${p.num}</td>
+      <td style="color:var(--text2)">${p.cls}</td>
+      <td style="color:var(--text3);font-family:'Roboto Mono',monospace">${p.G}</td>
+      <td style="color:var(--text2);font-family:'Roboto Mono',monospace">${f1(p.mpg)}</td>
+      <td style="font-weight:600;font-family:'Roboto Mono',monospace">${f1(p.ppg)}</td>
+      <td style="font-family:'Roboto Mono',monospace">${f1(p.rpg)}</td>
+      <td style="font-family:'Roboto Mono',monospace">${f1(p.apg)}</td>
+      <td style="font-family:'Roboto Mono',monospace">${f1(p.spg)}</td>
+      <td style="font-family:'Roboto Mono',monospace">${f1(p.bpg)}</td>
+      <td style="color:var(--text2);font-family:'Roboto Mono',monospace">${f1(p.tpg)}</td>
+      <td style="font-family:'Roboto Mono',monospace;color:${p.fgp>=45?'var(--text)':'var(--text2)'}">${f1(p.fgp)}%</td>
+      <td style="font-family:'Roboto Mono',monospace;color:${p.tp3>=38?'var(--green-light)':p.tp3>=33?'var(--text)':'var(--text2)'}">${f1(p.tp3)}%</td>
+      <td style="font-family:'Roboto Mono',monospace;color:${p.ftp>=80?'var(--green-light)':'var(--text)'}">${f1(p.ftp)}%</td>
+    </tr>`;
+    const net=p.ortg-p.drtg;
+    at.innerHTML+=`<tr>
+      <td class="td-name" style="font-size:12px">${p.name}</td>
+      <td style="font-weight:700;color:${co(p.ortg)};font-family:'Roboto Mono',monospace">${p.ortg}</td>
+      <td style="font-weight:700;color:${cd(p.drtg)};font-family:'Roboto Mono',monospace">${p.drtg}</td>
+      <td style="font-weight:700;color:${net>0?'var(--green-light)':net<0?'var(--red-light)':'var(--text)'};font-family:'Roboto Mono',monospace">${net>0?'+':''}${net}</td>
+      <td style="font-family:'Roboto Mono',monospace;color:${p.ts>=65?'var(--green-light)':p.ts>=55?'var(--text)':'var(--text2)'}">${f1(p.ts)}%</td>
+      <td style="font-family:'Roboto Mono',monospace">${f1(p.efg)}%</td>
+      <td style="font-weight:${p.usg>25?'700':'400'};color:${p.usg>25?'var(--gold)':'var(--text)'};font-family:'Roboto Mono',monospace">${f1(p.usg)}%</td>
+      <td style="font-family:'Roboto Mono',monospace">${f1(p.ast_pct)}%</td>
+      <td style="font-family:'Roboto Mono',monospace">${f1(p.orb)}%</td>
+      <td style="font-family:'Roboto Mono',monospace">${f1(p.drb)}%</td>
+      <td style="font-family:'Roboto Mono',monospace">${f1(p.stl_pct)}%</td>
+      <td style="font-family:'Roboto Mono',monospace">${f1(p.blk_pct)}%</td>
+      <td style="color:${p.tov_pct>22?'var(--red-light)':p.tov_pct>17?'var(--amber-light)':'var(--text)'};font-family:'Roboto Mono',monospace">${f1(p.tov_pct)}%</td>
+      <td style="font-family:'Roboto Mono',monospace">${f1(p.per)}</td>
+      <td style="font-weight:700;color:${cbm(p.bpm)};font-family:'Roboto Mono',monospace">${p.bpm>0?'+':''}${f1(p.bpm)}</td>
+      <td style="font-weight:700;color:${p.ws>=2?'var(--green-light)':'var(--text)'};font-family:'Roboto Mono',monospace">${f1(p.ws)}</td>
+    </tr>`;
+  });
+}
+fpRender();
+
+// ============================================================
+// PAGE 4: ARCHETYPES
+// ============================================================
+(function buildP4(){
+  // Distribution
+  const counts = {};
+  PL.forEach(p => counts[p.arch]=(counts[p.arch]||0)+1);
+  const total = PL.length;
+  const adist = document.getElementById('adist');
+  Object.entries(ARCHS).forEach(([name, info])=>{
+    const c = counts[name]||0;
+    if(!c) return;
+    adist.innerHTML+=`<div class="adist-row">
+      <div class="adist-name">${ap(name)}</div>
+      <div class="adist-bar"><div class="adist-fill" style="width:${(c/total*100).toFixed(0)}%;background:${bc((c/total)*200)}"></div></div>
+      <div class="adist-count">${c}</div>
+    </div>`;
+  });
+
+  // Assignment table
+  const tb = document.getElementById('archtb');
+  [...PL].sort((a,b)=>b.score-a.score).forEach(p=>{
+    tb.innerHTML+=`<tr>
+      <td style="display:flex;align-items:center;gap:10px"><div class="plr-av">${ini(p.name)}</div><span class="td-name">${p.name}</span></td>
+      <td><span class="td-pos">${p.pos}</span></td>
+      <td>${ap(p.arch)}</td>
+      <td style="color:var(--text2);font-size:12px">${p.peer_size} players</td>
+      <td style="color:var(--text3);font-size:11.5px;white-space:normal;max-width:380px;line-height:1.45">${p.arch_reason}</td>
+    </tr>`;
+  });
+
+  // Definitions
+  const dg = document.getElementById('archdef');
+  Object.entries(ARCHS).forEach(([name,info])=>{
+    const wts = info.wt;
+    dg.innerHTML+=`<div style="background:var(--bg3);border:1px solid var(--border);border-radius:var(--r-lg);padding:1.25rem">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px">
+        <span style="font-size:22px">${info.icon}</span>
+        ${ap(name)}
+        <span style="font-size:11px;color:var(--text3);margin-left:auto">${counts[name]||0} player${(counts[name]||0)!==1?'s':''}</span>
+      </div>
+      <p style="font-size:12px;color:var(--text2);line-height:1.6;margin-bottom:12px">${info.desc}</p>
+      <div style="font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text3);margin-bottom:8px">Role Weight Profile</div>
+      <div style="display:flex;gap:6px;flex-wrap:wrap">
+        ${[['S',wts.s,'Shooting'],['P',wts.p,'Playmaking'],['R',wts.r,'Rebounding'],['D',wts.d,'Defense'],['E',wts.e,'Efficiency']].map(([k,w,label])=>`
+          <div style="flex:1;min-width:50px;background:var(--bg4);border-radius:6px;padding:8px;text-align:center">
+            <div style="font-size:10px;color:var(--text3);text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px">${label}</div>
+            <div style="font-family:'Oswald',sans-serif;font-size:18px;font-weight:600;color:${w>=25?'var(--gold)':w>=18?'var(--text)':'var(--text3)'}">${w}%</div>
+          </div>`).join('')}
+      </div>
+    </div>`;
+  });
+})();
+
+// ============================================================
+// PAGE 5: EVALUATION
+// ============================================================
+(function initEval(){
+  const sel = document.getElementById('esel');
+  [...PL].sort((a,b)=>b.score-a.score).forEach((p,i)=>{
+    sel.innerHTML+=`<option value="${PL.indexOf(p)}">${p.name} — ${p.grade} (${f0(p.score)}/100)</option>`;
+  });
+  // Rankings table
+  const rtb = document.getElementById('rankTb');
+  [...PL].sort((a,b)=>b.score-a.score).forEach((p,i)=>{
+    rtb.innerHTML+=`<tr>
+      <td style="font-family:'Roboto Mono',monospace;color:var(--text3);font-weight:600">${i+1}</td>
+      <td style="display:flex;align-items:center;gap:10px"><div class="plr-av">${ini(p.name)}</div><span class="td-name">${p.name}</span></td>
+      <td>${ap(p.arch)}</td>
+      <td>${brow(p.shoot)}</td>
+      <td>${brow(p.play)}</td>
+      <td>${brow(p.reb)}</td>
+      <td>${brow(p.def_)}</td>
+      <td>${brow(p.eff)}</td>
+      <td style="font-family:'Oswald',sans-serif;font-size:24px;font-weight:700;color:var(--gold)">${f0(p.score)}</td>
+      <td><span class="badge ${gc(p.grade)}" style="font-size:14px;padding:5px 12px">${p.grade}</span></td>
+      <td style="font-size:11px;color:var(--text3)">${p.conf}</td>
+    </tr>`;
+  });
+  renderEval();
+})();
+
+function renderEval(){
+  const idx = parseInt(document.getElementById('esel').value);
+  const p = PL[idx];
+  const skills = [
+    {l:'Shooting',   v:p.shoot, w:p.w_shoot, comp:[{l:'3-Point %',v:p.tp3_pct},{l:'EFG%',v:p.efg_pct_pct},{l:'TS%',v:p.ts_pct_pct}]},
+    {l:'Playmaking', v:p.play,  w:p.w_play,  comp:[{l:'Assist %',v:p.ast_pct},{l:'Usage Rate',v:p.usg},{l:'TOV% (inv.)',v:p.tov_pct_pct}]},
+    {l:'Rebounding', v:p.reb,   w:p.w_reb,   comp:[{l:'Total RB%',v:p.trb_pct_pct},{l:'Off. RB%',v:p.orb_pct_pct},{l:'Def. RB%',v:p.drb_pct_pct}]},
+    {l:'Defense',    v:p.def_,  w:p.w_def,   comp:[{l:'Steal %',v:p.stl_pct_pct},{l:'Block %',v:p.blk_pct_pct},{l:'Def. Rating',v:p.drtg_pct}]},
+    {l:'Efficiency', v:p.eff,   w:p.w_eff,   comp:[{l:'Off. Rating',v:p.ortg_pct},{l:'TS%',v:p.ts_pct_eff},{l:'TOV% (inv.)',v:p.tov_pct_pct}]},
+  ];
+  function gl(v){if(v>=95)return'A+';if(v>=90)return'A';if(v>=87)return'A-';if(v>=83)return'B+';if(v>=80)return'B';if(v>=77)return'B-';if(v>=73)return'C+';if(v>=70)return'C';if(v>=67)return'C-';if(v>=60)return'D+';return'D';}
+
+  // Score ring
+  const pct = f0(p.score);
+  const r=46, circ=2*Math.PI*r;
+  const dash = (pct/100)*circ;
+  const gradeCol = p.grade.startsWith('A')?'#2ECC71':p.grade.startsWith('B')?'#3B9FD4':p.grade.startsWith('C')?'#F39C12':'#E74C3C';
+
+  document.getElementById('evalHero').innerHTML = `
+  <div class="plr-hero">
+    <div class="plr-av-lg">${ini(p.name)}</div>
+    <div class="plr-info">
+      <div class="plr-name">${p.name}</div>
+      <div class="plr-meta">
+        <span><strong style="color:var(--gold);font-family:'Oswald',sans-serif;font-size:18px">#${p.num}</strong></span>
+        <span class="dot"></span>
+        <span>${p.pos === 'G' ? 'Guard' : 'Forward'}</span>
+        <span class="dot"></span>
+        <span>${p.cls === 'FR'?'Freshman':p.cls==='SO'?'Sophomore':p.cls==='JR'?'Junior':'Senior'}</span>
+        <span class="dot"></span>
+        <span>${p.ht} · ${p.wt} lbs</span>
+        <span class="dot"></span>
+        <span>📍 ${p.town}</span>
+      </div>
+      <div class="plr-tags">
+        ${ap(p.arch)}
+        <span class="conf-tag">Confidence: ${p.conf}</span>
+        <span class="conf-tag">Peer group: ${p.peer_size} players</span>
+        <span class="conf-tag">Games: ${p.G}</span>
+        <span class="conf-tag">${f1(p.mpg)} MPG</span>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-top:14px;max-width:400px">
+        ${[['PPG',p.ppg,1],['RPG',p.rpg,1],['APG',p.apg,1],['ORTG',p.ortg,0],['Win Shares',p.ws,1]].map(([l,v,d])=>`
+          <div style="background:var(--bg4);border-radius:var(--r-sm);padding:8px;text-align:center">
+            <div style="font-size:9px;text-transform:uppercase;letter-spacing:.08em;color:var(--text3);margin-bottom:3px">${l}</div>
+            <div style="font-family:'Oswald',sans-serif;font-size:18px;font-weight:600;color:var(--text)">${(+v).toFixed(d)}</div>
+          </div>`).join('')}
+      </div>
+    </div>
+    <div class="plr-score-block">
+      <div class="score-ring">
+        <svg viewBox="0 0 110 110">
+          <circle cx="55" cy="55" r="${r}" fill="none" stroke="var(--bg5)" stroke-width="8"/>
+          <circle cx="55" cy="55" r="${r}" fill="none" stroke="${gradeCol}" stroke-width="8"
+            stroke-dasharray="${dash.toFixed(1)} ${circ.toFixed(1)}"
+            stroke-linecap="round" style="filter:drop-shadow(0 0 6px ${gradeCol}44)"/>
+        </svg>
+        <div class="score-ring-inner">
+          <div class="score-num">${pct}</div>
+          <div class="score-lbl">/ 100</div>
+        </div>
+      </div>
+      <div style="margin-top:10px;display:flex;align-items:center;justify-content:center;gap:10px">
+        <span class="badge ${gc(p.grade)}" style="font-size:22px;padding:7px 14px">${p.grade}</span>
+      </div>
+      <div style="font-size:11px;color:var(--text3);margin-top:6px;text-align:center">Final Grade</div>
+    </div>
+  </div>`;
+
+  // Skills
+  const sk = document.getElementById('evalSkills');
+  sk.innerHTML = '';
+  skills.forEach(s => {
+    sk.innerHTML += sbrow(s.l, s.v, Math.round(s.w*100));
+  });
+
+  // Detail table
+  const dtb = document.getElementById('evalDtb');
+  dtb.innerHTML = '';
+  skills.forEach(s=>{
+    const g=gl(s.v);
+    dtb.innerHTML+=`<tr>
+      <td style="font-weight:600">${s.l}</td>
+      <td style="font-family:'Oswald',sans-serif;font-size:20px;font-weight:600;color:${bc(s.v)}">${f0(s.v)}</td>
+      <td><span class="badge ${gc(g)}">${g}</span></td>
+      <td style="font-family:'Roboto Mono',monospace;font-size:12px;color:var(--text3)">${Math.round(s.w*100)}%</td>
+    </tr>`;
+  });
+
+  // Insight
+  const top=skills.reduce((a,b)=>a.v>b.v?a:b);
+  const bot=skills.reduce((a,b)=>a.v<b.v?a:b);
+  document.getElementById('evalIns').innerHTML=`
+    <div class="insight">
+      <div class="insight-title">Coaching Insight</div>
+      <p><strong style="color:var(--text)">${p.name}</strong> is a <em>${p.arch}</em> benchmarked against ${p.peer_size} similar players in the Big Sky Conference.
+      Strongest dimension: <strong style="color:var(--green-light)">${top.l} (${f0(top.v)}/100)</strong>.
+      Primary development opportunity: <strong style="color:var(--amber-light)">${bot.l} (${f0(bot.v)}/100)</strong>.
+      An overall score of <strong style="color:var(--gold)">${f0(p.score)}</strong> reflects role-adjusted effectiveness — 50 = exactly average within peer group.
+      ${p.peer_size<=5?'<em style="color:var(--red-light)">Note: small peer group ('+p.peer_size+') reduces statistical reliability.</em>':''}</p>
+    </div>`;
+
+  // Component breakdown
+  const bd = document.getElementById('evalBreak');
+  bd.innerHTML = '';
+  skills.forEach(s=>{
+    bd.innerHTML+=`<div>
+      <div style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text2);margin-bottom:12px;padding-bottom:6px;border-bottom:1px solid var(--border)">${s.l}</div>
+      ${s.comp.map(c=>`<div style="display:flex;align-items:center;gap:10px;margin-bottom:8px">
+        <div style="width:100px;font-size:11px;color:var(--text2);text-align:right;flex-shrink:0">${c.l}</div>
+        <div style="flex:1;height:8px;background:var(--bg5);border-radius:4px;overflow:hidden"><div style="width:${f0(c.v)}%;height:100%;background:${bc(c.v)};border-radius:4px"></div></div>
+        <div style="width:32px;font-size:12px;font-weight:600;color:${bc(c.v)};font-family:'Roboto Mono',monospace">${f0(c.v)}</div>
+      </div>`).join('')}
+    </div>`;
+  });
+}
+
+// ============================================================
+// NAV
+// ============================================================
+function showPg(id, btn){
+  document.querySelectorAll('.pg').forEach(p=>p.classList.remove('on'));
+  document.querySelectorAll('.nav-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById('pg-'+id).classList.add('on');
+  btn.classList.add('active');
+  window.scrollTo(0,0);
+}
+</script>
+</body>
+</html>

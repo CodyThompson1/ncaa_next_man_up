@@ -1,3 +1,178 @@
+2026-04-27
+Progress:
+-	Completed final GitHub repository cleanup — organized all scripts into the correct pipeline directories, removed redundant files, and ensured the folder structure clearly communicates the data flow from collection through evaluation to dashboard output.
+-	Published the updated README.md with full project description, tech stack table, repository structure diagram, pipeline explanation, archetype system documentation, and step-by-step run instructions modeled on professional analytics project standards.
+-	Created and published data_dictionary.md documenting all CSV files in the data directory with column-level descriptions, data types, and plain-language explanations.
+-	Added a .gitignore file covering Python cache files, environment files, and other standard exclusions.
+-	Confirmed requirements.txt accurately reflects all packages used across the pipeline.
+-	Delivered Ncaa_Next_Man_Up_FINAL.html as the completed standalone dashboard with all features: team info, team data, player statistics, archetype assignments, and the player evaluation tool with coaching insights, lineup partner recommendations, and specific development targets.
+-	Completed and submitted all capstone deliverables including the final paper, dashboard, and repository.
+-	Reflected on project outcomes — the evaluation system successfully produces role-adjusted player grades, peer-relative percentile scores, and actionable coaching insights for all 13 University of Montana players from the 2025-26 season.
+
+Problems:
+-	Writing a README that accurately describes the full system while remaining accessible to a non-technical coaching audience required multiple drafts to find the right balance of technical detail and plain language.
+-	Some column names in the earlier CSV outputs used abbreviated or non-obvious names that required careful documentation in the data dictionary to ensure reproducibility.
+-	Final integration testing of the dashboard confirmed that all 13 player records displayed correct per-game statistics, dimension grades, archetype assignments, and evaluation scores consistently across all five pages.
+
+Plans:
+-	Project complete. All deliverables submitted.
+-	Potential next steps if continuing: add multi-season historical data for longitudinal tracking, extend the peer group framework to all Big Sky programs, integrate play-by-play data for lineup-level analysis, and build a Streamlit version of the dashboard for live data updates.
+
+Hours: 14
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+2026-04-20
+Progress:
+-	Submitted the final capstone paper (NCAA_NextManUp_Final_v3.docx) incorporating all professor feedback, peer review suggestions, and writing guideline requirements.
+-	Verified all sections of the paper include real player data, specific metric values, and concrete examples from the 2025-26 Montana season.
+-	Began final repository organization — reviewed folder structure, removed redundant scripts, and ensured all pipeline stages are clearly separated into data_collection, data_cleaning, feature_engineering, and evaluation_engine directories.
+-	Audited all Python scripts for consistent docstrings, clear variable naming, and appropriate inline comments.
+-	Reviewed the completed dashboard across all five pages to confirm data accuracy, feature completeness, and visual consistency before final submission.
+-	Documented the full project change log for the dashboard covering all versions from the initial build through Ncaa_Next_Man_Up_FINAL.html.
+-	Prepared the GitHub repository prompt and context document for final repository cleanup and README update using the Claude Chrome extension.
+
+Problems:
+-	Some earlier data collection scripts had inconsistent file path references that assumed a different directory structure than the final organized layout, requiring updates to import paths.
+-	Ensuring the paper accurately reflected the final state of the system — particularly the evaluation weights and archetype definitions — required cross-referencing the paper against the actual script outputs.
+-	The repository had accumulated several intermediate or experimental files during development that needed to be identified and either cleaned up or moved to an archive folder.
+
+Plans:
+-	Complete GitHub repository cleanup and reorganization using the Chrome extension.
+-	Finalize and publish the updated README.md.
+-	Create and publish the data_dictionary.md.
+-	Prepare and rehearse the final capstone presentation.
+-	Submit all final deliverables.
+
+Hours: 16
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+2026-04-13
+Progress:
+-	Fixed the Player Archetypes tab icon — replaced the 🗂 emoji that rendered as a blank box in Chromium-based browsers with a cross-browser compatible inline SVG folder icon.
+-	Fixed the dimension grade display in the Player Evaluation Tool score breakdown table. Embedded pre-computed letter grades (shooting_grade, playmaking_grade, rebounding_grade, defense_grade, efficiency_grade) from player_final_evaluations.csv directly into each player's data object, replacing the generic grade function that was producing inaccurate results.
+-	Implemented the Best Lineup Partners feature on the Player Evaluation Tool — for every selected player, the system identifies the two best complementary teammates using an archetype compatibility matrix and a skill complementarity scoring function.
+-	Implemented the Development Target feature — identifies the highest-impact weak dimension for each player by weighting deficit by role weight, then generates specific numeric targets (e.g., raise TS% from 50.7% to 56%, reduce TOV% from 20.1% to under 18%) rather than generic directional guidance.
+-	Replaced the red-green color system throughout the entire dashboard with a colorblind-safe blue-orange palette (WCAG compliant for deuteranopia and protanopia). Updated win/loss dots, skill bars, grade badges, score rings, and all CSS color variables.
+-	Produced Ncaa_Next_Man_Up_FINAL.html as the completed dashboard.
+-	Compiled full project change log documenting all modifications from the initial dashboard version.
+
+Problems:
+-	The lineup partner algorithm needed to balance archetype compatibility with skill complementarity — early versions over-indexed on archetype matching and ignored cases where two players of the same archetype could complement each other well.
+-	The development target text generation needed to produce different output for each combination of weak dimension and archetype, requiring careful conditional logic to avoid generic or incorrect recommendations.
+-	Updating the color palette required finding every color reference across CSS variables, inline styles, and JavaScript color functions to ensure consistency throughout the file.
+
+Plans:
+-	Finalize and submit the capstone paper.
+-	Clean up and organize the GitHub repository structure.
+-	Update the README to be professional and comprehensive.
+-	Create the data dictionary documenting all CSV files and columns.
+-	Prepare final presentation materials.
+
+Hours: 22
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+2026-04-06
+Progress:
+-	Revised the capstone paper in full based on professor comments and peer review feedback — added explicit metric definitions for all five performance dimensions, archetype assignment thresholds and logic, archetype-adjusted weight tables, and three full player case studies using real data.
+-	Added five embedded dashboard screenshots to the capstone paper.
+-	Fixed a critical data accuracy issue in the dashboard where player per-game statistics (PPG, RPG, APG) were displaying per-minute rate values instead of true per-game averages. Recalculated all per-game stats for all 13 players from actual game log box scores.
+-	Updated all advanced statistics across the dashboard using corrected values from montana_player_season_stats.csv and montana_player_advanced_stats.csv.
+-	Removed all em-dash and hyphen sentence connectors from the paper per professor writing guidelines, replacing them with proper grammar and sentence restructuring.
+-	Corrected the tool attribution in the paper — removed the incorrect Google Looker Studio reference and accurately described the output as a standalone HTML/CSS/JavaScript file built from scratch.
+-	Uploaded the revised paper (NCAA_NextManUp_Final_v3.docx) and the corrected dashboard HTML.
+
+Problems:
+-	The per-game statistics bug was difficult to trace because the source CSV columns were labeled as per-game fields but contained normalized per-minute rates, requiring cross-referencing with game logs to identify the discrepancy.
+-	Re-embedding all corrected player statistics into the HTML data layer required careful JSON manipulation to avoid breaking the existing player object structure.
+-	Balancing technical depth with readability in the paper revision required multiple rounds of editing to ensure the methodology was explained clearly for a mixed coaching and academic audience.
+
+Plans:
+-	Fix the archetype tab icon rendering issue in the dashboard.
+-	Fix dimension grade display in the Player Evaluation Tool — grades were using a function calibrated for overall scores, not dimension-level scores.
+-	Add Best Lineup Partners and Development Target features to the evaluation tool.
+-	Update the dashboard color scheme to be colorblind accessible.
+
+Hours: 26
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+2026-03-30
+Progress:
+-	Built the complete standalone HTML dashboard with all five pages — Team Info, Team Data, Player Data, Player Archetypes, and Player Evaluation — embedded as a single self-contained HTML file requiring no server or internet connection.
+-	Embedded all player data, evaluation scores, archetype assignments, percentile rankings, and team statistics directly into the dashboard as JavaScript data objects.
+-	Implemented the Player Evaluation Tool with a player dropdown, hero card displaying archetype, peer group, games played, PPG, RPG, APG, ORTG, and Win Shares, a skill profile section with color-coded percentile bars, a score breakdown table with dimension grades and role weights, a coaching insight callout, and a component metric deep-dive section.
+-	Implemented the full team rankings table at the bottom of the evaluation page comparing all 13 players across all five dimensions.
+-	Added position filter and sort functionality to the Player Data page.
+-	Implemented the season game strip showing win/loss results for all 31 games on the Team Info page.
+-	Submitted first draft of the capstone paper.
+
+Problems:
+-	Embedding all CSV data directly into JavaScript required careful formatting to avoid JSON parsing errors, particularly for player names with apostrophes.
+-	The coaching insight logic needed to account for archetype context — a low playmaking score for an Off-Ball Shooter is expected and should not be flagged as a weakness.
+-	Color coding the skill bars and score breakdown table consistently required a shared color function that could be called from multiple rendering contexts.
+
+Plans:
+-	Address professor feedback on the capstone paper — add more technical detail about the data pipeline, metric selection, and archetype assignment methodology.
+-	Add real player case studies with specific data points to the paper.
+-	Collect peer review feedback and incorporate suggested improvements.
+-	Fix any data accuracy issues identified in the dashboard.
+
+Hours: 24
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+2026-03-23
+Progress:
+-	Completed score_playmaking.py, score_rebounding.py, and score_efficiency.py, bringing the full five-dimension evaluation engine to completion.
+-	Implemented archetype-adjusted weight profiles in build_final_player_grades.py, where each archetype carries a unique set of dimension weights reflecting what that role is primarily evaluated on.
+-	Generated player_final_evaluations.csv containing overall scores on a 0-100 scale, letter grades, dimension-level scores, dimension-level letter grades, and confidence bands for all 13 Montana players.
+-	Validated dimension scores and letter grades against expected player profiles — Courtney Anderson confirmed at A- overall with a perfect 100 shooting score, Grant Kepley confirmed at C+ with elite playmaking and poor shooting.
+-	Produced player_percentiles.csv and all five component score files (shooting_scores.csv, playmaking_scores.csv, rebounding_scores.csv, defense_scores.csv, efficiency_scores.csv).
+-	Began designing the HTML dashboard structure and navigation system with five pages: Team Info, Team Data, Player Data, Player Archetypes, and Player Evaluation.
+
+Problems:
+-	The rebounding scoring script required position-based weight profiles because Guard and Forward rebounding expectations differ significantly — Guards were penalized on a Forward weight profile.
+-	The efficiency score component for turnover rate needed to be inverted in the scoring function since lower turnover rates represent better performance, which was not initially accounted for.
+-	Some players had missing values in advanced metric fields due to limited playing time, requiring fallback logic in the scoring scripts to handle partial data gracefully.
+
+Plans:
+-	Complete the HTML dashboard with all five pages and embedded player data.
+-	Integrate real player statistics, evaluation scores, archetype assignments, and peer group data into the dashboard JavaScript data layer.
+-	Test all dashboard interactions including player dropdown, position filter, sort controls, and skill bar rendering.
+-	Begin writing the capstone paper draft.
+
+Hours: 20
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+2026-03-16
+Progress:
+-	Built the feature engineering layer including Big Sky Conference player pool construction, position-based peer group generation, and percentile rank calculations for all key metrics.
+-	Implemented the player archetype assignment system using a rules-based scoring approach applied to each player's normalized statistical profile across usage rate, assist rate, three-point attempt rate, rebounding rate, and defensive activity.
+-	Defined all seven player archetypes — Primary Creator, Secondary Playmaker, Off-Ball Shooter, Scoring Forward, 3-and-D Forward, Interior Forward, and Glue Forward — with explicit threshold criteria and assignment logic.
+-	Produced player_archetype_assignment.csv and player_peer_groups.csv for all 13 Montana players with archetype labels, peer group sizes, and confidence scores.
+-	Began building the five dimension scoring scripts: score_shooting.py, score_playmaking.py, score_rebounding.py, score_defense.py, and score_efficiency.py.
+-	Each scoring script reads from player_percentiles.csv, resolves metric columns, converts raw percentile values to 0-100 component scores, applies metric-level weights, and outputs a dimension score per player.
+-	Completed initial versions of score_shooting.py and score_defense.py with full input validation and output schema.
+
+Problems:
+-	Peer group sizes for some players were small due to position and usage filtering, requiring adjustments to the minimum threshold logic to maintain statistical reliability.
+-	Several percentile column names in the source data used inconsistent suffixes across scripts, requiring a flexible column resolver to handle aliases without breaking the pipeline.
+-	The archetype assignment confidence scores revealed that a few Montana players had ambiguous profiles that could reasonably fit two archetypes, requiring manual review of the thresholds.
+
+Plans:
+-	Complete score_playmaking.py, score_rebounding.py, and score_efficiency.py.
+-	Build build_final_player_grades.py to combine all five dimension scores into a weighted overall score and letter grade using archetype-adjusted weights.
+-	Begin integrating evaluation outputs into the dashboard.
+-	Review and validate archetype assignments against film and coaching knowledge where possible.
+
+Hours: 18
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 2026-03-09
 
 Progress:

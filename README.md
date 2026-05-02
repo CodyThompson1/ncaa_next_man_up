@@ -6,7 +6,7 @@ A role-based player evaluation system for NCAA men's basketball that assigns arc
 
 ## Project Overview
 
-**NCAA Next Man Up** was built as a capstone project for the University of Montana MSBA program, in partnership with the UM Men's Basketball Program (Head Coach Jay Flores). The system provides a structured, data-driven framework for evaluating players not by raw statistics alone, but by how well they perform within their role relative to conference peers.
+**NCAA Next Man Up** was built as a capstone project for the University of Montana MSBA program, in partnership with the UM Men's Basketball Program. The system provides a structured, data-driven framework for evaluating players not by raw statistics alone, but by how well they perform within their role relative to conference peers.
 
 The project covers the full analytics pipeline — from raw data collection through cleaning, feature engineering, and evaluation — and delivers results through a coach-friendly, interactive HTML dashboard that requires no server or installation to use.
 
@@ -211,7 +211,7 @@ Open `dashboard/Ncaa_Next_Man_Up.html` directly in any web browser. No server re
 
 - **Player Statistics & Game Logs:** [Sports Reference College Basketball](https://www.sports-reference.com/cbb/) — season stats, advanced metrics, game-by-game box scores
 - **Roster Information:** Sports Reference roster pages — jersey numbers, class, height, hometown
-
+- **Team Statistics:** Kenpom api and all materials contained on the Web Site are owned by The Forecast Factory LLC.
 Raw data files are excluded from version control (see `.gitignore`). Run the data collection scripts to regenerate them.
 
 ---
@@ -220,5 +220,5 @@ Raw data files are excluded from version control (see `.gitignore`). Run the dat
 
 **Author:** Cody Thompson  
 **Course:** MSBA Capstone — BMKT 699, University of Montana, Spring 2026  
-**Client:** University of Montana Men's Basketball Program (Head Coach Jay Flores)  
-**Contact:** cody.thompson@umconnect.umt.edu
+**Client:** University of Montana Men's Basketball Program  
+**Contact:** cthompson18318@gmail.com
